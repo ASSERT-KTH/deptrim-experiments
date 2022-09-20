@@ -1,0 +1,143 @@
+---
+title: "Analysis of Possible Versions From commons-collections"
+author: César Soto Valero
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    df_print: paged
+    css: css/main.css
+    number_sections: true
+    toc: true
+    toc_depth: 3
+    toc_float: 
+      collapsed: false
+---
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# Import the header 
+source("0_header.R")
+# Clear the R environment
+rm(list=ls())
+```
+
+# Raw Dataset
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# Read the data
+raw_results <- read.delim("../data/commons-collections.csv", sep = ",", header = T, stringsAsFactors = TRUE)
+raw_results
+```
+
+
+# Number of Types Used by Each Version
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+raw_results_4.0 <- raw_results %>%
+  select(Version, IsUsed) %>%
+  group_by(Version, IsUsed) %>%
+  summarise(Count = n()) %>%
+  filter(Version %in% c("tabusearch",
+                        "fuzzy-matcher",
+                        "checksims",
+                        "airlines")) %>%
+  mutate(From = "4.0")
+
+raw_results_4.4 <- raw_results %>%
+  select(Version, IsUsed) %>%
+  group_by(Version, IsUsed) %>%
+  summarise(Count = n()) %>%
+  filter(
+    Version %in% c(
+      "swid-generator",
+      "mixeway",
+      "fosstars-rating-core",
+      "commons-release-plugin"
+    )
+  ) %>%
+  mutate(From = "4.4")
+
+plot_results <- rbind(raw_results_4.0, raw_results_4.4)
+
+plot_results %>%
+  ggplot(aes(x = Version, y = Count, fill = IsUsed)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  xlab("Version") +
+  ylab("#Types") +
+  labs(fill = "Used from commons-collections") +
+  facet_wrap("From")
+```
+
+# Venn Diagrams of Types
+
+##  Used From 4.0
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+raw_results_in <- raw_results %>% 
+  mutate(id = row_number()) %>% 
+  filter(Version %in% c("tabusearch",
+                        "fuzzy-matcher",
+                        "checksims",
+                        "airlines")) %>% 
+  filter(IsUsed == "yes")
+
+
+used_tabusearch <- raw_results_in %>% filter(Version == "tabusearch")
+used_fuzzy_matcher <- raw_results_in %>% filter(Version == "fuzzy-matcher")
+used_checksims <- raw_results_in %>% filter(Version == "checksims")
+used_airlines <- raw_results_in %>% filter(Version == "airlines")
+
+
+ven_in <- list(used_tabusearch$Type, used_fuzzy_matcher$Type, used_checksims$Type, used_airlines$Type)
+snames <-  c("tabusearch","fuzzy-matcher","checksims","airlines")
+
+plot <- venn(
+  ven_in,
+  snames = snames,
+  ilab = TRUE,
+  zcolor = "style",
+  cexil = 1.5,
+  cexsn = 1.5,
+  ggplot = TRUE,
+  box=FALSE
+)
+plot
+```
+
+
+##  Used From 4.4
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+raw_results_in <- raw_results %>% 
+  mutate(id = row_number()) %>% 
+    filter(Version %in% c(
+      "swid-generator",
+      "mixeway",
+      "fosstars-rating-core",
+      "commons-release-plugin"
+    )) %>% 
+  filter(IsUsed == "yes")
+
+
+used_swid_generator <- raw_results_in %>% filter(Version == "swid-generator")
+used_mixeway <- raw_results_in %>% filter(Version == "mixeway")
+used_fosstars_rating_core <- raw_results_in %>% filter(Version == "fosstars-rating-core")
+used_commons_release_plugin <- raw_results_in %>% filter(Version == "commons-release-plugin")
+
+
+ven_in <- list(used_swid_generator$Type, used_mixeway$Type, used_fosstars_rating_core$Type, used_commons_release_plugin$Type)
+snames <-  c("swid-generator","mixeway","fosstars-rating-core","commons-release-plugin")
+
+plot <- venn(
+  ven_in,
+  snames = snames,
+  ilab = TRUE,
+  zcolor = "style",
+  cexil = 1.5,
+  cexsn = 1.5,
+  ggplot = TRUE,
+  box=FALSE
+)
+plot
+```
+
