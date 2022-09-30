@@ -1,7 +1,8 @@
+const utils = require("./utils");
 const fs = require('fs');
 const shell = require('shelljs')
 const path = require("path");
-const clientsPath = path.resolve(__dirname, "~/deptrim-experiments-resources/clients");
+const clientsPath = path.resolve(__dirname, "/Users/cesarsv/deptrim-experiments-resources/clients");
 const jdblDatasetPath = path.resolve(__dirname, "../data/jdbl_dataset.json");
 
 const obj = JSON.parse(fs.readFileSync(jdblDatasetPath, 'utf8'));
@@ -59,4 +60,3 @@ function depclean(projectName) {
       'mvn se.kth.castor:depclean-maven-plugin:2.0.3-SNAPSHOT:depclean -DcreateResultJson=true'
   );
 }
-

@@ -1,3 +1,4 @@
+const utils = require("./utils");
 const fs = require('fs');
 const depcleanResults = 'depclean-results.json';
 
