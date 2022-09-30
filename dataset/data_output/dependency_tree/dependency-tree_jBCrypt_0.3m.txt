@@ -1,0 +1,2 @@
+org.mindrot:jbcrypt:jar:0.3
+\- junit:junit:jar:3.8.1:test

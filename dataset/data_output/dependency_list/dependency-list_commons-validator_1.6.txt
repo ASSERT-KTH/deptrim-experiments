@@ -1,0 +1,9 @@
+
+The following files have been resolved:
+   commons-logging:commons-logging:jar:1.2:compile
+   commons-beanutils:commons-beanutils:jar:1.9.2:compile
+   org.hamcrest:hamcrest-core:jar:1.3:test
+   commons-digester:commons-digester:jar:1.8.1:compile
+   commons-collections:commons-collections:jar:3.2.2:compile
+   junit:junit:jar:4.12:test
+

@@ -1,0 +1,19 @@
+com.github.kstyrc:embedded-redis:jar:0.6
++- com.google.guava:guava:jar:18.0:compile
++- commons-io:commons-io:jar:2.4:compile
++- commons-logging:commons-logging:jar:1.1.1:test
++- redis.clients:jedis:jar:2.6.0:test
+|  \- org.apache.commons:commons-pool2:jar:2.0:test
++- org.mockito:mockito-all:jar:1.8.5:test
++- junit:junit:jar:4.11:test
+|  \- org.hamcrest:hamcrest-core:jar:1.3:test
+\- org.springframework.data:spring-data-redis:jar:1.4.1.RELEASE:test
+   +- org.springframework:spring-tx:jar:4.0.7.RELEASE:test
+   |  \- org.springframework:spring-beans:jar:4.0.7.RELEASE:test
+   +- org.slf4j:slf4j-api:jar:1.7.5:test
+   +- org.springframework:spring-aop:jar:4.0.7.RELEASE:test
+   |  \- aopalliance:aopalliance:jar:1.0:test
+   +- org.springframework:spring-context-support:jar:4.0.7.RELEASE:test
+   +- org.springframework:spring-core:jar:4.0.7.RELEASE:test
+   \- org.springframework:spring-context:jar:4.0.7.RELEASE:test
+      \- org.springframework:spring-expression:jar:4.0.7.RELEASE:test

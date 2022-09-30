@@ -1,0 +1,2 @@
+com.lambdaworks:scrypt:jar:1.4.0
+\- junit:junit:jar:4.8.2:test

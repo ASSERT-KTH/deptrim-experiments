@@ -1,0 +1,13 @@
+
+The following files have been resolved:
+   com.j256.ormlite:ormlite-core:jar:5.1:compile
+   com.h2database:h2:jar:1.2.128:test
+   joda-time:joda-time:jar:1.5:test
+   org.objenesis:objenesis:jar:2.2:test
+   org.apache.logging.log4j:log4j-api:jar:2.0-beta4:provided
+   junit:junit:jar:4.8.1:test
+   org.easymock:easymock:jar:3.4:test
+   com.j256.ormlite:ormlite-core:jar:tests:5.1:test
+   javax.persistence:persistence-api:jar:1.0:test
+   log4j:log4j:jar:1.2.12:provided
+

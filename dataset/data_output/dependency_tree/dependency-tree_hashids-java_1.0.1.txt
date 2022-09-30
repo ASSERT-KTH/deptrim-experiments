@@ -1,0 +1,2 @@
+org.hashids:hashids:jar:1.0.1
+\- junit:junit:jar:4.8.1:test

@@ -1,0 +1,6 @@
+com.github.davidmoten:guava-mini:jar:0.1.2
++- junit:junit:jar:4.12:test
+|  \- org.hamcrest:hamcrest-core:jar:1.3:test
++- org.mockito:mockito-core:jar:1.10.8:test
+|  \- org.objenesis:objenesis:jar:2.1:test
+\- com.github.davidmoten:junit-extras:jar:0.3:test

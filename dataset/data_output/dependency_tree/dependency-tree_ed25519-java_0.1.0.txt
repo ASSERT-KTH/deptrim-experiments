@@ -1,0 +1,4 @@
+net.i2p.crypto:eddsa:bundle:0.1.0
++- org.hamcrest:hamcrest-all:jar:1.3:test
+\- junit:junit:maven-plugin:4.11:test
+   \- org.hamcrest:hamcrest-core:jar:1.3:test

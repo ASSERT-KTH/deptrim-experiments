@@ -1,0 +1,2 @@
+net.sf.opencsv:opencsv:jar:2.3-SNAPSHOT
+\- junit:junit:jar:4.7:test

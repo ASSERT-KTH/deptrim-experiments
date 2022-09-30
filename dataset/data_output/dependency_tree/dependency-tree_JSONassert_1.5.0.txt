@@ -1,0 +1,4 @@
+org.skyscreamer:jsonassert:jar:1.5.0
++- com.vaadin.external.google:android-json:jar:0.0.20131108.vaadin1:compile
+\- junit:junit:jar:4.10:test
+   \- org.hamcrest:hamcrest-core:jar:1.1:test

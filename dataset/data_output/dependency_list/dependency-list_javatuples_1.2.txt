@@ -1,0 +1,5 @@
+
+The following files have been resolved:
+   junit:junit:jar:4.8.2:test
+   commons-lang:commons-lang:jar:2.5:test
+

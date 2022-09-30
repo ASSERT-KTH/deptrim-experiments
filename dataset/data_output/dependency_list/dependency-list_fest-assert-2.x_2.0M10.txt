@@ -1,0 +1,8 @@
+
+The following files have been resolved:
+   org.mockito:mockito-all:jar:1.9.0:test
+   org.easytesting:fest-util:jar:1.2.5:compile
+   org.easytesting:fest-test:jar:2.1.0:test
+   junit:junit:jar:4.10:test
+   org.hamcrest:hamcrest-core:jar:1.1:test
+

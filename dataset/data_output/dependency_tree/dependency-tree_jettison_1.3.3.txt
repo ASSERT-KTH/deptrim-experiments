@@ -1,0 +1,4 @@
+org.codehaus.jettison:jettison:bundle:1.3.3
++- junit:junit:jar:3.8.1:test
++- stax:stax-api:jar:1.0.1:compile
+\- woodstox:wstx-asl:jar:3.2.2:test

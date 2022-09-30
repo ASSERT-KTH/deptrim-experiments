@@ -1,0 +1,39 @@
+org.apache.commons:commons-configuration2:jar:2.1.1
++- org.apache.commons:commons-lang3:jar:3.3.2:compile
++- commons-logging:commons-logging:jar:1.2:compile
++- commons-beanutils:commons-beanutils:jar:1.9.3:compile
+|  \- commons-collections:commons-collections:jar:3.2.2:compile
++- commons-codec:commons-codec:jar:1.10:compile
++- org.apache.commons:commons-jexl:jar:2.1.1:compile
++- org.apache.commons:commons-vfs2:jar:2.1:compile
++- commons-jxpath:commons-jxpath:jar:1.3:compile
++- xml-resolver:xml-resolver:jar:1.2:compile
++- org.springframework:spring-core:jar:4.2.5.RELEASE:compile
++- org.springframework:spring-beans:jar:4.2.5.RELEASE:compile
++- org.springframework:spring-context:jar:4.2.5.RELEASE:test
+|  +- org.springframework:spring-aop:jar:4.2.5.RELEASE:test
+|  |  \- aopalliance:aopalliance:jar:1.0:test
+|  \- org.springframework:spring-expression:jar:4.2.5.RELEASE:test
++- org.springframework:spring-test:jar:4.2.5.RELEASE:test
++- javax.servlet:servlet-api:jar:2.4:provided
++- xerces:xercesImpl:jar:2.6.2:test
++- xml-apis:xml-apis:jar:1.0.b2:provided
++- commons-dbcp:commons-dbcp:jar:1.4:test
++- commons-pool:commons-pool:jar:1.6:test
++- hsqldb:hsqldb:jar:1.8.0.10:test
++- dbunit:dbunit:jar:2.1:test
++- junit:junit:jar:4.12:test
+|  \- org.hamcrest:hamcrest-core:jar:1.3:test
++- junit-addons:junit-addons:jar:1.4:test
++- mockobjects:mockobjects-core:jar:0.09:test
++- mockobjects:mockobjects-jdk1.4-j2ee1.3:jar:0.09:test
++- org.easymock:easymock:jar:3.2:test
+|  +- cglib:cglib-nodep:jar:2.2.2:test
+|  \- org.objenesis:objenesis:jar:1.3:test
++- javax.mail:mail:jar:1.4:test
+|  \- javax.activation:activation:jar:1.1:test
++- log4j:log4j:jar:1.2.17:compile
++- org.slf4j:slf4j-api:jar:1.7.7:test
++- org.slf4j:slf4j-ext:jar:1.7.7:test
+|  \- ch.qos.cal10n:cal10n-api:jar:0.8.1:test
+\- org.slf4j:slf4j-log4j12:jar:1.7.7:test

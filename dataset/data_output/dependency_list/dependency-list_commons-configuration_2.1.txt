@@ -1,0 +1,41 @@
+
+The following files have been resolved:
+   org.springframework:spring-expression:jar:4.2.5.RELEASE:test
+   log4j:log4j:jar:1.2.17:compile
+   ch.qos.cal10n:cal10n-api:jar:0.8.1:test
+   org.springframework:spring-aop:jar:4.2.5.RELEASE:test
+   aopalliance:aopalliance:jar:1.0:test
+   org.springframework:spring-beans:jar:4.2.5.RELEASE:compile
+   xerces:xercesImpl:jar:2.6.2:test
+   commons-beanutils:commons-beanutils:jar:1.9.3:compile
+   org.springframework:spring-test:jar:4.2.5.RELEASE:test
+   commons-pool:commons-pool:jar:1.6:test
+   junit-addons:junit-addons:jar:1.4:test
+   javax.activation:activation:jar:1.1:test
+   xml-apis:xml-apis:jar:1.0.b2:provided
+   org.slf4j:slf4j-ext:jar:1.7.7:test
+   org.apache.commons:commons-jexl:jar:2.1.1:compile
+   org.easymock:easymock:jar:3.2:test
+   javax.mail:mail:jar:1.4:test
+   javax.servlet:servlet-api:jar:2.4:provided
+   org.springframework:spring-core:jar:4.2.5.RELEASE:compile
+   commons-codec:commons-codec:jar:1.10:compile
+   org.hamcrest:hamcrest-core:jar:1.3:test
+   commons-dbcp:commons-dbcp:jar:1.4:test
+   commons-collections:commons-collections:jar:3.2.2:compile
+   cglib:cglib-nodep:jar:2.2.2:test
+   hsqldb:hsqldb:jar:1.8.0.10:test
+   junit:junit:jar:4.12:test
+   mockobjects:mockobjects-jdk1.4-j2ee1.3:jar:0.09:test
+   org.slf4j:slf4j-log4j12:jar:1.7.7:test
+   commons-logging:commons-logging:jar:1.2:compile
+   dbunit:dbunit:jar:2.1:test
+   commons-jxpath:commons-jxpath:jar:1.3:compile
+   org.objenesis:objenesis:jar:1.3:test
+   mockobjects:mockobjects-core:jar:0.09:test
+   org.apache.commons:commons-lang3:jar:3.3.2:compile
+   xml-resolver:xml-resolver:jar:1.2:compile
+   org.springframework:spring-context:jar:4.2.5.RELEASE:test
+   org.slf4j:slf4j-api:jar:1.7.7:test
+   org.apache.commons:commons-vfs2:jar:2.1:compile
+

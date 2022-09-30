@@ -1,0 +1,18 @@
+org.codehaus.groovy:groovy:jar:2.4.1.1
++- junit:junit:jar:4.11:test
+|  \- org.hamcrest:hamcrest-core:jar:1.3:test
++- commons-cli:commons-cli:jar:1.2:provided
++- co.paralleluniverse:quasar-core:jar:0.6.2:compile
+|  +- com.lmax:disruptor:jar:3.3.0:compile
+|  +- com.codahale.metrics:metrics-core:jar:3.0.2:compile
+|  +- de.javakaffee:kryo-serializers:jar:0.27:compile
+|  +- com.google.guava:guava:jar:18.0:compile
+|  +- com.esotericsoftware.kryo:kryo:jar:2.24.0:compile
+|  |  +- com.esotericsoftware.minlog:minlog:jar:1.2:compile
+|  |  \- org.objenesis:objenesis:jar:2.1:compile
+|  \- org.apache.ant:ant:jar:1.9.4:compile
+|     \- org.apache.ant:ant-launcher:jar:1.9.4:compile
++- org.ow2.asm:asm-util:jar:5.0.3:compile
+|  \- org.ow2.asm:asm-tree:jar:5.0.3:compile
+|     \- org.ow2.asm:asm:jar:5.0.3:compile
+\- org.codehaus.groovy:groovy:jar:indy:2.4.1:compile

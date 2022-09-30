@@ -1,0 +1,2 @@
+dnsjava:dnsjava:jar:2.1.8
+\- junit:junit:jar:3.8.2:test

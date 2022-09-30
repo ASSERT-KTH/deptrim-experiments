@@ -1,0 +1,8 @@
+
+The following files have been resolved:
+   junit:junit:jar:3.8.1:test
+   avalon-framework:avalon-framework:jar:4.1.5:compile
+   log4j:log4j:jar:1.2.17:compile
+   javax.servlet:servlet-api:jar:2.3:provided
+   logkit:logkit:jar:1.0.1:compile
+

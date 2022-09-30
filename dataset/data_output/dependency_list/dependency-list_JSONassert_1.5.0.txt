@@ -1,0 +1,6 @@
+
+The following files have been resolved:
+   junit:junit:jar:4.10:test
+   com.vaadin.external.google:android-json:jar:0.0.20131108.vaadin1:compile
+   org.hamcrest:hamcrest-core:jar:1.1:test
+

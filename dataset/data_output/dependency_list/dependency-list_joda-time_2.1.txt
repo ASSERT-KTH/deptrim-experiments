@@ -1,0 +1,5 @@
+
+The following files have been resolved:
+   org.joda:joda-convert:jar:1.9.2:compile (optional) [36m -- module org.joda.convert[0;1m [auto][m
+   junit:junit:jar:3.8.2:test[36m -- module junit[0;1;33m (auto)[m
+

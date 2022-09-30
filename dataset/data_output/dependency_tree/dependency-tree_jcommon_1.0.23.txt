@@ -1,0 +1,2 @@
+org.jfree:jcommon:jar:1.0.23
+\- junit:junit:jar:3.8.2:test

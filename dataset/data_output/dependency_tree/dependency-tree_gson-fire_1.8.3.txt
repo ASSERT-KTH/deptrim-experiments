@@ -1,0 +1,4 @@
+io.gsonfire:gson-fire:jar:1.8.3
++- com.google.code.gson:gson:jar:2.7:compile
+\- junit:junit:jar:4.10:test
+   \- org.hamcrest:hamcrest-core:jar:1.1:test

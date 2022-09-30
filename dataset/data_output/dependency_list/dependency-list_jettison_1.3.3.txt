@@ -1,0 +1,6 @@
+
+The following files have been resolved:
+   junit:junit:jar:3.8.1:test
+   woodstox:wstx-asl:jar:3.2.2:test
+   stax:stax-api:jar:1.0.1:compile
+

@@ -1,0 +1,8 @@
+
+The following files have been resolved:
+   com.fasterxml.jackson.core:jackson-databind:jar:2.6.4:compile
+   junit:junit:jar:4.9:test
+   com.fasterxml.jackson.core:jackson-core:jar:2.6.4:compile
+   com.fasterxml.jackson.core:jackson-annotations:jar:2.6.0:compile
+   org.hamcrest:hamcrest-core:jar:1.1:test
+

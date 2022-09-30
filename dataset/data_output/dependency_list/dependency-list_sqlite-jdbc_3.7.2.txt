@@ -1,0 +1,6 @@
+
+The following files have been resolved:
+   org.xerial.thirdparty:jdbc-api:jar:1.4:provided
+   junit:junit:jar:4.1:test
+   org.xerial.thirdparty:nestedvm:jar:1.0:provided
+

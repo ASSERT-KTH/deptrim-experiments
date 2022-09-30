@@ -1,0 +1,5 @@
+
+The following files have been resolved:
+   junit:junit:jar:4.8.2:test
+   org.ow2.asm:asm:jar:5.0.3:compile
+

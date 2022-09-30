@@ -1,0 +1,2 @@
+com.esotericsoftware.yamlbeans:yamlbeans:jar:1.12
+\- junit:junit:jar:4.8.2:test

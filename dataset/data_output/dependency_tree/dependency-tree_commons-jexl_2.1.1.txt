@@ -1,0 +1,5 @@
+org.apache.commons:commons-jexl:jar:2.1.1
++- commons-logging:commons-logging:jar:1.1.1:compile
++- junit:junit:jar:4.10:test
+|  \- org.hamcrest:hamcrest-core:jar:1.1:test
+\- org.apache.bsf:bsf-api:jar:3.1:provided

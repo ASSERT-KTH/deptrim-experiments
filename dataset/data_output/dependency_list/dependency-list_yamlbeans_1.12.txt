@@ -1,0 +1,4 @@
+
+The following files have been resolved:
+   junit:junit:jar:4.8.2:test
+
