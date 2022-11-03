@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "config:base",
+    "helpers:pinGitHubActionDigests"
+  ],
+  "packageRules": [
+    {
+      "packageNames": ["org.mockito:mockito-core"],
+      "schedule": ["on monday"]
+    }
+  ]
+}

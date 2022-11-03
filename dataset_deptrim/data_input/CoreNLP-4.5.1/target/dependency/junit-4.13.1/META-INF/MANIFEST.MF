@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Implementation-Vendor: JUnit
+Implementation-Title: JUnit
+Automatic-Module-Name: junit
+Implementation-Version: 4.13.1
+Implementation-Vendor-Id: junit
+Built-By: marc
+Build-Jdk: 1.6.0_65
+Created-By: Apache Maven 3.1.1
+Implementation-URL: http://junit.org
+Archiver-Version: Plexus Archiver
+

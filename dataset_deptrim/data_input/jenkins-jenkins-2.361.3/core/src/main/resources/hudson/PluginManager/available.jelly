@@ -1,0 +1,89 @@
+<!--
+The MIT License
+
+Copyright (c) 2004-2009, Sun Microsystems, Inc., Kohsuke Kawaguchi
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+-->
+
+<!--
+  List of available new plugins
+-->
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:l="/lib/layout" xmlns:f="/lib/form">
+  <l:layout title="${%Available Plugins} - ${%Plugin Manager}" permission="${app.SYSTEM_READ}">
+    <j:set var="page" value="available"/>
+
+    <l:app-bar title="${%Plugin Manager}" />
+
+    <st:include page="sidepanel.jelly"/>
+
+    <l:main-panel>
+      <script src="${resURL}/jsbundles/plugin-manager-ui.js" type="text/javascript"/>
+
+      <form method="post" action="install">
+        <local:tabBar page="${page}" xmlns:local="/hudson/PluginManager"/>
+
+        <div class="jenkins-form-item jenkins-search">
+          <input
+            class="jenkins-search__input"
+            type="search"
+            id="filter-box"
+            value="${request.getParameter('filter')}"
+            placeholder="${%Search}"/>
+          <div class="jenkins-search__icon">
+            <l:icon src="symbol-search"/>
+          </div>
+        </div>
+
+        <table id="plugins" class="jenkins-table sortable"
+               data-hasAdmin="${h.hasPermission(app.ADMINISTER)}">
+          <thead>
+            <tr>
+              <l:isAdmin>
+                <th data-sort-disable="true">
+                  ${%Install}
+                </th>
+              </l:isAdmin>
+              <th initialSortDir="down">${%Name}</th>
+              <th>${%Released}</th>
+              <j:if test="${isUpdates}">
+                <th>${%Installed}</th>
+              </j:if>
+            </tr>
+          </thead>
+          <tbody/>
+        </table>
+
+        <div id="bottom-sticker">
+          <div class="bottom-sticker-inner">
+            <l:isAdmin>
+              <f:submit value="${%Install without restart}" name="dynamicLoad"/>
+              <span style="margin-left:2em;"></span>
+              <f:submit value="${%Download now and install after restart}"/>
+            </l:isAdmin>
+            <st:include page="check.jelly"/>
+          </div>
+        </div>
+      </form>
+
+    </l:main-panel>
+  </l:layout>
+
+</j:jelly>
