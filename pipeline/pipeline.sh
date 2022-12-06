@@ -56,7 +56,7 @@ echo "====================================================="
 echo "${logger_deptrim} Running DepTrim"
 echo "====================================================="
 mvn se.kth.castor:deptrim-maven-plugin:0.0.1:deptrim -DcreateAllPomSpecialized=true -DverboseMode=true -DignoreScopes=test,provided,system,import,runtime >> deptrim/deptrim.log
-cp -r libs-deptrim deptrim
+cp -r libs-specialized deptrim
 
 # EXECUTING POMS
 poms=`find . -name "pom-specialized*.xml"`
@@ -91,6 +91,6 @@ mv pom-original.xml pom.xml
 
 # Copy the results to the results directory
 echo "${logger_pipeline}  Copying the results to the results directory"
-cp -r . ../../../"$RESULTS_DIR"/"$MODULE_DIR"
+cp -r . ../../../"$RESULTS_DIR"/"$REPO_NAME"/"$MODULE_DIR"
 
 exit 0
