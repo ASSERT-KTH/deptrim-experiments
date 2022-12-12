@@ -55,6 +55,7 @@ mvn dependency:copy-dependencies >> original/all-dependencies.log
 mkdir original/all-dependencies/
 cp -r target/dependency original/all-dependencies/
 mvn dependency:tree >> original/dependency-tree.log
+mvn dependency:list >> original/dependency-list.log
 
 # RUN DEPTRIM
 echo "====================================================="
