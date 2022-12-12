@@ -1,4 +1,0 @@
-<!-- minimal configuration for CI -->
-<configuration>
-  <root level="INFO"/>            
-</configuration>

@@ -1,1 +1,0 @@
-hudson.Util.getPastTimeString($d) => hudson.Util.getTimeSpanString($d);;

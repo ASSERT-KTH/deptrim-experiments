@@ -1,4 +1,0 @@
-.hideWarnings:not(:checked) + label {
-  color: grey;
-  text-decoration: line-through;
-}

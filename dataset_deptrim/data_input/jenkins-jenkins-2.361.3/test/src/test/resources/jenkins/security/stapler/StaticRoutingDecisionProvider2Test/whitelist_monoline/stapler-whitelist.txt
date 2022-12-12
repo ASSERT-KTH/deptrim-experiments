@@ -1,1 +1,0 @@
-method jenkins.security.stapler.StaticRoutingDecisionProviderTest$ContentProvider getObjectCustom

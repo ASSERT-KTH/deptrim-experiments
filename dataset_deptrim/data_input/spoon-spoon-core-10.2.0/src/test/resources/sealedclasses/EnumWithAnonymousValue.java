@@ -1,5 +1,0 @@
-public enum EnumWithAnonymousValue {
-	VALUE {
-
-	}
-}

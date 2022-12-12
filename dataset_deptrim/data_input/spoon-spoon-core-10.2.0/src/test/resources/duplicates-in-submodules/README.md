@@ -1,1 +1,0 @@
-Test files to replicate https://github.com/INRIA/spoon/issues/3707

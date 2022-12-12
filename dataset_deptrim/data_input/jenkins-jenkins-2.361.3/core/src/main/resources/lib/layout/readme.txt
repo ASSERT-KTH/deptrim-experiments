@@ -1,1 +1,0 @@
-Tags used to manage layouts.

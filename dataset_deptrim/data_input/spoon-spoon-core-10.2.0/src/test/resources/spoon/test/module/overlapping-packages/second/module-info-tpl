@@ -1,3 +1,0 @@
-module second {
-  exports test.parent;
-}

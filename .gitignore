@@ -1,5 +1,9 @@
 ### IntelliJ IDEA ###
 .idea/*
+/pipeline/.idea/*
+/pipeline/target/*
+/pipeline/results/*
+/pipeline/projects/*
 
 ### Eclipse ###
 .apt_generated
@@ -172,6 +176,8 @@ dist
 # TernJS port file
 .tern-port
 /.idea/
+
+
 
 
 

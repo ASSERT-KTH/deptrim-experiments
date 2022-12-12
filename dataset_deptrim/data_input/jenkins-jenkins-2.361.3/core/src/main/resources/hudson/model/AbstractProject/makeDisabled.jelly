@@ -1,5 +1,0 @@
-<?jelly escape-by-default='true'?>
-<!-- deprecated but kept for compatibility -->
-<j:jelly xmlns:j="jelly:core" xmlns:p="/lib/hudson/project">
-    <p:makeDisabled/>
-</j:jelly>

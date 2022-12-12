@@ -19,9 +19,3 @@ RUN chmod +x /usr/src/app/run-pipeline.sh
 
 # run the pipeline
 CMD ["/usr/src/app/run-pipeline.sh"]
-
-
-
-
-
-
