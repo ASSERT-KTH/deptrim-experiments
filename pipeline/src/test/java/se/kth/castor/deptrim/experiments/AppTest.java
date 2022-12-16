@@ -1,4 +1,4 @@
-package org.example;
+package se.kth.castor.deptrim.experiments;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
