@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+
+   <groupId>se.kth.castor</groupId>
+   <artifactId>deptrim-experiments</artifactId>
+   <version>1.0-SNAPSHOT</version>
+   <packaging>jar</packaging>
+
+   <name>deptrim-experiments</name>
+   <url>http://maven.apache.org</url>
+
+   <properties>
+      <!-- Encoding -->
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+      <!-- Java version -->
+      <maven.compiler.source>17</maven.compiler.source>
+      <maven.compiler.target>17</maven.compiler.target>
+      <compiler.release>17</compiler.release>
+      <javadoc.source>17</javadoc.source>
+      <!-- Dependencies -->
+      <junit5.version>5.9.0</junit5.version>
+   </properties>
+
+   <dependencies>
+      <dependency>
+         <groupId>org.junit.jupiter</groupId>
+         <artifactId>junit-jupiter-api</artifactId>
+         <version>${junit5.version}</version>
+         <scope>test</scope>
+      </dependency>
+      <dependency>
+         <groupId>org.junit.jupiter</groupId>
+         <artifactId>junit-jupiter-engine</artifactId>
+         <version>${junit5.version}</version>
+         <scope>test</scope>
+      </dependency>
+      <dependency>
+         <groupId>org.junit.vintage</groupId>
+         <artifactId>junit-vintage-engine</artifactId>
+         <version>${junit5.version}</version>
+         <scope>test</scope>
+      </dependency>
+      <dependency>
+         <groupId>org.junit.jupiter</groupId>
+         <artifactId>junit-jupiter-params</artifactId>
+         <version>${junit5.version}</version>
+         <scope>test</scope>
+      </dependency>
+   </dependencies>
+</project>
