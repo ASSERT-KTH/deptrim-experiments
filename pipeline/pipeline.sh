@@ -57,11 +57,17 @@ cp -r target/dependency original/all-dependencies/
 mvn dependency:tree >> original/dependency-tree.log
 mvn dependency:list >> original/dependency-list.log
 
+# RUN DEPCLEAN
+echo "====================================================="
+echo "${logger_deptrim} Running DepClean"
+mkdir depclean
+mvn se.kth.castor:depclean-maven-plugin:2.0.3:depclean >> depclean/depclean.log
+
 # RUN DEPTRIM
 echo "====================================================="
 echo "${logger_deptrim} Running DepTrim"
 mkdir deptrim
-mvn se.kth.castor:deptrim-maven-plugin:0.0.1:deptrim -DcreatePomSpecialized=true -DverboseMode=true -DignoreScopes=test,provided,system,import,runtime >> deptrim/deptrim.log
+mvn se.kth.castor:deptrim-maven-plugin:0.0.1:deptrim -DcreateAllPomSpecialized=true -DverboseMode=true -DignoreScopes=test,provided,system,import,runtime >> deptrim/deptrim.log
 cp -r libs-specialized deptrim
 
 # EXECUTING POMS
