@@ -7,10 +7,10 @@ jooby,results/jooby/jooby/pom-specialized/maven.log,NA,NA,NA,NA
 auto,results/auto/common/pom-specialized/maven.log,NA,NA,NA,NA
 mybatis-3,results/mybatis-3/pom-specialized/maven.log,1699,0,0,13
 woodstox,results/woodstox/pom-specialized/maven.log,NA,NA,NA,NA
-undertow,results/undertow/core/pom-specialized/maven.log,2,0,0,0,
+undertow,results/undertow/core/pom-specialized/maven.log,415,0,122,2
 tablesaw,results/tablesaw/json/pom-specialized/maven.log,9,0,0,0
 jacop,results/jacop/pom-specialized/maven.log,NA,NA,NA,NA
-spoon,results/spoon/pom-specialized/maven.log,16,0,0,0,
+spoon,results/spoon/pom-specialized/maven.log,2219,1,12,12
 para,results/para/para-core/pom-specialized/maven.log,NA,NA,NA,NA
 javaparser,results/javaparser/javaparser-symbol-solver-core/pom-specialized/maven.log,NA,NA,NA,NA
 vertx-unit,results/vertx-unit/pom-specialized/maven.log,NA,NA,NA,NA
