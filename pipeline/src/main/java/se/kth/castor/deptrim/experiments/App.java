@@ -58,19 +58,22 @@ public class App {
                     String testRun = line.split(" ")[2].substring(0, line.split(" ")[2].length() - 1);
                     String failures = line.split(" ")[4].substring(0, line.split(" ")[4].length() - 1);
                     String errors = line.split(" ")[6].substring(0, line.split(" ")[6].length() - 1);
-                    String skipped = line.split(" ")[8].substring(0, line.split(" ")[8].length());
+                    String skipped = line.split(" ")[8];
                     l.add(project + "," + f + "," +
                             testRun + "," +
                             failures + "," +
                             errors + "," +
                             skipped + "\n"
                     );
-                } else if (line.startsWith("[INFO] Tests run: ") || line.startsWith("[WARNING] Tests run: ")) {
+                } else if (line.startsWith("[INFO] Tests run: ")
+                        || line.startsWith("[WARNING] Tests run: ")
+                        || line.startsWith("[ERROR] Tests run: ")
+                ) {
                     String project = f.toString().split("/")[1];
                     String testRun = line.split(" ")[3].substring(0, line.split(" ")[3].length() - 1);
                     String failures = line.split(" ")[5].substring(0, line.split(" ")[5].length() - 1);
                     String errors = line.split(" ")[7].substring(0, line.split(" ")[7].length() - 1);
-                    String skipped = line.split(" ")[9].substring(0, line.split(" ")[9].length());
+                    String skipped = line.split(" ")[9];
                     l.add(project + "," + f + "," +
                             testRun + "," +
                             failures + "," +
