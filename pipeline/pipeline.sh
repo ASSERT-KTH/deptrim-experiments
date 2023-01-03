@@ -91,10 +91,21 @@ do
   mv pom.xml ${specialized_pom}
 done
 
+# RUN DEPCLEAN
+echo "====================================================="
+echo "${logger_deptrim} Running DepClean"
+cd "$CURRENT_DIR"/$PROJECTS_DIR/"$REPO_NAME"/"$MODULE_DIR"
+mv pom-original.xml pom.xml
+mkdir depclean
+mvn -q clean compile
+mvn -q compiler:testCompile
+mvn se.kth.castor:depclean-maven-plugin:2.0.5:depclean -DcreatePomDebloated=true >> pom-debloated/depclean.log
+
 # BUILD WITH pom-debloated.xml
 echo "====================================================="
 echo "${logger_pipeline}  Building with pom-debloated.xml"
 cd "$CURRENT_DIR"/$PROJECTS_DIR/"$REPO_NAME"/"$MODULE_DIR"
+mv pom.xml pom-original.xml
 mv pom-debloated.xml pom.xml
 mkdir pom-debloated
 mkdir pom-debloated/target
@@ -109,17 +120,9 @@ echo "====================================================="
 echo "${logger_pipeline}  Restoring original pom and exiting"
 mv pom-original.xml pom.xml
 
-# RUN DEPCLEAN
-echo "====================================================="
-echo "${logger_deptrim} Running DepClean"
-mkdir depclean
-mvn -q clean compile
-mvn -q compiler:testCompile
-mvn se.kth.castor:depclean-maven-plugin:2.0.5:depclean -DcreatePomDebloated=true >> pom-debloated/depclean.log
-
-## Copy the results to the results directory
-#echo "=========================================================================================="
-#echo "${logger_pipeline}  Copying the results to "$CURRENT_DIR"/"$RESULTS_DIR"/"$REPO_NAME"/"$MODULE_DIR""
-#cp -r . "$CURRENT_DIR"/"$RESULTS_DIR"/"$REPO_NAME"/"$MODULE_DIR"
-#cd "$CURRENT_DIR"
-#exit 0
+# Copy the results to the results directory
+echo "=========================================================================================="
+echo "${logger_pipeline}  Copying the results to "$CURRENT_DIR"/"$RESULTS_DIR"/"$REPO_NAME"/"$MODULE_DIR""
+cp -r . "$CURRENT_DIR"/"$RESULTS_DIR"/"$REPO_NAME"/"$MODULE_DIR"
+cd "$CURRENT_DIR"
+exit 0
