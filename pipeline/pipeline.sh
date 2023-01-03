@@ -26,7 +26,7 @@ mkdir -p "$CURRENT_DIR"/"$RESULTS_DIR"/"$REPO_NAME"
 # Clone the repo from URL
 echo "${logger_pipeline} Cloning $REPO_NAME"
 cd "$CURRENT_DIR"/$PROJECTS_DIR
-git clone "$GITHUB_URL"
+git clone --quiet "$GITHUB_URL"
 
 # CD into the project directory
 echo "${logger_pipeline} CDing into $REPO_NAME"
@@ -34,7 +34,7 @@ cd "$CURRENT_DIR"/$PROJECTS_DIR/"$REPO_NAME"
 
 # Checkout the release
 echo "${logger_pipeline} Checking out version $RELEASE at commit $COMMIT"
-git checkout "$COMMIT"
+git checkout --quiet "$COMMIT"
 
 # CD into the module if any
 echo "${logger_pipeline} CDing into $MODULE_DIR"
@@ -46,7 +46,7 @@ echo "${logger_pipeline} Building original project and storing results in $MODUL
 mkdir original
 cp pom.xml pom-original.xml
 cp pom.xml original/pom-original.xml
-mvn clean package -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true >> original/maven.log
+mvn clean package -q -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true >> original/maven.log
 cp target/*.jar original/
 mvn dependency:copy-dependencies -DincludeScope=runtime >> original/compile-scope-dependencies.log
 mkdir original/compile-scope-dependencies/
@@ -84,7 +84,7 @@ do
   # Running mvn clean package
   echo "====================================================="
   echo "${logger_pipeline} Building with ${specialized_pom}"
-  mvn clean package -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true >> ${output}/maven.log
+  mvn clean package -q -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true >> ${output}/maven.log
   mvn dependency:tree >> ${output}/dependency-tree.log
   cp target/*.jar ${output}/
   # Restoring pom number
@@ -97,8 +97,8 @@ echo "${logger_deptrim} Running DepClean"
 cd "$CURRENT_DIR"/$PROJECTS_DIR/"$REPO_NAME"/"$MODULE_DIR"
 mv pom-original.xml pom.xml
 mkdir depclean
-mvn -q clean compile
-mvn -q compiler:testCompile
+mvn -q clean compile -q
+mvn -q compiler:testCompile -q
 mvn se.kth.castor:depclean-maven-plugin:2.0.5:depclean -DcreatePomDebloated=true >> pom-debloated/depclean.log
 
 # BUILD WITH pom-debloated.xml
@@ -109,7 +109,7 @@ mv pom.xml pom-original.xml
 mv pom-debloated.xml pom.xml
 mkdir pom-debloated
 mkdir pom-debloated/target
-mvn clean package -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true >> pom-debloated/maven.log
+mvn clean package -q -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true >> pom-debloated/maven.log
 cp target/*.jar pom-debloated/
 mvn dependency:copy-dependencies >> pom-debloated/all-dependencies.log
 cp -r target/dependency pom-debloated/all-dependencies/
