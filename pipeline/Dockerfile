@@ -1,21 +1,20 @@
-FROM maven:3.8.3-openjdk-17
+FROM alpine:latest
 
-RUN apt-get update
-RUN apt-get install -y git
-
-# make a directory for the app
-RUN mkdir -p /usr/src/app
+RUN apk update \
+    && apk add --no-cache git maven \
+    && apk add --no-cache --upgrade bash \
+    && mkdir -p /home/app
 
 # set the working directory
 WORKDIR /usr/src/app
 
 # copy the .sh files
-COPY ./pipeline.sh /usr/src/app/pipeline.sh
-COPY ./run_pipeline.sh /usr/src/app/run-pipeline.sh
+COPY ./pipeline.sh /home/app/pipeline.sh
+COPY ./run_pipeline.sh /home/app/run-pipeline.sh
 
 # make .sh files executable
-RUN chmod +x /usr/src/app/pipeline.sh
-RUN chmod +x /usr/src/app/run-pipeline.sh
+RUN chmod +x /home/app/pipeline.sh \
+    && chmod +x /home/app/run-pipeline.sh
 
 # run the pipeline
-CMD ["/usr/src/app/run-pipeline.sh"]
+CMD ["/home/app/run-pipeline.sh"]
