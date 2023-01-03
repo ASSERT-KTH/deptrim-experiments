@@ -24,6 +24,7 @@ mkdir -p "$CURRENT_DIR"/"$RESULTS_DIR"
 mkdir -p "$CURRENT_DIR"/"$RESULTS_DIR"/"$REPO_NAME"
 
 # Clone the repo from URL
+echo "====================================================="
 echo "${logger_pipeline} Cloning $REPO_NAME"
 cd "$CURRENT_DIR"/$PROJECTS_DIR
 git clone --quiet "$GITHUB_URL"
@@ -37,12 +38,17 @@ echo "${logger_pipeline} Checking out version $RELEASE at commit $COMMIT"
 git checkout --quiet "$COMMIT"
 
 # CD into the module if any
-echo "${logger_pipeline} CDing into $MODULE_DIR"
-cd "$CURRENT_DIR"/$PROJECTS_DIR/"$REPO_NAME"/"$MODULE_DIR"
+if [ -z "$MODULE_DIR" ]; then
+  echo "${logger_pipeline} Project is single-module, will build $REPO_NAME"
+  cd "$CURRENT_DIR"/$PROJECTS_DIR/"$REPO_NAME"
+else
+  echo "${logger_pipeline} Project is multi-module, CDing into $MODULE_DIR"
+  cd "$CURRENT_DIR"/$PROJECTS_DIR/"$REPO_NAME"/"$MODULE_DIR"
+fi
 
 # Run the pipeline from module directory if any
 echo "=========================================================================================="
-echo "${logger_pipeline} Building original project and storing results in $MODULE_DIR/original"
+echo "${logger_pipeline} Building original project and storing results in $REPO_NAME/$MODULE_DIR/original"
 mkdir original
 cp pom.xml pom-original.xml
 cp pom.xml original/pom-original.xml
@@ -94,7 +100,13 @@ done
 # RUN DEPCLEAN
 echo "====================================================="
 echo "${logger_deptrim} Running DepClean"
-cd "$CURRENT_DIR"/$PROJECTS_DIR/"$REPO_NAME"/"$MODULE_DIR"
+if [ -z "$MODULE_DIR" ]; then
+  # shellcheck disable=SC2164
+  cd "$CURRENT_DIR"/$PROJECTS_DIR/"$REPO_NAME"
+else
+  # shellcheck disable=SC2164
+  cd "$CURRENT_DIR"/$PROJECTS_DIR/"$REPO_NAME"/"$MODULE_DIR"
+fi
 mv pom-original.xml pom.xml
 mkdir depclean
 mvn -q clean compile -q
@@ -104,7 +116,13 @@ mvn se.kth.castor:depclean-maven-plugin:2.0.5:depclean -DcreatePomDebloated=true
 # BUILD WITH pom-debloated.xml
 echo "====================================================="
 echo "${logger_pipeline}  Building with pom-debloated.xml"
-cd "$CURRENT_DIR"/$PROJECTS_DIR/"$REPO_NAME"/"$MODULE_DIR"
+if [ -z "$MODULE_DIR" ]; then
+  # shellcheck disable=SC2164
+  cd "$CURRENT_DIR"/$PROJECTS_DIR/"$REPO_NAME"
+else
+  # shellcheck disable=SC2164
+  cd "$CURRENT_DIR"/$PROJECTS_DIR/"$REPO_NAME"/"$MODULE_DIR"
+fi
 mv pom.xml pom-original.xml
 mv pom-debloated.xml pom.xml
 mkdir pom-debloated
@@ -122,7 +140,12 @@ mv pom-original.xml pom.xml
 
 # Copy the results to the results directory
 echo "=========================================================================================="
-echo "${logger_pipeline}  Copying the results to "$CURRENT_DIR"/"$RESULTS_DIR"/"$REPO_NAME"/"$MODULE_DIR""
-cp -r . "$CURRENT_DIR"/"$RESULTS_DIR"/"$REPO_NAME"/"$MODULE_DIR"
-cd "$CURRENT_DIR"
+if [ -z "$MODULE_DIR" ]; then
+  echo "${logger_pipeline}  Copying the results to ${CURRENT_DIR}/${RESULTS_DIR}/${REPO_NAME}"
+    cp -r . "$CURRENT_DIR"/"$RESULTS_DIR"/"$REPO_NAME"
+else
+  echo "${logger_pipeline}  Copying the results to ${CURRENT_DIR}/${RESULTS_DIR}/${REPO_NAME}/${MODULE_DIR}"
+  cp -r . "$CURRENT_DIR"/"$RESULTS_DIR"/"$REPO_NAME"/"$MODULE_DIR"
+fi
+
 exit 0

@@ -18,3 +18,7 @@ RUN chmod +x /home/app/pipeline.sh \
 
 # run the pipeline
 CMD ["/home/app/run-pipeline.sh"]
+
+# docker build -t pipeline .
+# docker build --no-cache -t pipeline .
+# docker run -it pipeline
