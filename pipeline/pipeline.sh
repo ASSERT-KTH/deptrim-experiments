@@ -57,17 +57,11 @@ cp -r target/dependency original/all-dependencies/
 mvn dependency:tree >> original/dependency-tree.log
 mvn dependency:list >> original/dependency-list.log
 
-# RUN DEPCLEAN
-echo "====================================================="
-echo "${logger_deptrim} Running DepClean"
-mkdir depclean
-mvn se.kth.castor:depclean-maven-plugin:2.0.3:depclean >> depclean/depclean.log
-
 # RUN DEPTRIM
 echo "====================================================="
 echo "${logger_deptrim} Running DepTrim"
 mkdir deptrim
-mvn se.kth.castor:deptrim-maven-plugin:0.0.1:deptrim -DcreateAllPomSpecialized=true -DverboseMode=true -DignoreScopes=test,provided,system,import,runtime >> deptrim/deptrim.log
+mvn se.kth.castor:deptrim-maven-plugin:0.1.1:deptrim -DcreateDependencySpecializedPerPom=true -DverboseMode=true -DignoreScopes=test,provided,system,import,runtime >> deptrim/deptrim.log
 cp -r libs-specialized deptrim
 
 # EXECUTING POMS
@@ -97,14 +91,35 @@ do
   mv pom.xml ${specialized_pom}
 done
 
+# BUILD WITH pom-debloated.xml
+echo "====================================================="
+echo "${logger_pipeline}  Building with pom-debloated.xml"
+cd "$CURRENT_DIR"/$PROJECTS_DIR/"$REPO_NAME"/"$MODULE_DIR"
+mv pom-debloated.xml pom.xml
+mkdir pom-debloated
+mkdir pom-debloated/target
+mvn clean package -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true >> pom-debloated/maven.log
+cp target/*.jar pom-debloated/
+mvn dependency:copy-dependencies >> pom-debloated/all-dependencies.log
+cp -r target/dependency pom-debloated/all-dependencies/
+mv pom.xml pom-debloated/pom-debloated.xml
+
 # Restore original pom
 echo "====================================================="
 echo "${logger_pipeline}  Restoring original pom and exiting"
 mv pom-original.xml pom.xml
 
-# Copy the results to the results directory
-echo "=========================================================================================="
-echo "${logger_pipeline}  Copying the results to "$CURRENT_DIR"/"$RESULTS_DIR"/"$REPO_NAME"/"$MODULE_DIR""
-cp -r . "$CURRENT_DIR"/"$RESULTS_DIR"/"$REPO_NAME"/"$MODULE_DIR"
-cd "$CURRENT_DIR"
-exit 0
+# RUN DEPCLEAN
+echo "====================================================="
+echo "${logger_deptrim} Running DepClean"
+mkdir depclean
+mvn -q clean compile
+mvn -q compiler:testCompile
+mvn se.kth.castor:depclean-maven-plugin:2.0.5:depclean -DcreatePomDebloated=true >> pom-debloated/depclean.log
+
+## Copy the results to the results directory
+#echo "=========================================================================================="
+#echo "${logger_pipeline}  Copying the results to "$CURRENT_DIR"/"$RESULTS_DIR"/"$REPO_NAME"/"$MODULE_DIR""
+#cp -r . "$CURRENT_DIR"/"$RESULTS_DIR"/"$REPO_NAME"/"$MODULE_DIR"
+#cd "$CURRENT_DIR"
+#exit 0
