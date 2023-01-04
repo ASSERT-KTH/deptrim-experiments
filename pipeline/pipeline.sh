@@ -111,7 +111,7 @@ mv pom-original.xml pom.xml
 mkdir depclean
 mvn -q clean compile -q
 mvn -q compiler:testCompile -q
-mvn se.kth.castor:depclean-maven-plugin:2.0.5:depclean -DcreatePomDebloated=true >> pom-debloated/depclean.log
+mvn se.kth.castor:depclean-maven-plugin:2.0.5:depclean -DcreatePomDebloated=true >> depclean/depclean.log
 
 # BUILD WITH pom-debloated.xml
 echo "====================================================="
@@ -131,6 +131,7 @@ mvn clean package -q -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=tru
 cp target/*.jar pom-debloated/
 mvn dependency:copy-dependencies >> pom-debloated/all-dependencies.log
 cp -r target/dependency pom-debloated/all-dependencies/
+rm -rf target
 mv pom.xml pom-debloated/pom-debloated.xml
 
 # Restore original pom
