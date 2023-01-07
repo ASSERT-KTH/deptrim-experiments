@@ -34,17 +34,21 @@ start=$(date +%s)
 ./pipeline.sh "checkstyle" "https://github.com/checkstyle/checkstyle.git" "" "10.5.0" "dbeb9024c861ad11b194e40d8c6e08d7e6ec5122";
 ./pipeline.sh "redisson" "https://github.com/redisson/redisson.git" "redisson" "3.19.0" "cb305d35bb5fc3678e825cc3d7ed6009b721c552";
 ./pipeline.sh "spring-boot-admin" "https://github.com/codecentric/spring-boot-admin.git" "spring-boot-admin-server" "2.7.9" "0ac7a6be5f849b6260e38e68e6f0610f39a1a729";
-./pipeline.sh "deeplearning4j" "https://github.com/deeplearning4j/deeplearning4j.git" "deeplearning4j/deeplearning4j-core" "1.0.0" "f775f84e8ff25e96116af2b24ac7b1052d59f4b5";
+./pipeline.sh "lanterna" "https://github.com/cesarsotovalero/lanterna.git" "native-integration" "3.1.1" "1b74f1c07a769f83b5beb5cb7d62bd51d53de449";
+./pipeline.sh "shiro" "https://github.com/apache/shiro.git" "core" "1.10.1" "4a74eed1cdca1fd1ab5cf3cba75a39c7288fb492";
+./pipeline.sh "flink" "https://github.com/apache/flink.git" "flink-java" "1.15.3" "c41c8e5cfab683da8135d6c822693ef851d6e2b7";
+./pipeline.sh "commons-validator" "https://github.com/apache/commons-validator.git" "" "1.7" "f9bb21748a9f9c50fbc31862de25ed49433ecc88";
+./pipeline.sh "nifi" "https://github.com/apache/nifi.git" "nifi-bootstrap" "1.19.1" "a7236ecc9123113ba5b9aaa3baab06354778116f";
+./pipeline.sh "rultor" "https://github.com/yegor256/rultor.git" "" "1.71.2" "2d36b41262b6285d4c1d41b9b55b6d5c20cfa3fb";
+./pipeline.sh "jcabi-github" "https://github.com/jcabi/jcabi-github.git" "" "1.27.0" "02f3ab93156349c2f66989ac675bd6292462d724";
 
 # not work
-#./pipeline.sh "jenkins" "https://github.com/jenkinsci/jenkins.git" "core" "2.381" "467d2fd1d8444ce1542c0f3a35353970f5a01a66";
+#./pipeline.sh "jenkins" "https://github.com/jenkinsci/jenkins.git" "core" "2.381" "467d2fd1d8444ce1542c0f3a35353970f5a01a66"; # not dependencies specialized
 #./pipeline.sh "jHiccup" "https://github.com/giltene/jHiccup.git" "" "2.0.10" "a440bdaed143e1445cbeab7c5bffd30989a435d0"; # not dependencies specialized
 #./pipeline.sh "subzero" "https://github.com/square/subzero.git" "java/shared" "1.0.0" "d051983f5d9f400771f175b0db1fc6a362992d75"; # doesn't build
 #./pipeline.sh "teavm" "https://github.com/konsoletyper/teavm.git" "core" "0.6.0" "379fae1c3b9aa9193753bebdd171ed383e2cff39"; # no dependency information available
 #./pipeline.sh "commons-configuration" "https://github.com/apache/commons-configuration" "" "2.8.0" "59e5152722198526c6ffe5361de7d1a6a87275c7"; # Unknown error
 #./pipeline.sh "github-api" "https://github.com/hub4j/github-api" "" "1.313" "9f1636f77a5c83eb6f4ec7e307c39a91f04a3d5c"; # Tests Errors
-#./pipeline.sh "woodstox" "https://github.com/FasterXML/woodstox.git" "" "6.4.0" "e8f00401bebd103f62d51383ef53da2cd58bd89e"; # requires old java version
-#./pipeline.sh "lanterna" "https://github.com/mabe02/lanterna.git" "native-integration" "3.1.1" "08d04a2a1d7b8a788d0d18f2d8d999b8fedaa1c4";
 #./pipeline.sh "RxReplayingShare" "https://github.com/JakeWharton/RxReplayingShare.git" "replaying-share" "3.0.0" "ee5b7f45fb306cba5f2654b0d770c8bb52b28902";
 #./pipeline.sh "Mybatis-PageHelper" "https://github.com/pagehelper/Mybatis-PageHelper.git" "" "5.3.2" "cfc4e0adbf1557f50c2d3647b14ac6b72a20d5e3";
 #./pipeline.sh "java-apns" "https://github.com/notnoop/java-apns.git" "" "0.2.3" "094fc2e819a1b134e07ff89aa6fed215a3d08e8d";
@@ -58,10 +62,12 @@ start=$(date +%s)
 #./pipeline.sh "webmagic" "https://github.com/code4craft/webmagic.git" "webmagic-core" "0.8.0" "43ce1a0db94f22e69f71de4fedc9df203890c397"; # build fails
 #./pipeline.sh "swagger-core" "https://github.com/swagger-api/swagger-core.git" "modules/swagger-core" "2.2.7" "603a037514efe20960d08a481552e0c0dd0e3869";
 #./pipeline.sh "dubbo" "https://github.com/apache/dubbo.git" "dubbo-common" "3.1.4" "941f1b4530606b8d210a1e37fcb4d5869b3faca2";
+#./pipeline.sh "deeplearning4j" "https://github.com/deeplearning4j/deeplearning4j.git" "deeplearning4j/deeplearning4j-core" "1.0.0" "f775f84e8ff25e96116af2b24ac7b1052d59f4b5";
+#./pipeline.sh "hadoop" "https://github.com/apache/hadoop.git" "hadoop-yarn-project" "3.3.4" "a585a73c3e02ac62350c136643a5e7f6095a3dbb";
 
 # ============================================================
 # Generate dependency graph image
-# mvn com.github.ferstl:depgraph-maven-plugin:4.0.2:aggregate -DcreateImage=true -DreduceEdges=false -DshowDuplicates=true -DshowConflicts=true -Dscopes=compile,provided
+# mvn com.github.ferstl:depgraph-maven-plugin:4.0.2:aggregate -DcreateImage=true -DreduceEdges=false -DshowDuplicates=true -DshowConflicts=true -Dscopes=compile,provided;cd target;
 # dot -Tsvg dependency-graph.dot > dependency-graph.svg
 
 
