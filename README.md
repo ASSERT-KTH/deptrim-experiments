@@ -30,7 +30,7 @@ This repository is organized as follows:
 
 To run the automatic data collection pipeline, you need the following installed:
 
-- [OpenJDK](https://jdk.java.net/archive/) v17 or above
+- [OpenJDK v17](https://jdk.java.net/archive/) or above
 - [Maven v3.8.4](https://maven.apache.org/docs/3.8.4/release-notes.html) or above
 - [DepClean v2.0.4](https://github.com/castor-software/depclean/releases/tag/2.0.5) or above
 - [DepTrim v0.1.1](https://github.com/castor-software/deptrim/releases/tag/0.1.1) or above
