@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4592533.svg)](https://doi.org/10.5281/zenodo.4592533)
 
-Data collection results are [results.zip](https://kth-my.sharepoint.com/:u:/g/personal/cesarsv_ug_kth_se/ERTa867oxpdNmq3_bUpcafgBRDE1PGSe4P6py5WPqiJDxg?e=LMXcLF) (file size is 3.47 GB).
+> Data collection results are in [results.zip](https://kth-my.sharepoint.com/:u:/g/personal/cesarsv_ug_kth_se/ERTa867oxpdNmq3_bUpcafgBRDE1PGSe4P6py5WPqiJDxg?e=LMXcLF) (file size is 3.47 GB).
 
 Open-science repository containing our experiments about debloating for specialization using [DepTrim](https://github.com/castor-software/deptrim).
 For more details about this repository, refer to the companion paper:
