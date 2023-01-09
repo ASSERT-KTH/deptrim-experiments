@@ -36,8 +36,8 @@ To run the automatic data collection pipeline, you need the following installed:
 - [DepTrim v0.1.1](https://github.com/castor-software/deptrim/releases/tag/0.1.1) or above
 
 Then, execute the [run_pipeline.sh](https://github.com/castor-software/deptrim-experiments/blob/main/pipeline/run_pipeline.sh) script.
-This will create a directory named `results` with the data for 30 java projects.
-For example, for the project [java-faker](https://https://github.com/DiUS/java-faker/commit/e23d6067c8f83b335a037d24e6107a37eb0b9e6e), the pipeline produces the following files and directories:
+This will create a directory named `results` with 30 subdirectories, each representing the result for a Java project.
+For example, for the project [java-faker](https://https://github.com/DiUS/java-faker/commit/e23d6067c8f83b335a037d24e6107a37eb0b9e6e), the `results/java-faker` directory contains the following files:
 
 ```bash
 ├── depclean # This directory contains the results of running DepClean with the original POM.
@@ -136,6 +136,8 @@ For example, for the project [java-faker](https://https://github.com/DiUS/java-f
 │   ├── maven.log # Maven build log.
 │   └── pom-original.xml # Original POM file.
 ```
+
+For your convenience, we provide a [Dockerfile](https://github.com/castor-software/deptrim-experiments/blob/main/pipeline/Dockerfile) will all the necessary to run the data collection pipeline.
 
 ## License
 
