@@ -1,0 +1,31 @@
+digraph "jacop" {
+  node [shape="box",style="rounded",fontname="Helvetica",fontsize="14"]
+  edge [fontsize="10",fontname="Helvetica"]
+
+  // Node Definitions:
+  "org.jacop:jacop:jar:compile"[label=<<font point-size="10">org.jacop</font><br/>jacop<font point-size="10"><br/>4.10.0</font>>]
+  "org.mockito:mockito-all:jar:compile"[label=<<font point-size="10">org.mockito</font><br/>mockito-all<font point-size="10"><br/>1.10.19</font>>]
+  "junit:junit:jar:test"[label=<<font point-size="10">junit</font><br/>junit<font point-size="10"><br/>4.13.1</font><font point-size="10"><br/>(test)</font>>]
+  "org.hamcrest:hamcrest-core:jar:test"[label=<<font point-size="10">org.hamcrest</font><br/>hamcrest-core<font point-size="10"><br/>1.3</font><font point-size="10"><br/>(test)</font>>]
+  "org.scala-lang:scala-library:jar:compile"[label=<<font point-size="10">org.scala-lang</font><br/>scala-library<font point-size="10"><br/>2.13.1</font>>]
+  "org.scala-lang:scala-compiler:jar:compile"[label=<<font point-size="10">org.scala-lang</font><br/>scala-compiler<font point-size="10"><br/>2.13.1</font>>]
+  "org.scala-lang:scala-reflect:jar:compile"[label=<<font point-size="10">org.scala-lang</font><br/>scala-reflect<font point-size="10"><br/>2.13.1</font>>]
+  "jline:jline:jar:compile"[label=<<font point-size="10">jline</font><br/>jline<font point-size="10"><br/>2.14.6</font>>]
+  "org.fusesource.jansi:jansi:jar:compile"[label=<<font point-size="10">org.fusesource.jansi</font><br/>jansi<font point-size="10"><br/>1.12</font>>]
+  "org.slf4j:slf4j-api:jar:compile"[label=<<font point-size="10">org.slf4j</font><br/>slf4j-api<font point-size="10"><br/>1.7.24</font>>]
+  "org.slf4j:slf4j-log4j12:jar:compile"[label=<<font point-size="10">org.slf4j</font><br/>slf4j-log4j12<font point-size="10"><br/>1.7.24</font>>]
+  "log4j:log4j:jar:compile"[label=<<font point-size="10">log4j</font><br/>log4j<font point-size="10"><br/>1.2.17</font>>]
+
+  // Edge Definitions:
+  "org.jacop:jacop:jar:compile" -> "org.mockito:mockito-all:jar:compile"
+  "junit:junit:jar:test" -> "org.hamcrest:hamcrest-core:jar:test"
+  "org.jacop:jacop:jar:compile" -> "junit:junit:jar:test"
+  "org.jacop:jacop:jar:compile" -> "org.scala-lang:scala-library:jar:compile"
+  "org.scala-lang:scala-compiler:jar:compile" -> "org.scala-lang:scala-reflect:jar:compile"
+  "org.scala-lang:scala-compiler:jar:compile" -> "jline:jline:jar:compile"
+  "org.scala-lang:scala-compiler:jar:compile" -> "org.fusesource.jansi:jansi:jar:compile"
+  "org.jacop:jacop:jar:compile" -> "org.scala-lang:scala-compiler:jar:compile"
+  "org.jacop:jacop:jar:compile" -> "org.slf4j:slf4j-api:jar:compile"
+  "org.slf4j:slf4j-log4j12:jar:compile" -> "log4j:log4j:jar:compile"
+  "org.jacop:jacop:jar:compile" -> "org.slf4j:slf4j-log4j12:jar:compile"
+}

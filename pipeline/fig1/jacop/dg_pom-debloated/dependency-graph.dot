@@ -1,0 +1,17 @@
+digraph "jacop" {
+  node [shape="box",style="rounded",fontname="Helvetica",fontsize="14"]
+  edge [fontsize="10",fontname="Helvetica"]
+
+  // Node Definitions:
+  "org.jacop:jacop:jar:compile"[label=<<font point-size="10">org.jacop</font><br/>jacop<font point-size="10"><br/>4.10.0</font>>]
+  "org.scala-lang:scala-library:jar:compile"[label=<<font point-size="10">org.scala-lang</font><br/>scala-library<font point-size="10"><br/>2.13.1</font>>]
+  "org.scala-lang:scala-reflect:jar:compile"[label=<<font point-size="10">org.scala-lang</font><br/>scala-reflect<font point-size="10"><br/>2.13.1</font>>]
+  "org.mockito:mockito-all:jar:compile"[label=<<font point-size="10">org.mockito</font><br/>mockito-all<font point-size="10"><br/>1.10.19</font>>]
+  "org.scala-lang:scala-compiler:jar:compile"[label=<<font point-size="10">org.scala-lang</font><br/>scala-compiler<font point-size="10"><br/>2.13.1</font>>]
+
+  // Edge Definitions:
+  "org.jacop:jacop:jar:compile" -> "org.scala-lang:scala-library:jar:compile"
+  "org.jacop:jacop:jar:compile" -> "org.scala-lang:scala-reflect:jar:compile"
+  "org.jacop:jacop:jar:compile" -> "org.mockito:mockito-all:jar:compile"
+  "org.jacop:jacop:jar:compile" -> "org.scala-lang:scala-compiler:jar:compile"
+}

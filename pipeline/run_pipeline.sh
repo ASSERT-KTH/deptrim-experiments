@@ -11,36 +11,36 @@
 start=$(date +%s)
 
 # work fine
-./pipeline.sh "httpcomponents-client" "https://github.com/apache/httpcomponents-client.git" "httpclient5" "5.2.1-RC1" "d8f702fb4d44c746bb0edf00643aa7139cb8bdf7"
-./pipeline.sh "undertow" "https://github.com/undertow-io/undertow.git" "core" "2.2.21.Final" "56c91f129b1c2a55cf3287836cc68c80acce54c6";
-./pipeline.sh "mybatis-3" "https://github.com/mybatis/mybatis-3.git" "" "mybatis-3.5.11" "c195f12808a88a1ee245dc86d9c1621042655970";
-./pipeline.sh "tika" "https://github.com/apache/tika.git" "tika-core" "2.6.0" "41319f3c294b13de5342a80570b4540f7dd04a3e";
-./pipeline.sh "tablesaw" "https://github.com/jtablesaw/tablesaw.git" "json" "v0.43.1" "05823f66246ea191e62ad0658d2fed0b080d5334";
-./pipeline.sh "pdfbox" "https://github.com/cesarsotovalero/pdfbox.git" "pdfbox" "2.0.27" "07ddd189b4f76c9e265d7c80d95979642567af6b";
-./pipeline.sh "error-prone" "https://github.com/google/error-prone.git" "core" "2.16.0" "b1dcc4c9fef5c4e601b0a8124432a9504930686f";
-./pipeline.sh "jooby" "https://github.com/jooby-project/jooby.git" "jooby" "2.16.1" "4d7be54dad429b5aeb5266387df14b0781c78357";
-./pipeline.sh "jacop" "https://github.com/cesarsotovalero/jacop.git" "" "4.9.0" "4fa3b8f2ea74df17b40ebe564552c28735a82885";
 ./pipeline.sh "auto" "https://github.com/google/auto.git" "common" "1.10.1" "c698816ebd45185e0265ed566b267bc786a306c1";
-./pipeline.sh "para" "https://github.com/Erudika/para.git" "para-core" "1.47.2" "41d900574e2e159b05fbd23aaab1f6e554ab8fc3";
-./pipeline.sh "javaparser" "https://github.com/javaparser/javaparser.git" "javaparser-symbol-solver-core" "3.24.8" "3926ccabdac3341f365bf867ea2c2a11d1ab224b";
-./pipeline.sh "spoon" "https://github.com/INRIA/spoon.git" "" "10.2.0" "ee73f4376aa929d8dce950202fabb8992a77c9fb";
-./pipeline.sh "java-faker" "https://github.com/cesarsotovalero/java-faker.git" "" "1.0.2" "0bed1d8381cd0b3319a6f3bb03efc74728334f6a";
-./pipeline.sh "spark" "https://github.com/perwendel/spark.git" "" "2.9.3" "48a94f1b9e0b0353642415fbfd97d5e1669c0f1b";
-./pipeline.sh "vertx-unit" "https://github.com/vert-x3/vertx-unit.git" "" "4.3.6" "0af930f47f71b229de48f5d4308a841f599dcc7e";
-./pipeline.sh "commons-pool" "https://github.com/apache/commons-pool.git" "" "2.11.1" "abb1a0797b406566f0214c688871ab7e8fdc2601";
-./pipeline.sh "gson" "https://github.com/google/gson.git" "metrics" "2.10" "dd92e49b279f335006433148e673fdfb2c387074";
-./pipeline.sh "woodstox" "https://github.com/cesarsotovalero/woodstox.git" "" "6.4.0" "6de8bf7bfed4baa1c05d5a916fd5f96335708a84"; # requires old java version
-./pipeline.sh "qart4j" "https://github.com/cesarsotovalero/qart4j.git" "" "1.0.0" "04d17792030e02792a198c92c3dfee53a81bb051"; # requires old java version
 ./pipeline.sh "checkstyle" "https://github.com/checkstyle/checkstyle.git" "" "10.5.0" "dbeb9024c861ad11b194e40d8c6e08d7e6ec5122";
-./pipeline.sh "redisson" "https://github.com/redisson/redisson.git" "redisson" "3.19.0" "cb305d35bb5fc3678e825cc3d7ed6009b721c552";
-./pipeline.sh "spring-boot-admin" "https://github.com/codecentric/spring-boot-admin.git" "spring-boot-admin-server" "2.7.9" "0ac7a6be5f849b6260e38e68e6f0610f39a1a729";
-./pipeline.sh "lanterna" "https://github.com/cesarsotovalero/lanterna.git" "native-integration" "3.1.1" "1b74f1c07a769f83b5beb5cb7d62bd51d53de449";
-./pipeline.sh "shiro" "https://github.com/apache/shiro.git" "core" "1.10.1" "4a74eed1cdca1fd1ab5cf3cba75a39c7288fb492";
-./pipeline.sh "flink" "https://github.com/apache/flink.git" "flink-java" "1.15.3" "c41c8e5cfab683da8135d6c822693ef851d6e2b7";
+./pipeline.sh "commons-pool" "https://github.com/apache/commons-pool.git" "" "2.11.1" "abb1a0797b406566f0214c688871ab7e8fdc2601";
 ./pipeline.sh "commons-validator" "https://github.com/apache/commons-validator.git" "" "1.7" "f9bb21748a9f9c50fbc31862de25ed49433ecc88";
-./pipeline.sh "nifi" "https://github.com/apache/nifi.git" "nifi-bootstrap" "1.19.1" "a7236ecc9123113ba5b9aaa3baab06354778116f";
-./pipeline.sh "rultor" "https://github.com/yegor256/rultor.git" "" "1.71.2" "2d36b41262b6285d4c1d41b9b55b6d5c20cfa3fb";
+./pipeline.sh "error-prone" "https://github.com/google/error-prone.git" "core" "2.16.0" "b1dcc4c9fef5c4e601b0a8124432a9504930686f";
+./pipeline.sh "flink" "https://github.com/apache/flink.git" "flink-java" "1.15.3" "c41c8e5cfab683da8135d6c822693ef851d6e2b7";
+./pipeline.sh "gson" "https://github.com/google/gson.git" "metrics" "2.10" "dd92e49b279f335006433148e673fdfb2c387074";
+./pipeline.sh "httpcomponents-client" "https://github.com/apache/httpcomponents-client.git" "httpclient5" "5.2.1-RC1" "d8f702fb4d44c746bb0edf00643aa7139cb8bdf7"
+./pipeline.sh "jacop" "https://github.com/cesarsotovalero/jacop.git" "" "4.9.0" "4fa3b8f2ea74df17b40ebe564552c28735a82885";
+./pipeline.sh "java-faker" "https://github.com/cesarsotovalero/java-faker.git" "" "1.0.2" "0bed1d8381cd0b3319a6f3bb03efc74728334f6a";
+./pipeline.sh "javaparser" "https://github.com/javaparser/javaparser.git" "javaparser-symbol-solver-core" "3.24.8" "3926ccabdac3341f365bf867ea2c2a11d1ab224b";
 ./pipeline.sh "jcabi-github" "https://github.com/jcabi/jcabi-github.git" "" "1.27.0" "02f3ab93156349c2f66989ac675bd6292462d724";
+./pipeline.sh "jooby" "https://github.com/jooby-project/jooby.git" "jooby" "2.16.1" "4d7be54dad429b5aeb5266387df14b0781c78357";
+./pipeline.sh "lanterna" "https://github.com/cesarsotovalero/lanterna.git" "native-integration" "3.1.1" "1b74f1c07a769f83b5beb5cb7d62bd51d53de449";
+./pipeline.sh "mybatis-3" "https://github.com/mybatis/mybatis-3.git" "" "mybatis-3.5.11" "c195f12808a88a1ee245dc86d9c1621042655970";
+./pipeline.sh "nifi" "https://github.com/apache/nifi.git" "nifi-bootstrap" "1.19.1" "a7236ecc9123113ba5b9aaa3baab06354778116f";
+./pipeline.sh "para" "https://github.com/Erudika/para.git" "para-core" "1.47.2" "41d900574e2e159b05fbd23aaab1f6e554ab8fc3";
+./pipeline.sh "pdfbox" "https://github.com/cesarsotovalero/pdfbox.git" "pdfbox" "2.0.27" "07ddd189b4f76c9e265d7c80d95979642567af6b";
+./pipeline.sh "qart4j" "https://github.com/cesarsotovalero/qart4j.git" "" "1.0.0" "04d17792030e02792a198c92c3dfee53a81bb051"; # requires old java version
+./pipeline.sh "redisson" "https://github.com/redisson/redisson.git" "redisson" "3.19.0" "cb305d35bb5fc3678e825cc3d7ed6009b721c552";
+./pipeline.sh "rultor" "https://github.com/yegor256/rultor.git" "" "1.71.2" "2d36b41262b6285d4c1d41b9b55b6d5c20cfa3fb";
+./pipeline.sh "shiro" "https://github.com/apache/shiro.git" "core" "1.10.1" "4a74eed1cdca1fd1ab5cf3cba75a39c7288fb492";
+./pipeline.sh "spark" "https://github.com/perwendel/spark.git" "" "2.9.3" "48a94f1b9e0b0353642415fbfd97d5e1669c0f1b";
+./pipeline.sh "spoon" "https://github.com/INRIA/spoon.git" "" "10.2.0" "ee73f4376aa929d8dce950202fabb8992a77c9fb";
+./pipeline.sh "spring-boot-admin" "https://github.com/codecentric/spring-boot-admin.git" "spring-boot-admin-server" "2.7.9" "0ac7a6be5f849b6260e38e68e6f0610f39a1a729";
+./pipeline.sh "tablesaw" "https://github.com/jtablesaw/tablesaw.git" "json" "v0.43.1" "05823f66246ea191e62ad0658d2fed0b080d5334";
+./pipeline.sh "tika" "https://github.com/apache/tika.git" "tika-core" "2.6.0" "41319f3c294b13de5342a80570b4540f7dd04a3e";
+./pipeline.sh "undertow" "https://github.com/undertow-io/undertow.git" "core" "2.2.21.Final" "56c91f129b1c2a55cf3287836cc68c80acce54c6";
+./pipeline.sh "vertx-unit" "https://github.com/vert-x3/vertx-unit.git" "" "4.3.6" "0af930f47f71b229de48f5d4308a841f599dcc7e";
+./pipeline.sh "woodstox" "https://github.com/cesarsotovalero/woodstox.git" "" "6.4.0" "6de8bf7bfed4baa1c05d5a916fd5f96335708a84"; # requires old java version
 
 # not work
 #./pipeline.sh "jenkins" "https://github.com/jenkinsci/jenkins.git" "core" "2.381" "467d2fd1d8444ce1542c0f3a35353970f5a01a66"; # not dependencies specialized
@@ -70,7 +70,6 @@ start=$(date +%s)
 # mvn com.github.ferstl:depgraph-maven-plugin:4.0.2:aggregate -DcreateImage=true -DreduceEdges=false -DshowDuplicates=true -DshowConflicts=true -Dscopes=compile,provided;cd target;
 # dot -Tsvg dependency-graph.dot > dependency-graph.svg
 
-
 # Write execution time to file
 end=$(date +%s)
 total_time_seconds=$((end - start))
@@ -79,3 +78,77 @@ total_time_hours=$((total_time_minutes / 60))
 echo "Total execution time: $total_time_seconds seconds" >>total_execution_time.txt
 echo "Total execution time: $total_time_minutes minutes" >>total_execution_time.txt
 echo "Total execution time: $total_time_hours hours" >>total_execution_time.txt
+
+# ============================================================
+# Short commit IDs
+# ============================================================
+#\href{https://github.com/google/auto/commit/c698816ebd45185e0265ed566b267bc786a306c1}{6a306c1}
+#\href{https://github.com/checkstyle/checkstyle/commit/dbeb9024c861ad11b194e40d8c6e08d7e6ec5122}{6ec5122}
+#\href{https://github.com/apache/commons-pool/commit/abb1a0797b406566f0214c688871ab7e8fdc2601}{fdc2601}
+#\href{https://github.com/apache/commons-validator/commit/f9bb21748a9f9c50fbc31862de25ed49433ecc88}{33ecc88}
+#\href{https://github.com/google/error-prone/commit/b1dcc4c9fef5c4e601b0a8124432a9504930686f}{930686f}
+#\href{https://github.com/apache/flink/commit/c41c8e5cfab683da8135d6c822693ef851d6e2b7}{1d6e2b7}
+#\href{https://https://github.com/google/gson/commit/dd92e49b279f335006433148e673fdfb2c387074}{c387074}
+#\href{https://https://github.com/apache/httpcomponents-client/commit/d8f702fb4d44c746bb0edf00643aa7139cb8bdf7}{cb8bdf7}
+#\href{https://https://github.com/radsz/jacop/commit/1a395e6add22caf79590fe9d1b2223bfb6ed0cd0}{6ed0cd0}
+#\href{https://https://github.com/DiUS/java-faker/commit/e23d6067c8f83b335a037d24e6107a37eb0b9e6e}{b0b9e6e}
+#\href{https://https://github.com/javaparser/javaparser/commit/3926ccabdac3341f365bf867ea2c2a11d1ab224b}{1ab224b}
+#\href{https://https://github.com/jcabi/jcabi-github/commit/02f3ab93156349c2f66989ac675bd6292462d724}{462d724}
+#\href{https://https://github.com/jooby-project/jooby/commit/4d7be54dad429b5aeb5266387df14b0781c78357}{1c78357}
+#\href{https://https://github.com/mabe02/lanterna/commit/08d04a2a1d7b8a788d0d18f2d8d999b8fedaa1c4}{edaa1c4}
+#\href{https://https://github.com/mybatis/mybatis-3/commit/c195f12808a88a1ee245dc86d9c1621042655970}{2655970}
+#\href{https://https://github.com/apache/nifi/commit/a7236ecc9123113ba5b9aaa3baab06354778116f}{778116f}
+#\href{https://https://github.com/Erudika/para/commit/41d900574e2e159b05fbd23aaab1f6e554ab8fc3}{4ab8fc3}
+#\href{https://https://github.com/apache/pdfbox/commit/e72963ca5b283a87828ee731cd85c0b6baf1ff57}{af1ff57}
+#\href{https://https://github.com/dieforfree/qart4j/commit/e82c7ba34ef648883b933817a395821d6cf8b2ff}{cf8b2ff}
+#\href{https://https://github.com/redisson/redisson/commit/cb305d35bb5fc3678e825cc3d7ed6009b721c552}{721c552}
+#\href{https://https://github.com/yegor256/rultor/commit/2d36b41262b6285d4c1d41b9b55b6d5c20cfa3fb}{0cfa3fb}
+#\href{https://https://github.com/apache/shiro/commit/4a74eed1cdca1fd1ab5cf3cba75a39c7288fb492}{28fb492}
+#\href{https://https://github.com/perwendel/spark/commit/48a94f1b9e0b0353642415fbfd97d5e1669c0f1b}{69c0f1b}
+#\href{https://https://github.com/INRIA/spoon/commit/ee73f4376aa929d8dce950202fabb8992a77c9fb}{a77c9fb}
+#\href{https://https://github.com/codecentric/spring-boot-admin/commit/0ac7a6be5f849b6260e38e68e6f0610f39a1a729}{9a1a729}
+#\href{https://https://github.com/jtablesaw/tablesaw/commit/05823f66246ea191e62ad0658d2fed0b080d5334}{80d5334}
+#\href{https://https://github.com/apache/tika/commit/41319f3c294b13de5342a80570b4540f7dd04a3e}{dd04a3e}
+#\href{https://https://github.com/undertow-io/undertow/commit/56c91f129b1c2a55cf3287836cc68c80acce54c6}{cce54c6}
+#\href{https://https://github.com/vert-x3/vertx-unit/commit/0af930f47f71b229de48f5d4308a841f599dcc7e}{99dcc7e}
+#\href{https://https://github.com/FasterXML/woodstox/commit/e8f00401bebd103f62d51383ef53da2cd58bd89e}{58bd89e}
+
+
+# ============================================================
+# Stars
+# ============================================================
+#curl https://api.github.com/repos/google/auto | grep 'stargazers_count'
+#curl https://api.github.com/repos/checkstyle/checkstyle | grep 'stargazers_count'
+#curl https://api.github.com/repos/apache/commons-pool | grep 'stargazers_count'
+#curl https://api.github.com/repos/apache/commons-validator | grep 'stargazers_count'
+#curl https://api.github.com/repos/google/error-prone | grep 'stargazers_count'
+#curl https://api.github.com/repos/apache/flink | grep 'stargazers_count'
+#curl https://api.github.com/repos/google/gson | grep 'stargazers_count'
+#curl https://api.github.com/repos/apache/httpcomponents-client | grep 'stargazers_count'
+#curl https://api.github.com/repos/radsz/jacop | grep 'stargazers_count'
+#curl https://api.github.com/repos/DiUS/java-faker | grep 'stargazers_count'
+#curl https://api.github.com/repos/javaparser/javaparser | grep 'stargazers_count'
+#curl https://api.github.com/repos/jcabi/jcabi-github | grep 'stargazers_count'
+#curl https://api.github.com/repos/jooby-project/jooby | grep 'stargazers_count'
+#curl https://api.github.com/repos/mabe02/lanterna | grep 'stargazers_count'
+#curl https://api.github.com/repos/mybatis/mybatis-3 | grep 'stargazers_count'
+#curl https://api.github.com/repos/apache/nifi | grep 'stargazers_count'
+#curl https://api.github.com/repos/Erudika/para | grep 'stargazers_count'
+#curl https://api.github.com/repos/apache/pdfbox | grep 'stargazers_count'
+#curl https://api.github.com/repos/dieforfree/qart4j | grep 'stargazers_count'
+#curl https://api.github.com/repos/redisson/redisson | grep 'stargazers_count'
+#curl https://api.github.com/repos/yegor256/rultor | grep 'stargazers_count'
+#curl https://api.github.com/repos/apache/shiro | grep 'stargazers_count'
+#curl https://api.github.com/repos/perwendel/spark | grep 'stargazers_count'
+#curl https://api.github.com/repos/INRIA/spoon | grep 'stargazers_count'
+#curl https://api.github.com/repos/codecentric/spring-boot-admin | grep 'stargazers_count'
+#curl https://api.github.com/repos/jtablesaw/tablesaw | grep 'stargazers_count'
+#curl https://api.github.com/repos/apache/tika | grep 'stargazers_count'
+#curl https://api.github.com/repos/undertow-io/undertow | grep 'stargazers_count'
+#curl https://api.github.com/repos/vert-x3/vertx-unit | grep 'stargazers_count'
+#curl https://api.github.com/repos/FasterXML/woodstox | grep 'stargazers_count'
+
+
+
+
+
