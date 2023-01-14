@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class App {
+public class GeneralDataCollector {
     public static void main(String[] args) throws IOException {
 
         // CSV files to be written
