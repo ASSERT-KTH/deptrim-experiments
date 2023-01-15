@@ -191,7 +191,6 @@ public class DepcleanDataCollector {
                     "\\ChartSmall{" + usedInheritedDirectCompile + "}{" + Math.addExact(usedInheritedDirectCompile, unusedInheritedDirectCompile) + "}" + "," +
                     "\\ChartSmall{" + usedInheritedTransitiveCompile + "}{" + Math.addExact(usedInheritedTransitiveCompile, unusedInheritedTransitiveCompile) + "}" + "," +
 
-
                     "\\ChartSmall{" + usedDirectNonCompile + "}{" + Math.addExact(usedDirectNonCompile, unusedDirectNonCompile) + "}" + "," +
                     "\\ChartSmall{" + usedTransitiveNonCompile + "}{" + Math.addExact(usedTransitiveNonCompile, unusedTransitiveNonCompile) + "}" + "," +
                     "\\ChartSmall{" + usedInheritedDirectNonCompile + "}{" + Math.addExact(usedInheritedDirectNonCompile, unusedInheritedDirectNonCompile) + "}" + "," +

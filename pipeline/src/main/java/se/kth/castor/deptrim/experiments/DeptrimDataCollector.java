@@ -7,35 +7,136 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 public class DeptrimDataCollector {
 
     // CSV files to be written
-    private static File deptrimResults = new File("csv/deptrim-results.csv");
+    private static File originalBuildResultLogs = new File("csv/original-build-result-logs.csv");
+
+    private static File originalTestsLogs = new File("csv/original-tests-logs.csv");
+
+    private static File pomSpecializedBuildResultLogs = new File("csv/pom-specialized-build-result-logs.csv");
 
     public static void main(String[] args) throws IOException {
+
         // Write file headers
-        FileUtils.writeStringToFile(deptrimResults, "Project,FilePath,SpecializedDependencies,RemovedClasses,JarSizeReduction,CompilationPass,TestsPass" + "\n", true);
+        FileUtils.writeStringToFile(originalBuildResultLogs,
+                "Project,FilePath,BuildResult" + "\n", true
+        );
+        FileUtils.writeStringToFile(originalTestsLogs,
+                "Project,FilePath,TestRun,TestFailure,TestError,TestSkipped" + "\n", true
+        );
+        FileUtils.writeStringToFile(pomSpecializedBuildResultLogs,
+                "Project,FilePath,BuildResult" + "\n", true
+        );
+
+
+        // FileUtils.writeStringToFile(deptrimResults,
+        //         "Project,FilePath,SpecializedDependencies,NonSpecializedDependencies,TotalDependencies,RemovedClasses,TotalClasses,JarSizeSpecialized,JarSizeOriginal,CompilationPass,CompilationFail,TestsPass,TestFail" + "\n", true);
+
+        String regex = "^.*deptrim/pom-specialized_([1-9]|[1-9][0-9]|100)_([1-9]|[1-9][0-9]|100)/maven.log$";
+        Pattern pattern = Pattern.compile(regex);
 
         try (Stream<Path> filepath = Files.walk(Paths.get("results"))) {
             filepath.filter(Files::isRegularFile).forEach(f -> {
-                if (f.toString().endsWith("/depclean/depclean.log")) {
-                    try {
-                        processPomSpecializedLogs(deptrimResults, f);
-                    } catch (
-                            Exception e) {
-                        throw new RuntimeException(e);
-                    }
+                if (f.toString().endsWith("/deptrim/maven.log")) {
+                    processBuildLogs(originalBuildResultLogs, f);
+                    processOriginalTestsLogs(originalTestsLogs, f);
+                } else if (pattern.matcher(f.toString()).matches()) {
+                    processBuildLogs(pomSpecializedBuildResultLogs, f);
                 }
             });
         } catch (
                 IOException e) {
             throw new IOException("Directory Not Present!");
         }
+    }
+
+    private static void processBuildLogs(File deptrimResults, Path f) {
+        List<String> l = new ArrayList<>();
+        try {
+            List<String> lines = Files.readAllLines(f);
+            for (String line : lines) {
+                if (line.startsWith("[INFO] BUILD SUCCESS")) {
+                    String project = f.toString().split("/")[1];
+                    String build = "SUCCESS";
+                    l.add(project + "," + f + "," + build + "\n");
+                } else if (line.startsWith("[INFO] BUILD FAILURE")) {
+                    String project = f.toString().split("/")[1];
+                    String build = "FAILURE";
+                    l.add(project + "," + f + "," + build + "\n");
+                }
+            }
+            // Write the last test run line
+            if (!l.isEmpty()) {
+                FileUtils.writeStringToFile(deptrimResults, l.get(l.size() - 1), true);
+            } else {
+                FileUtils.writeStringToFile(deptrimResults, f.toString().split("/")[1] + "," + f + "," +
+                        "NA" + "," +
+                        "NA" + "," +
+                        "NA" + "," +
+                        "NA" + "\n", true);
+            }
+        } catch (
+                IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void processOriginalTestsLogs(File deptrimResults, Path f) {
+        List<String> l = new ArrayList<>();
+        try {
+            List<String> lines = Files.readAllLines(f);
+            for (String line : lines) {
+                if (line.startsWith("Tests run: ")) {
+                    String project = f.toString().split("/")[1];
+                    String testRun = line.split(" ")[2].substring(0, line.split(" ")[2].length() - 1);
+                    String failures = line.split(" ")[4].substring(0, line.split(" ")[4].length() - 1);
+                    String errors = line.split(" ")[6].substring(0, line.split(" ")[6].length() - 1);
+                    String skipped = line.split(" ")[8];
+                    l.add(project + "," + f + "," +
+                            testRun + "," +
+                            failures + "," +
+                            errors + "," +
+                            skipped + "\n"
+                    );
+                } else if (line.startsWith("[INFO] Tests run: ")
+                        || line.startsWith("[WARNING] Tests run: ")
+                        || line.startsWith("[ERROR] Tests run: ")
+                ) {
+                    String project = f.toString().split("/")[1];
+                    String testRun = line.split(" ")[3].substring(0, line.split(" ")[3].length() - 1);
+                    String failures = line.split(" ")[5].substring(0, line.split(" ")[5].length() - 1);
+                    String errors = line.split(" ")[7].substring(0, line.split(" ")[7].length() - 1);
+                    String skipped = line.split(" ")[9];
+                    l.add(project + "," + f + "," +
+                            testRun + "," +
+                            failures + "," +
+                            errors + "," +
+                            skipped + "\n"
+                    );
+                }
+            }
+            // Write the last test run line
+            if (!l.isEmpty()) {
+                FileUtils.writeStringToFile(deptrimResults, l.get(l.size() - 1), true);
+            } else {
+                FileUtils.writeStringToFile(deptrimResults, f.toString().split("/")[1] + "," + f + "," +
+                        "NA" + "," +
+                        "NA" + "," +
+                        "NA" + "," +
+                        "NA" + "\n", true);
+            }
+        } catch (
+                IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
-    private static void processPomSpecializedLogs(File deptrimResults, Path f) {
-    }
+
 }
