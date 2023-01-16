@@ -25,7 +25,7 @@ public class DepcleanDataCollector {
                 "UnusedDirectCompile,UnusedTransitiveCompile,UnusedInheritedDirectCompile,UnusedInheritedTransitiveCompile," +
                 "UnusedDirectNonCompile,UnusedTransitiveNonCompile,UnusedInheritedDirectNonCompile,UnusedInheritedTransitiveNonCompile," +
 
-                "DirectChartCompile,TransitiveChartCompile,InheritedDirectChartCompile,InheritedTransitiveChartCompile" +
+                "DirectChartCompile,TransitiveChartCompile,InheritedDirectChartCompile,InheritedTransitiveChartCompile," +
                 "DirectChartNonCompile,TransitiveChartNonCompile,InheritedDirectChartNonCompile,InheritedTransitiveChartNonCompile" + "\n", true);
 
         try (Stream<Path> filepath = Files.walk(Paths.get("results"))) {
@@ -194,7 +194,7 @@ public class DepcleanDataCollector {
                     "\\ChartSmall{" + usedDirectNonCompile + "}{" + Math.addExact(usedDirectNonCompile, unusedDirectNonCompile) + "}" + "," +
                     "\\ChartSmall{" + usedTransitiveNonCompile + "}{" + Math.addExact(usedTransitiveNonCompile, unusedTransitiveNonCompile) + "}" + "," +
                     "\\ChartSmall{" + usedInheritedDirectNonCompile + "}{" + Math.addExact(usedInheritedDirectNonCompile, unusedInheritedDirectNonCompile) + "}" + "," +
-                    "\\ChartSmall{" + usedInheritedTransitiveNonCompile + "}{" + Math.addExact(usedInheritedTransitiveNonCompile, unusedInheritedTransitiveNonCompile) + "}" + "," + "\n"
+                    "\\ChartSmall{" + usedInheritedTransitiveNonCompile + "}{" + Math.addExact(usedInheritedTransitiveNonCompile, unusedInheritedTransitiveNonCompile) + "}" + "\n"
             );
         } catch (
                 IOException e) {
