@@ -12,14 +12,13 @@ import java.util.List;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
-public class DeptrimDataCollector {
+public class DeptrimDataCollectorRQ1 {
 
     // CSV files to be written
-    private static File originalBuildResultLogs = new File("csv/original-build-result-logs.csv");
-
-    private static File originalTestsLogs = new File("csv/original-tests-logs.csv");
-
-    private static File pomSpecializedBuildResultLogs = new File("csv/pom-specialized-build-result-logs.csv");
+    private static File originalBuildResultLogs = new File("csv/RQ1/original-build-result-logs.csv");
+    private static File originalTestsLogs = new File("csv/RQ1/original-tests-logs.csv");
+    private static File pomSpecializedBuildResultLogs = new File("csv/RQ1/pom-specialized-build-result-logs.csv");
+    private static File pomTotallySpecializedBuildResultLogs = new File("csv/RQ1/pom-totally-specialized-build-result-logs.csv");
 
     public static void main(String[] args) throws IOException {
 
@@ -33,10 +32,9 @@ public class DeptrimDataCollector {
         FileUtils.writeStringToFile(pomSpecializedBuildResultLogs,
                 "Project,FilePath,BuildResult" + "\n", true
         );
-
-
-        // FileUtils.writeStringToFile(deptrimResults,
-        //         "Project,FilePath,SpecializedDependencies,NonSpecializedDependencies,TotalDependencies,RemovedClasses,TotalClasses,JarSizeSpecialized,JarSizeOriginal,CompilationPass,CompilationFail,TestsPass,TestFail" + "\n", true);
+        FileUtils.writeStringToFile(pomTotallySpecializedBuildResultLogs,
+                "Project,FilePath,BuildResult" + "\n", true
+        );
 
         String regex = "^.*deptrim/pom-specialized_([1-9]|[1-9][0-9]|100)_([1-9]|[1-9][0-9]|100)/maven.log$";
         Pattern pattern = Pattern.compile(regex);
@@ -46,6 +44,8 @@ public class DeptrimDataCollector {
                 if (f.toString().endsWith("/deptrim/maven.log")) {
                     processBuildLogs(originalBuildResultLogs, f);
                     processOriginalTestsLogs(originalTestsLogs, f);
+                } else if (f.toString().endsWith("/deptrim/pom-specialized/maven.log")) {
+                    processBuildLogs(pomTotallySpecializedBuildResultLogs, f);
                 } else if (pattern.matcher(f.toString()).matches()) {
                     processBuildLogs(pomSpecializedBuildResultLogs, f);
                 }

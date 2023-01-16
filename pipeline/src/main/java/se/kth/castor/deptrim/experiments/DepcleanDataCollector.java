@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 public class DepcleanDataCollector {
 
     // CSV files to be written
-    private static File depcleanResults = new File("csv/depclean-results.csv");
+    private static File depcleanResults = new File("csv/Descriptive/depclean-results.csv");
 
     public static void main(String[] args) throws IOException {
         // Write file headers
