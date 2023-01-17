@@ -22,6 +22,15 @@ public class DeptrimDataCollectorRQ2 {
 
     public static void main(String[] args) throws Exception {
 
+        // remove files if exists
+        if (removedAndTotalClassesSpecializedDependency.exists()) {
+            removedAndTotalClassesSpecializedDependency.delete();
+        } else if (dependencyJarSizeOriginal.exists()) {
+            dependencyJarSizeOriginal.delete();
+        } else if (dependencyJarSizeSpecialized.exists()) {
+            dependencyJarSizeSpecialized.delete();
+        }
+
         // Write file headers
         FileUtils.writeStringToFile(removedAndTotalClassesSpecializedDependency, "Project,FilePath,Dependency,RemovedClasses,TotalClasses" + "\n", true);
         FileUtils.writeStringToFile(dependencyJarSizeSpecialized, "Project,FilePath,Dependency,SizeSpecialized" + "\n", true);

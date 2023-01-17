@@ -18,6 +18,12 @@ public class DeptrimDataCollectorRQ3 {
     private static File specializationFailures = new File("csv/RQ3/specialization-failures.csv");
 
     public static void main(String[] args) throws IOException {
+        // remove files if exists
+        if (specializationFailures.exists()) {
+            specializationFailures.delete();
+        }
+
+
         FileUtils.writeStringToFile(specializationFailures,
                 "Project,FilePath,CompilationError,TestRun,TestFailure,TestError,TestSkipped" + "\n", true
         );

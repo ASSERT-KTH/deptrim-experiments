@@ -3,6 +3,11 @@
 # This script is used to run the pipeline on a single project.
 # ============================================================
 
+java -version
+
+# Get the start time
+start=$(date +%s)
+
 # Input arguments
 REPO_NAME=$1
 GITHUB_URL=$2
@@ -123,7 +128,7 @@ mv pom-original.xml pom.xml
 mkdir depclean
 mvn clean compile -q
 mvn compiler:testCompile -q
-mvn se.kth.castor:depclean-maven-plugin:2.0.5:depclean -DcreatePomDebloated=true >>depclean/depclean.log
+mvn se.kth.castor:depclean-maven-plugin:2.0.5:depclean -DcreatePomDebloated=true -DignoreScopes=test,provided,system,import,runtime >>depclean/depclean.log
 
 # BUILD WITH pom-debloated.xml
 echo "====================================================="
@@ -149,6 +154,21 @@ echo "====================================================="
 echo "${logger_pipeline}  Restoring original pom and exiting"
 mv pom-original.xml pom.xml
 
+echo "====================================================="
+echo "${logger_pipeline}  Writing experiment execution time"
+if [ -z "$MODULE_DIR" ]; then
+  # shellcheck disable=SC2164
+  cd "$CURRENT_DIR"/$PROJECTS_DIR/"$REPO_NAME"
+else
+  # shellcheck disable=SC2164
+  cd "$CURRENT_DIR"/$PROJECTS_DIR/"$REPO_NAME"/"$MODULE_DIR"
+fi
+end=$(date +%s)
+total_time_seconds=$((end - start))
+total_time_minutes=$((total_time_seconds / 60))
+total_time_hours=$((total_time_minutes / 60))
+echo "$REPO_NAME,$total_time_seconds seconds,$total_time_minutes minutes,$total_time_hours hours" >>experiment_execution_time.txt
+
 # Copy the results to the results directory
 echo "=========================================================================================="
 if [ -z "$MODULE_DIR" ]; then
@@ -158,5 +178,7 @@ else
   echo "${logger_pipeline}  Copying the results to ${CURRENT_DIR}/${RESULTS_DIR}/${REPO_NAME}/${MODULE_DIR}"
   cp -r . "$CURRENT_DIR"/"$RESULTS_DIR"/"$REPO_NAME"/"$MODULE_DIR"
 fi
+
+
 
 exit 0

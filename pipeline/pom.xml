@@ -53,5 +53,16 @@
          <version>${junit5.version}</version>
          <scope>test</scope>
       </dependency>
+      <dependency>
+         <groupId>
+            org.apache.commons
+         </groupId>
+         <artifactId>
+            commons-csv
+         </artifactId>
+         <version>
+            1.9.0
+         </version>
+      </dependency>
    </dependencies>
 </project>
