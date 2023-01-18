@@ -1,0 +1,15 @@
+Project,FilePath,UsedDirectCompile,UsedTransitiveCompile,UsedInheritedDirectCompile,UsedInheritedTransitiveCompile,UsedDirectNonCompile,UsedTransitiveNonCompile,UsedInheritedDirectNonCompile,UsedInheritedTransitiveNonCompile,UnusedDirectCompile,UnusedTransitiveCompile,UnusedInheritedDirectCompile,UnusedInheritedTransitiveCompile,UnusedDirectNonCompile,UnusedTransitiveNonCompile,UnusedInheritedDirectNonCompile,UnusedInheritedTransitiveNonCompile,DirectChartCompile,TransitiveChartCompile,InheritedChartCompile
+tablesaw_json,results/tablesaw_json/depclean/depclean.log,3,6,0,0,2,18,0,0,0,0,0,0,0,2,0,0,\ChartSmall{3}{3},\ChartSmall{6}{6},\ChartSmall{0}{0}
+commons-validator,results/commons-validator/depclean/depclean.log,4,0,0,0,3,1,0,0,0,0,0,0,0,0,0,0,\ChartSmall{4}{4},\ChartSmall{0}{0},\ChartSmall{0}{0}
+checkstyle,results/checkstyle/depclean/depclean.log,7,8,0,0,15,25,0,0,0,2,0,0,0,0,0,0,\ChartSmall{7}{7},\ChartSmall{8}{10},\ChartSmall{0}{0}
+jooby_jooby,results/jooby_jooby/depclean/depclean.log,13,7,0,0,9,37,0,0,1,1,0,0,0,0,0,0,\ChartSmall{13}{14},\ChartSmall{7}{8},\ChartSmall{0}{0}
+mybatis-3,results/mybatis-3/depclean/depclean.log,7,1,0,0,20,36,0,0,0,0,0,0,0,0,0,0,\ChartSmall{7}{7},\ChartSmall{1}{1},\ChartSmall{0}{0}
+woodstox,results/woodstox/depclean/depclean.log,4,1,0,0,3,1,0,0,0,0,0,0,0,2,0,0,\ChartSmall{4}{4},\ChartSmall{1}{1},\ChartSmall{0}{0}
+pdfbox_pdfbox,results/pdfbox_pdfbox/depclean/depclean.log,4,2,0,0,3,10,0,0,1,0,0,0,3,0,0,0,\ChartSmall{4}{5},\ChartSmall{2}{2},\ChartSmall{0}{0}
+jacop,results/jacop/depclean/depclean.log,3,1,0,0,1,1,0,0,2,3,0,0,0,0,0,0,\ChartSmall{3}{5},\ChartSmall{1}{4},\ChartSmall{0}{0}
+undertow_core,results/undertow_core/depclean/depclean.log,3,2,0,0,14,9,0,0,0,0,0,0,0,0,0,0,\ChartSmall{3}{3},\ChartSmall{2}{2},\ChartSmall{0}{0}
+httpcomponents-client_httpclient5,results/httpcomponents-client_httpclient5/depclean/depclean.log,5,0,0,0,6,12,0,0,0,0,0,0,1,0,0,0,\ChartSmall{5}{5},\ChartSmall{0}{0},\ChartSmall{0}{0}
+jcabi-github,results/jcabi-github/depclean/depclean.log,10,7,0,0,18,12,1,3,0,3,0,0,6,16,1,0,\ChartSmall{10}{10},\ChartSmall{7}{10},\ChartSmall{0}{0}
+qart4j,results/qart4j/depclean/depclean.log,6,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,\ChartSmall{6}{6},\ChartSmall{0}{0},\ChartSmall{0}{0}
+java-faker,results/java-faker/depclean/depclean.log,3,1,0,0,7,6,0,0,0,0,0,0,0,4,0,0,\ChartSmall{3}{3},\ChartSmall{1}{1},\ChartSmall{0}{0}
+tika_tika-core,results/tika_tika-core/depclean/depclean.log,2,0,0,0,7,16,0,0,0,0,0,0,2,5,0,0,\ChartSmall{2}{2},\ChartSmall{0}{0},\ChartSmall{0}{0}

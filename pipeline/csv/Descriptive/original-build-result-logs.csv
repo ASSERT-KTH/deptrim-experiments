@@ -1,0 +1,15 @@
+Project,FilePath,BuildResult
+tablesaw_json,results/tablesaw_json/deptrim/maven.log,SUCCESS
+commons-validator,results/commons-validator/deptrim/maven.log,SUCCESS
+checkstyle,results/checkstyle/deptrim/maven.log,SUCCESS
+jooby_jooby,results/jooby_jooby/deptrim/maven.log,SUCCESS
+mybatis-3,results/mybatis-3/deptrim/maven.log,SUCCESS
+woodstox,results/woodstox/deptrim/maven.log,SUCCESS
+pdfbox_pdfbox,results/pdfbox_pdfbox/deptrim/maven.log,SUCCESS
+jacop,results/jacop/deptrim/maven.log,SUCCESS
+undertow_core,results/undertow_core/deptrim/maven.log,SUCCESS
+httpcomponents-client_httpclient5,results/httpcomponents-client_httpclient5/deptrim/maven.log,SUCCESS
+jcabi-github,results/jcabi-github/deptrim/maven.log,SUCCESS
+qart4j,results/qart4j/deptrim/maven.log,SUCCESS
+java-faker,results/java-faker/deptrim/maven.log,SUCCESS
+tika_tika-core,results/tika_tika-core/deptrim/maven.log,SUCCESS
