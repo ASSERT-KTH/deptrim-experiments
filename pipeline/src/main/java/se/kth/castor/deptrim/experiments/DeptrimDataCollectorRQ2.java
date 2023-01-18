@@ -20,15 +20,18 @@ public class DeptrimDataCollectorRQ2 {
     private static File dependencyJarSizeOriginal = new File("csv/RQ2/dependency-jar-size-original.csv");
     private static File dependencyJarSizeSpecialized = new File("csv/RQ2/dependency-jar-size-specialized.csv");
 
-    public static void main(String[] args) throws Exception {
+
+    public static void execute() throws Exception {
 
         // remove files if exists
         if (removedAndTotalClassesSpecializedDependency.exists()) {
-            removedAndTotalClassesSpecializedDependency.delete();
-        } else if (dependencyJarSizeOriginal.exists()) {
-            dependencyJarSizeOriginal.delete();
-        } else if (dependencyJarSizeSpecialized.exists()) {
-            dependencyJarSizeSpecialized.delete();
+            FileUtils.forceDelete(removedAndTotalClassesSpecializedDependency);
+        }
+        if (dependencyJarSizeOriginal.exists()) {
+            FileUtils.forceDelete(dependencyJarSizeOriginal);
+        }
+        if (dependencyJarSizeSpecialized.exists()) {
+            FileUtils.forceDelete(dependencyJarSizeSpecialized);
         }
 
         // Write file headers
@@ -83,7 +86,8 @@ public class DeptrimDataCollectorRQ2 {
         List<String> l = new ArrayList<>();
         String project = f.toString().split("/")[1];
         String depJar = f.toString().split("/")[f.toString().split("/").length - 1];
-        l.add(project + "," + f + "," + depJar + "," + FileUtils.sizeOf(new File(f.toString())) + "\n");
+        double size = FileUtils.sizeOf(new File(f.toString())) / 1024;
+        l.add(project + "," + f + "," + depJar + "," + size + "\n");
         String str = String.join("", l);
         try {
             FileUtils.writeStringToFile(splDeps, str, true);
@@ -97,7 +101,8 @@ public class DeptrimDataCollectorRQ2 {
         List<String> l = new ArrayList<>();
         String project = f.toString().split("/")[1];
         String depJar = f.toString().split("/")[f.toString().split("/").length - 1];
-        l.add(project + "," + f + "," + depJar + "," + FileUtils.sizeOf(new File(f.toString())) + "\n");
+        double size = FileUtils.sizeOf(new File(f.toString())) / 1024;
+        l.add(project + "," + f + "," + depJar + "," + size + "\n");
         String str = String.join("", l);
         try {
             FileUtils.writeStringToFile(origDeps, str, true);

@@ -18,12 +18,13 @@ public class DeptrimDataCollectorRQ1 {
     private static File pomSpecializedBuildResultLogs = new File("csv/RQ1/pom-specialized-build-result-logs.csv");
     private static File pomTotallySpecializedBuildResultLogs = new File("csv/RQ1/pom-totally-specialized-build-result-logs.csv");
 
-    public static void main(String[] args) throws IOException {
+    public static void execute() throws IOException {
         // remove files if exists
         if (pomSpecializedBuildResultLogs.exists()) {
-            pomSpecializedBuildResultLogs.delete();
-        } else if (pomTotallySpecializedBuildResultLogs.exists()) {
-            pomTotallySpecializedBuildResultLogs.delete();
+            FileUtils.forceDelete(pomSpecializedBuildResultLogs);
+        }
+        if (pomTotallySpecializedBuildResultLogs.exists()) {
+            FileUtils.forceDelete(pomTotallySpecializedBuildResultLogs);
         }
 
 

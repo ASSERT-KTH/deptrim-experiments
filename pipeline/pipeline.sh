@@ -72,7 +72,7 @@ mvn dependency:list >>original/dependency-list.log
 echo "====================================================="
 echo "${logger_deptrim} Running DepTrim with all dependencies specialized"
 mkdir deptrim
-mvn se.kth.castor:deptrim-maven-plugin:0.1.1:deptrim -DcreateSinglePomSpecialized=true -DverboseMode=true -DignoreScopes=test,provided,system,import,runtime >>deptrim/deptrim.log
+mvn se.kth.castor:deptrim-maven-plugin:0.1.2:deptrim -DcreateSinglePomSpecialized=true -DverboseMode=true -DignoreScopes=test,provided,system,import,runtime >>deptrim/deptrim.log
 mv libs-specialized deptrim
 mvn clean package -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true >>deptrim/maven.log
 
@@ -82,7 +82,7 @@ mvn clean package -q -Dcheckstyle.skip -DskipTests -Drat.skip=true -Dtidy.skip=t
 # RUN DEPTRIM WITH ONE DEPENDENCY SPECIALIZED PER POM
 echo "====================================================="
 echo "${logger_deptrim} Running DepTrim with one dependency specialized per pom"
-mvn se.kth.castor:deptrim-maven-plugin:0.1.1:deptrim -DcreateDependencySpecializedPerPom=true -DverboseMode=true -DignoreScopes=test,provided,system,import,runtime >>deptrim.log
+mvn se.kth.castor:deptrim-maven-plugin:0.1.2:deptrim -DcreateDependencySpecializedPerPom=true -DverboseMode=true -DignoreScopes=test,provided,system,import,runtime >>deptrim.log
 
 # EXECUTING POMS
 echo "====================================================="
@@ -126,9 +126,9 @@ else
 fi
 mv pom-original.xml pom.xml
 mkdir depclean
-mvn clean compile -q
-mvn compiler:testCompile -q
-mvn se.kth.castor:depclean-maven-plugin:2.0.5:depclean -DcreatePomDebloated=true -DignoreScopes=test,provided,system,import,runtime >>depclean/depclean.log
+mvn clean compile -q -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true
+mvn compiler:testCompile -q -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true
+mvn se.kth.castor:depclean-maven-plugin:2.0.6:depclean -DcreatePomDebloated=true -DignoreScopes=test,provided,system,import,runtime >>depclean/depclean.log
 
 # BUILD WITH pom-debloated.xml
 echo "====================================================="
@@ -178,7 +178,5 @@ else
   echo "${logger_pipeline}  Copying the results to ${CURRENT_DIR}/${RESULTS_DIR}/${REPO_NAME}/${MODULE_DIR}"
   cp -r . "$CURRENT_DIR"/"$RESULTS_DIR"/"$REPO_NAME"/"$MODULE_DIR"
 fi
-
-
 
 exit 0

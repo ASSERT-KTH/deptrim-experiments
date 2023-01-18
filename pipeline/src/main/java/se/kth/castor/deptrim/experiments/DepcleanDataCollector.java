@@ -20,16 +20,20 @@ public class DepcleanDataCollector {
     private static File depcleanResults = new File("csv/Descriptive/depclean-results.csv");
 
 
-    public static void main(String[] args) throws IOException {
-        // cleanup;
+    public static void execute() throws IOException {
+
+        // delete files if they already exist
         if (originalBuildResultLogs.exists()) {
-            FileUtils.delete(originalBuildResultLogs);
-        } else if (depcleanBuildResultLogs.exists()) {
-            FileUtils.delete(depcleanBuildResultLogs);
-        } else if (originalTestsLogs.exists()) {
-            FileUtils.delete(originalTestsLogs);
-        } else if (depcleanResults.exists()) {
-            FileUtils.delete(depcleanResults);
+            FileUtils.forceDelete(originalBuildResultLogs);
+        }
+        if (depcleanBuildResultLogs.exists()) {
+            FileUtils.forceDelete(depcleanBuildResultLogs);
+        }
+        if (originalTestsLogs.exists()) {
+            FileUtils.forceDelete(originalTestsLogs);
+        }
+        if (depcleanResults.exists()) {
+            FileUtils.forceDelete(depcleanResults);
         }
 
         // Write file headers
@@ -52,8 +56,7 @@ public class DepcleanDataCollector {
                 "UnusedDirectCompile,UnusedTransitiveCompile,UnusedInheritedDirectCompile,UnusedInheritedTransitiveCompile," +
                 "UnusedDirectNonCompile,UnusedTransitiveNonCompile,UnusedInheritedDirectNonCompile,UnusedInheritedTransitiveNonCompile," +
 
-                "DirectChartCompile,TransitiveChartCompile,InheritedDirectChartCompile,InheritedTransitiveChartCompile," +
-                "DirectChartNonCompile,TransitiveChartNonCompile,InheritedDirectChartNonCompile,InheritedTransitiveChartNonCompile" + "\n", true);
+                "DirectChartCompile,TransitiveChartCompile,InheritedChartCompile" + "\n", true);
 
         try (Stream<Path> filepath = Files.walk(Paths.get("results"))) {
             filepath.filter(Files::isRegularFile).forEach(f -> {
@@ -302,14 +305,7 @@ public class DepcleanDataCollector {
 
                     "\\ChartSmall{" + usedDirectCompile + "}{" + Math.addExact(usedDirectCompile, unusedDirectCompile) + "}" + "," +
                     "\\ChartSmall{" + usedTransitiveCompile + "}{" + Math.addExact(usedTransitiveCompile, unusedTransitiveCompile) + "}" + "," +
-                    "\\ChartSmall{" + usedInheritedDirectCompile + "}{" + Math.addExact(usedInheritedDirectCompile, unusedInheritedDirectCompile) + "}" + "," +
-                    "\\ChartSmall{" + usedInheritedTransitiveCompile + "}{" + Math.addExact(usedInheritedTransitiveCompile, unusedInheritedTransitiveCompile) + "}" + "," +
-
-                    "\\ChartSmall{" + usedDirectNonCompile + "}{" + Math.addExact(usedDirectNonCompile, unusedDirectNonCompile) + "}" + "," +
-                    "\\ChartSmall{" + usedTransitiveNonCompile + "}{" + Math.addExact(usedTransitiveNonCompile, unusedTransitiveNonCompile) + "}" + "," +
-                    "\\ChartSmall{" + usedInheritedDirectNonCompile + "}{" + Math.addExact(usedInheritedDirectNonCompile, unusedInheritedDirectNonCompile) + "}" + "," +
-                    "\\ChartSmall{" + usedInheritedTransitiveNonCompile + "}{" + Math.addExact(usedInheritedTransitiveNonCompile, unusedInheritedTransitiveNonCompile) + "}" + "\n"
-            );
+                    "\\ChartSmall{" + Math.addExact(usedInheritedDirectCompile, usedInheritedTransitiveCompile) + "}{" + Math.addExact(Math.addExact(Math.addExact(usedInheritedDirectCompile, unusedInheritedDirectCompile), usedInheritedTransitiveCompile), unusedInheritedTransitiveCompile) + "}" + "\n");
         } catch (
                 IOException e) {
             System.out.println("Error reading file " + f);
@@ -323,7 +319,7 @@ public class DepcleanDataCollector {
     }
 
     private static boolean isNonCompileDependency(String line) {
-        return line.contains(":provided ") || line.contains(":runtime ") || line.contains(":test ") || line.contains(":system ")|| line.contains(":import ");
+        return line.contains(":provided ") || line.contains(":runtime ") || line.contains(":test ") || line.contains(":system ") || line.contains(":import ");
     }
 
 

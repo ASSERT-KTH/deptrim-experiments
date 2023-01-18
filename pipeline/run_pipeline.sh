@@ -7,30 +7,22 @@
 # To run in background in aquiles server:
 # nohup /home/ubuntu/cesarsv/pipeline/run_pipeline.sh > run_pipeline.log &
 
+# WORK WELL (Build is successful and Depclean is successful)
+./pipeline.sh "checkstyle" "https://github.com/checkstyle/checkstyle.git" "" "10.5.0" "dbeb9024c861ad11b194e40d8c6e08d7e6ec5122";
+./pipeline.sh "commons-validator" "https://github.com/apache/commons-validator.git" "" "1.7" "f9bb21748a9f9c50fbc31862de25ed49433ecc88";
+./pipeline.sh "httpcomponents-client" "https://github.com/apache/httpcomponents-client.git" "httpclient5" "5.2.1-RC1" "d8f702fb4d44c746bb0edf00643aa7139cb8bdf7"
+./pipeline.sh "jacop" "https://github.com/cesarsotovalero/jacop.git" "" "4.9.0" "4fa3b8f2ea74df17b40ebe564552c28735a82885";
+./pipeline.sh "java-faker" "https://github.com/cesarsotovalero/java-faker.git" "" "1.0.2" "0bed1d8381cd0b3319a6f3bb03efc74728334f6a";
+./pipeline.sh "jcabi-github" "https://github.com/jcabi/jcabi-github.git" "" "1.27.0" "02f3ab93156349c2f66989ac675bd6292462d724";
+./pipeline.sh "jooby" "https://github.com/jooby-project/jooby.git" "jooby" "2.16.1" "4d7be54dad429b5aeb5266387df14b0781c78357";
+./pipeline.sh "mybatis-3" "https://github.com/mybatis/mybatis-3.git" "" "mybatis-3.5.11" "c195f12808a88a1ee245dc86d9c1621042655970";
+./pipeline.sh "pdfbox" "https://github.com/cesarsotovalero/pdfbox.git" "pdfbox" "2.0.27" "07ddd189b4f76c9e265d7c80d95979642567af6b";
+./pipeline.sh "qart4j" "https://github.com/cesarsotovalero/qart4j.git" "" "1.0.0" "04d17792030e02792a198c92c3dfee53a81bb051"; # requires old java version
+./pipeline.sh "tablesaw" "https://github.com/jtablesaw/tablesaw.git" "json" "v0.43.1" "05823f66246ea191e62ad0658d2fed0b080d5334";
+./pipeline.sh "tika" "https://github.com/apache/tika.git" "tika-core" "2.6.0" "41319f3c294b13de5342a80570b4540f7dd04a3e";
+./pipeline.sh "undertow" "https://github.com/undertow-io/undertow.git" "core" "2.2.21.Final" "56c91f129b1c2a55cf3287836cc68c80acce54c6";
+./pipeline.sh "woodstox" "https://github.com/cesarsotovalero/woodstox.git" "" "6.4.0" "6de8bf7bfed4baa1c05d5a916fd5f96335708a84"; # requires old java version
 
-
-# work fine
-./pipeline.sh "commons-pool" "https://github.com/apache/commons-pool.git" "" "2.11.1" "abb1a0797b406566f0214c688871ab7e8fdc2601";
-#./pipeline.sh "checkstyle" "https://github.com/checkstyle/checkstyle.git" "" "10.5.0" "dbeb9024c861ad11b194e40d8c6e08d7e6ec5122";
-#./pipeline.sh "commons-validator" "https://github.com/apache/commons-validator.git" "" "1.7" "f9bb21748a9f9c50fbc31862de25ed49433ecc88";
-#./pipeline.sh "error-prone" "https://github.com/google/error-prone.git" "core" "2.16.0" "b1dcc4c9fef5c4e601b0a8124432a9504930686f";
-#./pipeline.sh "httpcomponents-client" "https://github.com/apache/httpcomponents-client.git" "httpclient5" "5.2.1-RC1" "d8f702fb4d44c746bb0edf00643aa7139cb8bdf7"
-#./pipeline.sh "jacop" "https://github.com/cesarsotovalero/jacop.git" "" "4.9.0" "4fa3b8f2ea74df17b40ebe564552c28735a82885";
-#./pipeline.sh "java-faker" "https://github.com/cesarsotovalero/java-faker.git" "" "1.0.2" "0bed1d8381cd0b3319a6f3bb03efc74728334f6a";
-#./pipeline.sh "jcabi-github" "https://github.com/jcabi/jcabi-github.git" "" "1.27.0" "02f3ab93156349c2f66989ac675bd6292462d724";
-#./pipeline.sh "jooby" "https://github.com/jooby-project/jooby.git" "jooby" "2.16.1" "4d7be54dad429b5aeb5266387df14b0781c78357";
-#./pipeline.sh "mybatis-3" "https://github.com/mybatis/mybatis-3.git" "" "mybatis-3.5.11" "c195f12808a88a1ee245dc86d9c1621042655970";
-#./pipeline.sh "nifi" "https://github.com/apache/nifi.git" "nifi-bootstrap" "1.19.1" "a7236ecc9123113ba5b9aaa3baab06354778116f";
-#./pipeline.sh "pdfbox" "https://github.com/cesarsotovalero/pdfbox.git" "pdfbox" "2.0.27" "07ddd189b4f76c9e265d7c80d95979642567af6b";
-#./pipeline.sh "qart4j" "https://github.com/cesarsotovalero/qart4j.git" "" "1.0.0" "04d17792030e02792a198c92c3dfee53a81bb051"; # requires old java version
-#./pipeline.sh "rultor" "https://github.com/yegor256/rultor.git" "" "1.71.2" "2d36b41262b6285d4c1d41b9b55b6d5c20cfa3fb";
-#./pipeline.sh "shiro" "https://github.com/apache/shiro.git" "core" "1.10.1" "4a74eed1cdca1fd1ab5cf3cba75a39c7288fb492";
-#./pipeline.sh "spring-boot-admin" "https://github.com/codecentric/spring-boot-admin.git" "spring-boot-admin-server" "2.7.9" "0ac7a6be5f849b6260e38e68e6f0610f39a1a729";
-#./pipeline.sh "tablesaw" "https://github.com/jtablesaw/tablesaw.git" "json" "v0.43.1" "05823f66246ea191e62ad0658d2fed0b080d5334";
-#./pipeline.sh "tika" "https://github.com/apache/tika.git" "tika-core" "2.6.0" "41319f3c294b13de5342a80570b4540f7dd04a3e";
-#./pipeline.sh "undertow" "https://github.com/undertow-io/undertow.git" "core" "2.2.21.Final" "56c91f129b1c2a55cf3287836cc68c80acce54c6";
-#./pipeline.sh "vertx-unit" "https://github.com/vert-x3/vertx-unit.git" "" "4.3.6" "0af930f47f71b229de48f5d4308a841f599dcc7e";
-#./pipeline.sh "woodstox" "https://github.com/cesarsotovalero/woodstox.git" "" "6.4.0" "6de8bf7bfed4baa1c05d5a916fd5f96335708a84"; # requires old java version
 
 # Market as unnapropiated after run
 #./pipeline.sh "redisson" "https://github.com/redisson/redisson.git" "redisson" "3.19.0" "cb305d35bb5fc3678e825cc3d7ed6009b721c552";  # tests are skipped in the config file
@@ -38,12 +30,20 @@
 #./pipeline.sh "gson" "https://github.com/google/gson.git" "metrics" "2.10" "dd92e49b279f335006433148e673fdfb2c387074"; # has no tests
 #./pipeline.sh "para" "https://github.com/Erudika/para.git" "para-core" "1.47.2" "41d900574e2e159b05fbd23aaab1f6e554ab8fc3"; # has no tests
 #./pipeline.sh "lanterna" "https://github.com/cesarsotovalero/lanterna.git" "native-integration" "3.1.1" "1b74f1c07a769f83b5beb5cb7d62bd51d53de449"; # has no tests
+
+
+# not work
+#./pipeline.sh "commons-pool" "https://github.com/apache/commons-pool.git" "" "2.11.1" "abb1a0797b406566f0214c688871ab7e8fdc2601";
+#./pipeline.sh "spring-boot-admin" "https://github.com/codecentric/spring-boot-admin.git" "spring-boot-admin-server" "2.7.9" "0ac7a6be5f849b6260e38e68e6f0610f39a1a729";
+#./pipeline.sh "nifi" "https://github.com/apache/nifi.git" "nifi-bootstrap" "1.19.1" "a7236ecc9123113ba5b9aaa3baab06354778116f";
+#./pipeline.sh "rultor" "https://github.com/yegor256/rultor.git" "" "1.71.2" "2d36b41262b6285d4c1d41b9b55b6d5c20cfa3fb";
+#./pipeline.sh "error-prone" "https://github.com/google/error-prone.git" "core" "2.16.0" "b1dcc4c9fef5c4e601b0a8124432a9504930686f";
+#./pipeline.sh "vertx-unit" "https://github.com/vert-x3/vertx-unit.git" "" "4.3.6" "0af930f47f71b229de48f5d4308a841f599dcc7e";
+#./pipeline.sh "shiro" "https://github.com/apache/shiro.git" "core" "1.10.1" "4a74eed1cdca1fd1ab5cf3cba75a39c7288fb492";
 #./pipeline.sh "auto" "https://github.com/google/auto.git" "common" "1.10" "e065d1918f96301b7c2214ace217a69ae6ba8fdd"; # tests errors
 #./pipeline.sh "flink" "https://github.com/apache/flink.git" "flink-java" "1.15.3" "c41c8e5cfab683da8135d6c822693ef851d6e2b7"; # tests errors
 #./pipeline.sh "spark" "https://github.com/perwendel/spark.git" "" "2.9.3" "48a94f1b9e0b0353642415fbfd97d5e1669c0f1b"; # tests errors
 #./pipeline.sh "spoon" "https://github.com/INRIA/spoon.git" "" "10.2.0" "ee73f4376aa929d8dce950202fabb8992a77c9fb"; # tests errors
-
-# not work
 #./pipeline.sh "auto" "https://github.com/google/auto.git" "common" "1.10" "e065d1918f96301b7c2214ace217a69ae6ba8fdd"; # tests errors
 #./pipeline.sh "jenkins" "https://github.com/jenkinsci/jenkins.git" "core" "2.381" "467d2fd1d8444ce1542c0f3a35353970f5a01a66"; # not dependencies specialized
 #./pipeline.sh "jHiccup" "https://github.com/giltene/jHiccup.git" "" "2.0.10" "a440bdaed143e1445cbeab7c5bffd30989a435d0"; # not dependencies specialized
@@ -106,6 +106,23 @@
 #\href{https://https://github.com/vert-x3/vertx-unit/commit/0af930f47f71b229de48f5d4308a841f599dcc7e}{99dcc7e}
 #\href{https://https://github.com/FasterXML/woodstox/commit/e8f00401bebd103f62d51383ef53da2cd58bd89e}{58bd89e}
 
+
+
+# PROJECT URL
+#\href{https://github.com/checkstyle/checkstyle}{checkstyle}
+#\href{https://github.com/apache/commons-validator}{commons-validator}
+#\href{https://github.com/apache/httpcomponents-client/tree/master/httpclient5}{httpcomponents-client/httpclient5}
+#\href{https://github.com/radsz/jacop}{jacop}
+#\href{https://github.com/DiUS/java-faker}{java-faker}
+#\href{https://github.com/jcabi/jcabi-github}{jcabi-github}
+#\href{https://github.com/jooby-project/jooby/tree/3.x/jooby}{jooby/jooby}
+#\href{https://github.com/mybatis/mybatis-3}{mybatis-3}
+#\href{https://github.com/apache/pdfbox/tree/trunk/pdfbox}{pdfbox/pdfbox}
+#\href{https://github.com/dieforfree/qart4j}{qart4j}
+#\href{https://github.com/jtablesaw/tablesaw/tree/master/json}{tablesaw/json}
+#\href{https://github.com/apache/tika/tree/main/tika-core}{tika/tika-core}
+#\href{https://github.com/undertow-io/undertow/tree/master/core}{undertow/core}
+#\href{https://github.com/FasterXML/woodstox}{woodstox}
 
 # ============================================================
 # Stars

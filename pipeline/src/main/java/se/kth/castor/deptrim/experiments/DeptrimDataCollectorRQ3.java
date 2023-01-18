@@ -17,10 +17,10 @@ public class DeptrimDataCollectorRQ3 {
     // CSV files to be written
     private static File specializationFailures = new File("csv/RQ3/specialization-failures.csv");
 
-    public static void main(String[] args) throws IOException {
+    public static void execute() throws IOException {
         // remove files if exists
         if (specializationFailures.exists()) {
-            specializationFailures.delete();
+            FileUtils.forceDelete(specializationFailures);
         }
 
 
