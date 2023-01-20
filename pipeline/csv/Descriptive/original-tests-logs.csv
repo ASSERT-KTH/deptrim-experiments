@@ -3,13 +3,17 @@ tablesaw_json,results/tablesaw_json/deptrim/maven.log,9,0,0,0
 commons-validator,results/commons-validator/deptrim/maven.log,576,0,0,1
 checkstyle,results/checkstyle/deptrim/maven.log,3887,0,0,0
 jooby_jooby,results/jooby_jooby/deptrim/maven.log,122,0,0,0
+flink,results/flink/flink-java/deptrim/maven.log,836,0,0,1
 mybatis-3,results/mybatis-3/deptrim/maven.log,1699,0,0,13
+RxRelay,results/RxRelay/deptrim/maven.log,64,0,0,3
 woodstox,results/woodstox/deptrim/maven.log,868,0,0,0
 pdfbox_pdfbox,results/pdfbox_pdfbox/deptrim/maven.log,654,0,0,1
 jacop,results/jacop/deptrim/maven.log,210,0,0,2
+pf4j,results/pf4j/deptrim/maven.log,151,0,0,1
 undertow_core,results/undertow_core/deptrim/maven.log,682,0,0,8
 httpcomponents-client_httpclient5,results/httpcomponents-client_httpclient5/deptrim/maven.log,669,0,0,0
 jcabi-github,results/jcabi-github/deptrim/maven.log,684,0,0,6
+CoreNLP,results/CoreNLP/deptrim/maven.log,1374,0,0,0
 qart4j,results/qart4j/deptrim/maven.log,1,0,0,0
 java-faker,results/java-faker/deptrim/maven.log,579,0,0,0
 tika_tika-core,results/tika_tika-core/deptrim/maven.log,305,0,0,2

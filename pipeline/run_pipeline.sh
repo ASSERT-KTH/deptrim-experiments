@@ -6,22 +6,39 @@
 
 # To run in background in aquiles server:
 # nohup /home/ubuntu/cesarsv/pipeline/run_pipeline.sh > run_pipeline.log &
+# scp -i ~/.ssh/aquiles.pem -r ubuntu@129.192.81.91:/home/ubuntu/cesarsv/pipeline/results.zip ~/IdeaProjects/deptrim-experiments/pipeline/results/results.zip
 
 # WORK WELL (Build is successful and Depclean is successful)
-./pipeline.sh "checkstyle" "https://github.com/checkstyle/checkstyle.git" "" "10.5.0" "dbeb9024c861ad11b194e40d8c6e08d7e6ec5122";
-./pipeline.sh "commons-validator" "https://github.com/apache/commons-validator.git" "" "1.7" "f9bb21748a9f9c50fbc31862de25ed49433ecc88";
-./pipeline.sh "httpcomponents-client" "https://github.com/apache/httpcomponents-client.git" "httpclient5" "5.2.1-RC1" "d8f702fb4d44c746bb0edf00643aa7139cb8bdf7"
-./pipeline.sh "jacop" "https://github.com/cesarsotovalero/jacop.git" "" "4.9.0" "4fa3b8f2ea74df17b40ebe564552c28735a82885";
-./pipeline.sh "java-faker" "https://github.com/cesarsotovalero/java-faker.git" "" "1.0.2" "0bed1d8381cd0b3319a6f3bb03efc74728334f6a";
-./pipeline.sh "jcabi-github" "https://github.com/jcabi/jcabi-github.git" "" "1.27.0" "02f3ab93156349c2f66989ac675bd6292462d724";
-./pipeline.sh "jooby" "https://github.com/jooby-project/jooby.git" "jooby" "2.16.1" "4d7be54dad429b5aeb5266387df14b0781c78357";
-./pipeline.sh "mybatis-3" "https://github.com/mybatis/mybatis-3.git" "" "mybatis-3.5.11" "c195f12808a88a1ee245dc86d9c1621042655970";
-./pipeline.sh "pdfbox" "https://github.com/cesarsotovalero/pdfbox.git" "pdfbox" "2.0.27" "07ddd189b4f76c9e265d7c80d95979642567af6b";
-./pipeline.sh "qart4j" "https://github.com/cesarsotovalero/qart4j.git" "" "1.0.0" "04d17792030e02792a198c92c3dfee53a81bb051"; # requires old java version
-./pipeline.sh "tablesaw" "https://github.com/jtablesaw/tablesaw.git" "json" "v0.43.1" "05823f66246ea191e62ad0658d2fed0b080d5334";
-./pipeline.sh "tika" "https://github.com/apache/tika.git" "tika-core" "2.6.0" "41319f3c294b13de5342a80570b4540f7dd04a3e";
-./pipeline.sh "undertow" "https://github.com/undertow-io/undertow.git" "core" "2.2.21.Final" "56c91f129b1c2a55cf3287836cc68c80acce54c6";
-./pipeline.sh "woodstox" "https://github.com/cesarsotovalero/woodstox.git" "" "6.4.0" "6de8bf7bfed4baa1c05d5a916fd5f96335708a84"; # requires old java version
+./pipeline.sh "onedev" "https://github.com/theonedev/onedev.git" "server-core" "7.9.0" "e8724f4d8b6fefa377645810400b9a8d723efa7c";
+./pipeline.sh "webmagic" "https://github.com/code4craft/webmagic.git" "webmagic-core" "0.8.0" "43ce1a0db94f22e69f71de4fedc9df203890c397";
+./pipeline.sh "neo4j" "https://github.com/neo4j/neo4j.git" "annotations" "4.4.16" "9e386f7db1834e2a74f1040899db6f18a0fbe4b3";
+./pipeline.sh "jedis" "https://github.com/redis/jedis.git" "" "4.3.1" "448207be431d6832ede5ddd28f40508e033905c8";
+./pipeline.sh "zookeeper" "https://github.com/apache/zookeeper.git" "zookeeper-server" "3.6.4" "d65253dcf68e9097c6e95a126463fd5fdeb4521c";
+./pipeline.sh "guice" "https://github.com/google/guice.git" "core" "5.1.0" "b0ff10c8ec8911137451623a333d6daa65f73d8a";
+./pipeline.sh "piggymetrics" "https://github.com/sqshq/piggymetrics.git" "auth-service" "2.0.3" "6bb2cf9ddbca980b664d3edbb6ff775d75369278";
+./pipeline.sh "pulsar" "https://github.com/apache/pulsar.git" "pulsar-client" "2.11.0" "97ee1a114aa1e5df05d86a9dd47f7fe7a2194211";
+./pipeline.sh "druid" "https://github.com/apache/druid.git" "core" "25.0.0" "9a78059ffbb22f0bf6074cd81b13078a2d4501bc";
+./pipeline.sh "antlr4" "https://github.com/antlr/antlr4.git" "antlr4-maven-plugin" "4.11.1" "9239e6ff444420516b44b7621e8dc7691fcf0e16";
+./pipeline.sh "Chronicle-Map" "https://github.com/OpenHFT/Chronicle-Map.git" "" "3.23.5" "26e26c132290ad8049c97e0c44eb7f33b63c1c60";
+./pipeline.sh "zxing" "https://github.com/zxing/zxing.git" "core" "3.5.1" "bb75858c9b391d37e8d78b5a5b640ff758df42fb";
+./pipeline.sh "Chronicle-Map" "https://github.com/OpenHFT/Chronicle-Map.git" "" "3.23.5" "26e26c132290ad8049c97e0c44eb7f33b63c1c60";
+
+#./pipeline.sh "RxRelay" "https://github.com/cesarsotovalero/RxRelay.git" "" "3.0.1" "e9fc1586192ca1ecdbc41ae39036cbf0d09428b5"; # tests failures
+#./pipeline.sh "checkstyle" "https://github.com/checkstyle/checkstyle.git" "" "10.5.0" "dbeb9024c861ad11b194e40d8c6e08d7e6ec5122";
+#./pipeline.sh "commons-validator" "https://github.com/apache/commons-validator.git" "" "1.7" "f9bb21748a9f9c50fbc31862de25ed49433ecc88";
+#./pipeline.sh "httpcomponents-client" "https://github.com/apache/httpcomponents-client.git" "httpclient5" "5.2.1-RC1" "d8f702fb4d44c746bb0edf00643aa7139cb8bdf7"
+#./pipeline.sh "jacop" "https://github.com/cesarsotovalero/jacop.git" "" "4.9.0" "4fa3b8f2ea74df17b40ebe564552c28735a82885";
+#./pipeline.sh "java-faker" "https://github.com/cesarsotovalero/java-faker.git" "" "1.0.2" "0bed1d8381cd0b3319a6f3bb03efc74728334f6a";
+#./pipeline.sh "jcabi-github" "https://github.com/jcabi/jcabi-github.git" "" "1.27.0" "02f3ab93156349c2f66989ac675bd6292462d724";
+#./pipeline.sh "jooby" "https://github.com/jooby-project/jooby.git" "jooby" "2.16.1" "4d7be54dad429b5aeb5266387df14b0781c78357";
+#./pipeline.sh "mybatis-3" "https://github.com/mybatis/mybatis-3.git" "" "mybatis-3.5.11" "c195f12808a88a1ee245dc86d9c1621042655970";
+#./pipeline.sh "pdfbox" "https://github.com/cesarsotovalero/pdfbox.git" "pdfbox" "2.0.27" "07ddd189b4f76c9e265d7c80d95979642567af6b";
+#./pipeline.sh "qart4j" "https://github.com/cesarsotovalero/qart4j.git" "" "1.0.0" "04d17792030e02792a198c92c3dfee53a81bb051"; # requires old java version
+#./pipeline.sh "tablesaw" "https://github.com/jtablesaw/tablesaw.git" "json" "v0.43.1" "05823f66246ea191e62ad0658d2fed0b080d5334";
+#./pipeline.sh "tika" "https://github.com/apache/tika.git" "tika-core" "2.6.0" "41319f3c294b13de5342a80570b4540f7dd04a3e";
+#./pipeline.sh "undertow" "https://github.com/undertow-io/undertow.git" "core" "2.2.21.Final" "56c91f129b1c2a55cf3287836cc68c80acce54c6";
+#./pipeline.sh "woodstox" "https://github.com/cesarsotovalero/woodstox.git" "" "6.4.0" "6de8bf7bfed4baa1c05d5a916fd5f96335708a84"; # requires old java version
+#./pipeline.sh "flink" "https://github.com/apache/flink.git" "flink-java" "1.15.3" "c41c8e5cfab683da8135d6c822693ef851d6e2b7"; # tests errors
 
 
 # Market as unnapropiated after run
@@ -41,7 +58,6 @@
 #./pipeline.sh "vertx-unit" "https://github.com/vert-x3/vertx-unit.git" "" "4.3.6" "0af930f47f71b229de48f5d4308a841f599dcc7e";
 #./pipeline.sh "shiro" "https://github.com/apache/shiro.git" "core" "1.10.1" "4a74eed1cdca1fd1ab5cf3cba75a39c7288fb492";
 #./pipeline.sh "auto" "https://github.com/google/auto.git" "common" "1.10" "e065d1918f96301b7c2214ace217a69ae6ba8fdd"; # tests errors
-#./pipeline.sh "flink" "https://github.com/apache/flink.git" "flink-java" "1.15.3" "c41c8e5cfab683da8135d6c822693ef851d6e2b7"; # tests errors
 #./pipeline.sh "spark" "https://github.com/perwendel/spark.git" "" "2.9.3" "48a94f1b9e0b0353642415fbfd97d5e1669c0f1b"; # tests errors
 #./pipeline.sh "spoon" "https://github.com/INRIA/spoon.git" "" "10.2.0" "ee73f4376aa929d8dce950202fabb8992a77c9fb"; # tests errors
 #./pipeline.sh "auto" "https://github.com/google/auto.git" "common" "1.10" "e065d1918f96301b7c2214ace217a69ae6ba8fdd"; # tests errors
@@ -55,9 +71,9 @@
 #./pipeline.sh "Mybatis-PageHelper" "https://github.com/pagehelper/Mybatis-PageHelper.git" "" "5.3.2" "cfc4e0adbf1557f50c2d3647b14ac6b72a20d5e3";
 #./pipeline.sh "java-apns" "https://github.com/notnoop/java-apns.git" "" "0.2.3" "094fc2e819a1b134e07ff89aa6fed215a3d08e8d";
 #./pipeline.sh "AutoLoadCache" "https://github.com/qiujiayu/AutoLoadCache.git" "autoload-cache-core" "7.0.4" "c99cfb98b94a2fd2dd1862c0018c1a461d1fe1cd";
-#./pipeline.sh "Chronicle-Map" "https://github.com/OpenHFT/Chronicle-Map.git" "" "3.23.5" "26e26c132290ad8049c97e0c44eb7f33b63c1c60";
+
 #./pipeline.sh "zxing" "https://github.com/zxing/zxing.git" "core" "3.5.1" "bb75858c9b391d37e8d78b5a5b640ff758df42fb";
-#./pipeline.sh "RxRelay" "https://github.com/cesarsotovalero/RxRelay.git" "" "3.0.1" "e9fc1586192ca1ecdbc41ae39036cbf0d09428b5"; # tests failures
+
 #./pipeline.sh "vert.x" "https://github.com/eclipse-vertx/vert.x.git" "" "4.3.7" "2095bf92d0109c95ab65b9ac84d80872d6b27cc8"; # very long build time
 #./pipeline.sh "spark" "https://github.com/perwendel/spark.git" "" "2.9.3" "48a94f1b9e0b0353642415fbfd97d5e1669c0f1b"; # build fails
 #./pipeline.sh "jedis" "https://github.com/redis/jedis.git" "" "4.4.0" "0cf061ca34a39283f0a64269724a0f4ad708a6ff"; # build fails due to issue with a plugin fails
@@ -105,8 +121,6 @@
 #\href{https://https://github.com/undertow-io/undertow/commit/56c91f129b1c2a55cf3287836cc68c80acce54c6}{cce54c6}
 #\href{https://https://github.com/vert-x3/vertx-unit/commit/0af930f47f71b229de48f5d4308a841f599dcc7e}{99dcc7e}
 #\href{https://https://github.com/FasterXML/woodstox/commit/e8f00401bebd103f62d51383ef53da2cd58bd89e}{58bd89e}
-
-
 
 # PROJECT URL
 #\href{https://github.com/checkstyle/checkstyle}{checkstyle}

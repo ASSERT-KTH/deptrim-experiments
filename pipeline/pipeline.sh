@@ -57,32 +57,32 @@ echo "${logger_pipeline} Building original project and storing results in $REPO_
 mkdir original
 cp pom.xml pom-original.xml
 cp pom.xml original/pom-original.xml
-mvn clean package -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true >>original/maven.log
+mvn -B clean package -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true >>original/maven.log
 cp target/*.jar original/
-mvn dependency:copy-dependencies -DincludeScope=runtime >>original/compile-scope-dependencies.log
+mvn -B dependency:copy-dependencies -DincludeScope=runtime >>original/compile-scope-dependencies.log
 mkdir original/compile-scope-dependencies/
 cp -r target/dependency original/compile-scope-dependencies/
-mvn dependency:copy-dependencies >>original/all-dependencies.log
+mvn -B dependency:copy-dependencies >>original/all-dependencies.log
 mkdir original/all-dependencies/
 cp -r target/dependency original/all-dependencies/
-mvn dependency:tree >>original/dependency-tree.log
-mvn dependency:list >>original/dependency-list.log
+mvn -B dependency:tree >>original/dependency-tree.log
+mvn -B dependency:list >>original/dependency-list.log
 
 # RUN DEPTRIM WITH ALL DEPENDENCIES SPECIALIZED
 echo "====================================================="
 echo "${logger_deptrim} Running DepTrim with all dependencies specialized"
 mkdir deptrim
-mvn se.kth.castor:deptrim-maven-plugin:0.1.2:deptrim -DcreateSinglePomSpecialized=true -DverboseMode=true -DignoreScopes=test,provided,system,import,runtime >>deptrim/deptrim.log
+mvn -B se.kth.castor:deptrim-maven-plugin:0.1.2:deptrim -DcreateSinglePomSpecialized=true -DverboseMode=true -DignoreScopes=test,provided,system,import,runtime >>deptrim/deptrim.log
 mv libs-specialized deptrim
-mvn clean package -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true >>deptrim/maven.log
+mvn -B clean package -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true >>deptrim/maven.log
 
 # CLEANUP
-mvn clean package -q -Dcheckstyle.skip -DskipTests -Drat.skip=true -Dtidy.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true
+mvn -B clean package -q -Dcheckstyle.skip -DskipTests -Drat.skip=true -Dtidy.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true
 
 # RUN DEPTRIM WITH ONE DEPENDENCY SPECIALIZED PER POM
 echo "====================================================="
 echo "${logger_deptrim} Running DepTrim with one dependency specialized per pom"
-mvn se.kth.castor:deptrim-maven-plugin:0.1.2:deptrim -DcreateDependencySpecializedPerPom=true -DverboseMode=true -DignoreScopes=test,provided,system,import,runtime >>deptrim.log
+mvn -B se.kth.castor:deptrim-maven-plugin:0.1.2:deptrim -DcreateDependencySpecializedPerPom=true -DverboseMode=true -DignoreScopes=test,provided,system,import,runtime >>deptrim.log
 
 # EXECUTING POMS
 echo "====================================================="
@@ -103,8 +103,8 @@ for i in ${poms}; do
   # Running mvn clean package
   echo "====================================================="
   echo "${logger_pipeline} Building ${REPO_NAME}/${MODULE_DIR} with ${specialized_pom}"
-  mvn clean package -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true >>${output}/maven.log
-  mvn dependency:tree >>${output}/dependency-tree.log
+  mvn -B clean package -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true >>${output}/maven.log
+  mvn -B dependency:tree >>${output}/dependency-tree.log
   cp target/*.jar "${output}"/
   # Restoring pom number
   mv pom.xml "${specialized_pom}"
@@ -126,9 +126,9 @@ else
 fi
 mv pom-original.xml pom.xml
 mkdir depclean
-mvn clean compile -q -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true
-mvn compiler:testCompile -q -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true
-mvn se.kth.castor:depclean-maven-plugin:2.0.6:depclean -DcreatePomDebloated=true -DignoreScopes=test,provided,system,import,runtime >>depclean/depclean.log
+mvn -B clean compile -q -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true
+mvn -B compiler:testCompile -q -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true
+mvn -B se.kth.castor:depclean-maven-plugin:2.0.6:depclean -DcreatePomDebloated=true -DignoreScopes=test,provided,system,import,runtime >>depclean/depclean.log
 
 # BUILD WITH pom-debloated.xml
 echo "====================================================="
@@ -143,9 +143,9 @@ fi
 mv pom.xml pom-original.xml
 mv pom-debloated.xml pom.xml
 mkdir depclean/pom-debloated
-mvn clean package -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true >>depclean/pom-debloated/maven.log
+mvn -B clean package -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true >>depclean/pom-debloated/maven.log
 cp target/*.jar depclean/pom-debloated/
-mvn dependency:copy-dependencies >>depclean/pom-debloated/all-dependencies.log
+mvn -B dependency:copy-dependencies >>depclean/pom-debloated/all-dependencies.log
 mv target/dependency depclean/pom-debloated/all-dependencies/
 mv pom.xml depclean/pom-debloated/pom-debloated.xml
 

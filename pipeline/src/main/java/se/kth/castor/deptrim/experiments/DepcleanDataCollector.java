@@ -18,6 +18,8 @@ public class DepcleanDataCollector {
     private static File depcleanBuildResultLogs = new File("csv/Descriptive/depclean-build-result-logs.csv");
     private static File originalTestsLogs = new File("csv/Descriptive/original-tests-logs.csv");
     private static File depcleanResults = new File("csv/Descriptive/depclean-results.csv");
+    private static File projectClassesSize = new File("csv/Descriptive/project-classes-size.csv");
+    private static File projectClassesNumber = new File("csv/Descriptive/project-classes-number.csv");
 
 
     public static void execute() throws IOException {
@@ -34,6 +36,12 @@ public class DepcleanDataCollector {
         }
         if (depcleanResults.exists()) {
             FileUtils.forceDelete(depcleanResults);
+        }
+        if (projectClassesSize.exists()) {
+            FileUtils.forceDelete(projectClassesSize);
+        }
+        if (projectClassesNumber.exists()) {
+            FileUtils.forceDelete(projectClassesNumber);
         }
 
         // Write file headers
@@ -58,8 +66,17 @@ public class DepcleanDataCollector {
 
                 "DirectChartCompile,TransitiveChartCompile,InheritedChartCompile" + "\n", true);
 
+        FileUtils.writeStringToFile(projectClassesSize,
+                "Project,FilePath,ProjectClassesSize" + "\n", true
+        );
+
+        FileUtils.writeStringToFile(projectClassesNumber,
+                "Project,FilePath,ProjectClassesNumber" + "\n", true
+        );
+
         try (Stream<Path> filepath = Files.walk(Paths.get("results"))) {
             filepath.filter(Files::isRegularFile).forEach(f -> {
+
                 if (f.toString().endsWith("/depclean/depclean.log")) {
                     try {
                         processDepcleanLogs(depcleanResults, f);
@@ -74,11 +91,62 @@ public class DepcleanDataCollector {
                     processBuildLogs(depcleanBuildResultLogs, f);
                 }
             });
+
+            try (Stream<Path> directoryPath = Files.walk(Paths.get("results"))) {
+                directoryPath.filter(Files::isDirectory).forEach(f -> {
+                    System.out.println(f.toFile().getAbsolutePath());
+                    if (f.toString().endsWith("/target/classes")) {
+                        getProjectClassesSize(projectClassesSize, f);
+                        getProjectClassesNumber(projectClassesNumber, f);
+                    }
+                });
+            }
         } catch (
                 IOException e) {
             throw new IOException("Directory Not Present!");
         }
 
+    }
+
+    private static void getProjectClassesNumber(File projectClassesNumber, Path f) {
+        List<String> l = new ArrayList<>();
+        String project = f.toString().split("/")[1];
+        int totalClassFiles = countClassFiles(f.toFile());
+        l.add(project + "," + f + "," + totalClassFiles + "\n");
+        String str = String.join("", l);
+        try {
+            FileUtils.writeStringToFile(projectClassesNumber, str, true);
+        } catch (
+                IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static int countClassFiles(File directory) {
+        int count = 0;
+        File[] files = directory.listFiles();
+        for (File file : files) {
+            if (file.isDirectory()) {
+                count += countClassFiles(file);
+            } else if (file.getName().endsWith(".class")) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    private static void getProjectClassesSize(File projectClassesSize, Path f) {
+        List<String> l = new ArrayList<>();
+        String project = f.toString().split("/")[1];
+        double size = FileUtils.sizeOf(new File(f.toString())) / 1024;
+        l.add(project + "," + f + "," + size + "\n");
+        String str = String.join("", l);
+        try {
+            FileUtils.writeStringToFile(projectClassesSize, str, true);
+        } catch (
+                IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private static void processBuildLogs(File deptrimResults, Path f) {
@@ -303,9 +371,9 @@ public class DepcleanDataCollector {
                     unusedInheritedDirectNonCompile + "," +
                     unusedInheritedTransitiveNonCompile + "," +
 
-                    "\\ChartSmall{" + usedDirectCompile + "}{" + Math.addExact(usedDirectCompile, unusedDirectCompile) + "}" + "," +
-                    "\\ChartSmall{" + usedTransitiveCompile + "}{" + Math.addExact(usedTransitiveCompile, unusedTransitiveCompile) + "}" + "," +
-                    "\\ChartSmall{" + Math.addExact(usedInheritedDirectCompile, usedInheritedTransitiveCompile) + "}{" + Math.addExact(Math.addExact(Math.addExact(usedInheritedDirectCompile, unusedInheritedDirectCompile), usedInheritedTransitiveCompile), unusedInheritedTransitiveCompile) + "}" + "\n");
+                    "\\ChartSmall[r]{" + usedDirectCompile + "}{" + Math.addExact(usedDirectCompile, unusedDirectCompile) + "}" + "," +
+                    "\\ChartSmall[r]{" + usedTransitiveCompile + "}{" + Math.addExact(usedTransitiveCompile, unusedTransitiveCompile) + "}" + "," +
+                    "\\ChartSmall[r]{" + Math.addExact(usedInheritedDirectCompile, usedInheritedTransitiveCompile) + "}{" + Math.addExact(Math.addExact(Math.addExact(usedInheritedDirectCompile, unusedInheritedDirectCompile), usedInheritedTransitiveCompile), unusedInheritedTransitiveCompile) + "}" + "\n");
         } catch (
                 IOException e) {
             System.out.println("Error reading file " + f);
