@@ -1,4 +1,5 @@
 Project,FilePath,BuildResult
+zeppelin_zeppelin-common,results/zeppelin_zeppelin-common/deptrim/pom-specialized/maven.log,SUCCESS
 tablesaw_json,results/tablesaw_json/deptrim/pom-specialized/maven.log,SUCCESS
 commons-validator,results/commons-validator/deptrim/pom-specialized/maven.log,SUCCESS
 checkstyle,results/checkstyle/deptrim/pom-specialized/maven.log,FAILURE
@@ -7,8 +8,12 @@ flink,results/flink/flink-java/deptrim/pom-specialized/maven.log,FAILURE
 mybatis-3,results/mybatis-3/deptrim/pom-specialized/maven.log,FAILURE
 RxRelay,results/RxRelay/deptrim/pom-specialized/maven.log,FAILURE
 woodstox,results/woodstox/deptrim/pom-specialized/maven.log,FAILURE
+graphhopper_core,results/graphhopper_core/deptrim/pom-specialized/maven.log,FAILURE
+guice,results/guice/core/deptrim/pom-specialized/maven.log,SUCCESS
 pdfbox_pdfbox,results/pdfbox_pdfbox/deptrim/pom-specialized/maven.log,FAILURE
 jacop,results/jacop/deptrim/pom-specialized/maven.log,FAILURE
+Recaf,results/Recaf/deptrim/pom-specialized/maven.log,SUCCESS
+Chronicle-Map,results/Chronicle-Map/deptrim/pom-specialized/maven.log,FAILURE
 pf4j,results/pf4j/deptrim/pom-specialized/maven.log,SUCCESS
 undertow_core,results/undertow_core/deptrim/pom-specialized/maven.log,FAILURE
 httpcomponents-client_httpclient5,results/httpcomponents-client_httpclient5/deptrim/pom-specialized/maven.log,SUCCESS

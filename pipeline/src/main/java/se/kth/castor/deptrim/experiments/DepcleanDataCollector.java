@@ -94,7 +94,7 @@ public class DepcleanDataCollector {
 
             try (Stream<Path> directoryPath = Files.walk(Paths.get("results"))) {
                 directoryPath.filter(Files::isDirectory).forEach(f -> {
-                    System.out.println(f.toFile().getAbsolutePath());
+                    // System.out.println(f.toFile().getAbsolutePath());
                     if (f.toString().endsWith("/target/classes")) {
                         getProjectClassesSize(projectClassesSize, f);
                         getProjectClassesNumber(projectClassesNumber, f);

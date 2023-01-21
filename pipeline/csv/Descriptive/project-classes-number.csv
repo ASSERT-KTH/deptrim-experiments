@@ -1,4 +1,5 @@
 Project,FilePath,ProjectClassesNumber
+zeppelin_zeppelin-common,results/zeppelin_zeppelin-common/target/classes,4
 tablesaw_json,results/tablesaw_json/target/classes,7
 commons-validator,results/commons-validator/target/classes,64
 checkstyle,results/checkstyle/target/classes,863
@@ -7,8 +8,12 @@ flink,results/flink/flink-java/target/classes,277
 mybatis-3,results/mybatis-3/target/classes,480
 RxRelay,results/RxRelay/target/classes,16
 woodstox,results/woodstox/target/classes,208
+graphhopper_core,results/graphhopper_core/target/classes,631
+guice,results/guice/core/target/classes,460
 pdfbox_pdfbox,results/pdfbox_pdfbox/target/classes,754
 jacop,results/jacop/target/classes,833
+Recaf,results/Recaf/target/classes,538
+Chronicle-Map,results/Chronicle-Map/target/classes,375
 pf4j,results/pf4j/target/classes,93
 undertow_core,results/undertow_core/target/classes,1581
 httpcomponents-client_httpclient5,results/httpcomponents-client_httpclient5/target/classes,493

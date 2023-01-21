@@ -1,4 +1,5 @@
 Project,FilePath,TestRun,TestFailure,TestError,TestSkipped
+zeppelin_zeppelin-common,results/zeppelin_zeppelin-common/deptrim/maven.log,NA,NA,NA,NA
 tablesaw_json,results/tablesaw_json/deptrim/maven.log,9,0,0,0
 commons-validator,results/commons-validator/deptrim/maven.log,576,0,0,1
 checkstyle,results/checkstyle/deptrim/maven.log,3887,0,0,0
@@ -7,8 +8,12 @@ flink,results/flink/flink-java/deptrim/maven.log,836,0,0,1
 mybatis-3,results/mybatis-3/deptrim/maven.log,1699,0,0,13
 RxRelay,results/RxRelay/deptrim/maven.log,64,0,0,3
 woodstox,results/woodstox/deptrim/maven.log,868,0,0,0
+graphhopper_core,results/graphhopper_core/deptrim/maven.log,2460,0,0,29
+guice,results/guice/core/deptrim/maven.log,979,0,0,0
 pdfbox_pdfbox,results/pdfbox_pdfbox/deptrim/maven.log,654,0,0,1
 jacop,results/jacop/deptrim/maven.log,210,0,0,2
+Recaf,results/Recaf/deptrim/maven.log,274,0,0,1
+Chronicle-Map,results/Chronicle-Map/deptrim/maven.log,1231,0,0,19
 pf4j,results/pf4j/deptrim/maven.log,151,0,0,1
 undertow_core,results/undertow_core/deptrim/maven.log,682,0,0,8
 httpcomponents-client_httpclient5,results/httpcomponents-client_httpclient5/deptrim/maven.log,669,0,0,0

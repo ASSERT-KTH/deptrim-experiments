@@ -1,4 +1,5 @@
 Project,FilePath,BuildResult
+zeppelin_zeppelin-common,results/zeppelin_zeppelin-common/depclean/pom-debloated/maven.log,SUCCESS
 tablesaw_json,results/tablesaw_json/depclean/pom-debloated/maven.log,SUCCESS
 commons-validator,results/commons-validator/depclean/pom-debloated/maven.log,SUCCESS
 checkstyle,results/checkstyle/depclean/pom-debloated/maven.log,SUCCESS
@@ -7,8 +8,12 @@ flink,results/flink/flink-java/depclean/pom-debloated/maven.log,SUCCESS
 mybatis-3,results/mybatis-3/depclean/pom-debloated/maven.log,SUCCESS
 RxRelay,results/RxRelay/depclean/pom-debloated/maven.log,SUCCESS
 woodstox,results/woodstox/depclean/pom-debloated/maven.log,SUCCESS
+graphhopper_core,results/graphhopper_core/depclean/pom-debloated/maven.log,SUCCESS
+guice,results/guice/core/depclean/pom-debloated/maven.log,SUCCESS
 pdfbox_pdfbox,results/pdfbox_pdfbox/depclean/pom-debloated/maven.log,SUCCESS
 jacop,results/jacop/depclean/pom-debloated/maven.log,SUCCESS
+Recaf,results/Recaf/depclean/pom-debloated/maven.log,SUCCESS
+Chronicle-Map,results/Chronicle-Map/depclean/pom-debloated/maven.log,SUCCESS
 pf4j,results/pf4j/depclean/pom-debloated/maven.log,SUCCESS
 undertow_core,results/undertow_core/depclean/pom-debloated/maven.log,SUCCESS
 httpcomponents-client_httpclient5,results/httpcomponents-client_httpclient5/depclean/pom-debloated/maven.log,SUCCESS

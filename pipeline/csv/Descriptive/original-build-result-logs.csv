@@ -1,4 +1,5 @@
 Project,FilePath,BuildResult
+zeppelin_zeppelin-common,results/zeppelin_zeppelin-common/deptrim/maven.log,SUCCESS
 tablesaw_json,results/tablesaw_json/deptrim/maven.log,SUCCESS
 commons-validator,results/commons-validator/deptrim/maven.log,SUCCESS
 checkstyle,results/checkstyle/deptrim/maven.log,SUCCESS
@@ -7,8 +8,12 @@ flink,results/flink/flink-java/deptrim/maven.log,SUCCESS
 mybatis-3,results/mybatis-3/deptrim/maven.log,SUCCESS
 RxRelay,results/RxRelay/deptrim/maven.log,SUCCESS
 woodstox,results/woodstox/deptrim/maven.log,SUCCESS
+graphhopper_core,results/graphhopper_core/deptrim/maven.log,SUCCESS
+guice,results/guice/core/deptrim/maven.log,SUCCESS
 pdfbox_pdfbox,results/pdfbox_pdfbox/deptrim/maven.log,SUCCESS
 jacop,results/jacop/deptrim/maven.log,SUCCESS
+Recaf,results/Recaf/deptrim/maven.log,SUCCESS
+Chronicle-Map,results/Chronicle-Map/deptrim/maven.log,SUCCESS
 pf4j,results/pf4j/deptrim/maven.log,SUCCESS
 undertow_core,results/undertow_core/deptrim/maven.log,SUCCESS
 httpcomponents-client_httpclient5,results/httpcomponents-client_httpclient5/deptrim/maven.log,SUCCESS

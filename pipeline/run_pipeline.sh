@@ -9,47 +9,41 @@
 # scp -i ~/.ssh/aquiles.pem -r ubuntu@129.192.81.91:/home/ubuntu/cesarsv/pipeline/results.zip ~/IdeaProjects/deptrim-experiments/pipeline/results/results.zip
 
 # WORK WELL (Build is successful and Depclean is successful)
-./pipeline.sh "onedev" "https://github.com/theonedev/onedev.git" "server-core" "7.9.0" "e8724f4d8b6fefa377645810400b9a8d723efa7c";
-./pipeline.sh "webmagic" "https://github.com/code4craft/webmagic.git" "webmagic-core" "0.8.0" "43ce1a0db94f22e69f71de4fedc9df203890c397";
-./pipeline.sh "neo4j" "https://github.com/neo4j/neo4j.git" "annotations" "4.4.16" "9e386f7db1834e2a74f1040899db6f18a0fbe4b3";
-./pipeline.sh "jedis" "https://github.com/redis/jedis.git" "" "4.3.1" "448207be431d6832ede5ddd28f40508e033905c8";
-./pipeline.sh "zookeeper" "https://github.com/apache/zookeeper.git" "zookeeper-server" "3.6.4" "d65253dcf68e9097c6e95a126463fd5fdeb4521c";
 ./pipeline.sh "guice" "https://github.com/google/guice.git" "core" "5.1.0" "b0ff10c8ec8911137451623a333d6daa65f73d8a";
-./pipeline.sh "piggymetrics" "https://github.com/sqshq/piggymetrics.git" "auth-service" "2.0.3" "6bb2cf9ddbca980b664d3edbb6ff775d75369278";
-./pipeline.sh "pulsar" "https://github.com/apache/pulsar.git" "pulsar-client" "2.11.0" "97ee1a114aa1e5df05d86a9dd47f7fe7a2194211";
-./pipeline.sh "druid" "https://github.com/apache/druid.git" "core" "25.0.0" "9a78059ffbb22f0bf6074cd81b13078a2d4501bc";
-./pipeline.sh "antlr4" "https://github.com/antlr/antlr4.git" "antlr4-maven-plugin" "4.11.1" "9239e6ff444420516b44b7621e8dc7691fcf0e16";
 ./pipeline.sh "Chronicle-Map" "https://github.com/OpenHFT/Chronicle-Map.git" "" "3.23.5" "26e26c132290ad8049c97e0c44eb7f33b63c1c60";
-./pipeline.sh "zxing" "https://github.com/zxing/zxing.git" "core" "3.5.1" "bb75858c9b391d37e8d78b5a5b640ff758df42fb";
-./pipeline.sh "Chronicle-Map" "https://github.com/OpenHFT/Chronicle-Map.git" "" "3.23.5" "26e26c132290ad8049c97e0c44eb7f33b63c1c60";
+./pipeline.sh "graphhopper" "git@github.com:graphhopper/graphhopper.git" "core" "6.2" "6d3da37960f56aa6b9c4b1ffd77f70ebebff8747";
+./pipeline.sh "Recaf" "git@github.com:Col-E/Recaf.git" "" "2.21.13" "c66f23801493bd866db757b0594c1fceaa30dce0";
+./pipeline.sh "zeppelin" "git@github.com:apache/zeppelin.git" "zeppelin-common" "v0.10.1" "fd74504199247f8a9f9c3950abf193c97cf1d771";
+./pipeline.sh "RxRelay" "https://github.com/cesarsotovalero/RxRelay.git" "" "3.0.1" "e9fc1586192ca1ecdbc41ae39036cbf0d09428b5";
+./pipeline.sh "checkstyle" "https://github.com/checkstyle/checkstyle.git" "" "10.5.0" "dbeb9024c861ad11b194e40d8c6e08d7e6ec5122";
+./pipeline.sh "commons-validator" "https://github.com/apache/commons-validator.git" "" "1.7" "f9bb21748a9f9c50fbc31862de25ed49433ecc88";
+./pipeline.sh "httpcomponents-client" "https://github.com/apache/httpcomponents-client.git" "httpclient5" "5.2.1-RC1" "d8f702fb4d44c746bb0edf00643aa7139cb8bdf7"
+./pipeline.sh "jacop" "https://github.com/cesarsotovalero/jacop.git" "" "4.9.0" "4fa3b8f2ea74df17b40ebe564552c28735a82885";
+./pipeline.sh "java-faker" "https://github.com/cesarsotovalero/java-faker.git" "" "1.0.2" "0bed1d8381cd0b3319a6f3bb03efc74728334f6a";
+./pipeline.sh "jcabi-github" "https://github.com/jcabi/jcabi-github.git" "" "1.27.0" "02f3ab93156349c2f66989ac675bd6292462d724";
+./pipeline.sh "jooby" "https://github.com/jooby-project/jooby.git" "jooby" "2.16.1" "4d7be54dad429b5aeb5266387df14b0781c78357";
+./pipeline.sh "mybatis-3" "https://github.com/mybatis/mybatis-3.git" "" "mybatis-3.5.11" "c195f12808a88a1ee245dc86d9c1621042655970";
+./pipeline.sh "pdfbox" "https://github.com/cesarsotovalero/pdfbox.git" "pdfbox" "2.0.27" "07ddd189b4f76c9e265d7c80d95979642567af6b";
+./pipeline.sh "qart4j" "https://github.com/cesarsotovalero/qart4j.git" "" "1.0.0" "04d17792030e02792a198c92c3dfee53a81bb051";
+./pipeline.sh "tablesaw" "https://github.com/jtablesaw/tablesaw.git" "json" "v0.43.1" "05823f66246ea191e62ad0658d2fed0b080d5334";
+./pipeline.sh "tika" "https://github.com/apache/tika.git" "tika-core" "2.6.0" "41319f3c294b13de5342a80570b4540f7dd04a3e";
+./pipeline.sh "undertow" "https://github.com/undertow-io/undertow.git" "core" "2.2.21.Final" "56c91f129b1c2a55cf3287836cc68c80acce54c6";
+./pipeline.sh "woodstox" "https://github.com/cesarsotovalero/woodstox.git" "" "6.4.0" "6de8bf7bfed4baa1c05d5a916fd5f96335708a84";
+./pipeline.sh "flink" "https://github.com/apache/flink.git" "flink-java" "1.15.3" "c41c8e5cfab683da8135d6c822693ef851d6e2b7";
+./pipeline.sh "pf4j" "git@github.com:pf4j/pf4j.git" "pf4j" "release-3.8.0" "efaed93c10dd9d114335e2a344e8bca04fd00c63";
+./pipeline.sh "CoreNLP" "https://github.com/stanfordnlp/CoreNLP" "" "v4.5.1" "f7782ff5f235584b0fc559f266961b5ab013556a";
 
-#./pipeline.sh "RxRelay" "https://github.com/cesarsotovalero/RxRelay.git" "" "3.0.1" "e9fc1586192ca1ecdbc41ae39036cbf0d09428b5"; # tests failures
-#./pipeline.sh "checkstyle" "https://github.com/checkstyle/checkstyle.git" "" "10.5.0" "dbeb9024c861ad11b194e40d8c6e08d7e6ec5122";
-#./pipeline.sh "commons-validator" "https://github.com/apache/commons-validator.git" "" "1.7" "f9bb21748a9f9c50fbc31862de25ed49433ecc88";
-#./pipeline.sh "httpcomponents-client" "https://github.com/apache/httpcomponents-client.git" "httpclient5" "5.2.1-RC1" "d8f702fb4d44c746bb0edf00643aa7139cb8bdf7"
-#./pipeline.sh "jacop" "https://github.com/cesarsotovalero/jacop.git" "" "4.9.0" "4fa3b8f2ea74df17b40ebe564552c28735a82885";
-#./pipeline.sh "java-faker" "https://github.com/cesarsotovalero/java-faker.git" "" "1.0.2" "0bed1d8381cd0b3319a6f3bb03efc74728334f6a";
-#./pipeline.sh "jcabi-github" "https://github.com/jcabi/jcabi-github.git" "" "1.27.0" "02f3ab93156349c2f66989ac675bd6292462d724";
-#./pipeline.sh "jooby" "https://github.com/jooby-project/jooby.git" "jooby" "2.16.1" "4d7be54dad429b5aeb5266387df14b0781c78357";
-#./pipeline.sh "mybatis-3" "https://github.com/mybatis/mybatis-3.git" "" "mybatis-3.5.11" "c195f12808a88a1ee245dc86d9c1621042655970";
-#./pipeline.sh "pdfbox" "https://github.com/cesarsotovalero/pdfbox.git" "pdfbox" "2.0.27" "07ddd189b4f76c9e265d7c80d95979642567af6b";
-#./pipeline.sh "qart4j" "https://github.com/cesarsotovalero/qart4j.git" "" "1.0.0" "04d17792030e02792a198c92c3dfee53a81bb051"; # requires old java version
-#./pipeline.sh "tablesaw" "https://github.com/jtablesaw/tablesaw.git" "json" "v0.43.1" "05823f66246ea191e62ad0658d2fed0b080d5334";
-#./pipeline.sh "tika" "https://github.com/apache/tika.git" "tika-core" "2.6.0" "41319f3c294b13de5342a80570b4540f7dd04a3e";
-#./pipeline.sh "undertow" "https://github.com/undertow-io/undertow.git" "core" "2.2.21.Final" "56c91f129b1c2a55cf3287836cc68c80acce54c6";
-#./pipeline.sh "woodstox" "https://github.com/cesarsotovalero/woodstox.git" "" "6.4.0" "6de8bf7bfed4baa1c05d5a916fd5f96335708a84"; # requires old java version
-#./pipeline.sh "flink" "https://github.com/apache/flink.git" "flink-java" "1.15.3" "c41c8e5cfab683da8135d6c822693ef851d6e2b7"; # tests errors
-
-
-# Market as unnapropiated after run
+# not work
 #./pipeline.sh "redisson" "https://github.com/redisson/redisson.git" "redisson" "3.19.0" "cb305d35bb5fc3678e825cc3d7ed6009b721c552";  # tests are skipped in the config file
 #./pipeline.sh "javaparser" "https://github.com/javaparser/javaparser.git" "javaparser-symbol-solver-core" "3.24.8" "3926ccabdac3341f365bf867ea2c2a11d1ab224b"; # has no tests
 #./pipeline.sh "gson" "https://github.com/google/gson.git" "metrics" "2.10" "dd92e49b279f335006433148e673fdfb2c387074"; # has no tests
 #./pipeline.sh "para" "https://github.com/Erudika/para.git" "para-core" "1.47.2" "41d900574e2e159b05fbd23aaab1f6e554ab8fc3"; # has no tests
 #./pipeline.sh "lanterna" "https://github.com/cesarsotovalero/lanterna.git" "native-integration" "3.1.1" "1b74f1c07a769f83b5beb5cb7d62bd51d53de449"; # has no tests
-
-
-# not work
+#./pipeline.sh "onedev" "https://github.com/theonedev/onedev.git" "server-core" "7.9.0" "e8724f4d8b6fefa377645810400b9a8d723efa7c";
+#./pipeline.sh "webmagic" "https://github.com/code4craft/webmagic.git" "webmagic-core" "0.8.0" "43ce1a0db94f22e69f71de4fedc9df203890c397";
+#./pipeline.sh "neo4j" "https://github.com/neo4j/neo4j.git" "annotations" "4.4.16" "9e386f7db1834e2a74f1040899db6f18a0fbe4b3";
+#./pipeline.sh "jedis" "https://github.com/redis/jedis.git" "" "4.3.1" "448207be431d6832ede5ddd28f40508e033905c8";
+#./pipeline.sh "zookeeper" "https://github.com/apache/zookeeper.git" "zookeeper-server" "3.6.4" "d65253dcf68e9097c6e95a126463fd5fdeb4521c";
 #./pipeline.sh "commons-pool" "https://github.com/apache/commons-pool.git" "" "2.11.1" "abb1a0797b406566f0214c688871ab7e8fdc2601";
 #./pipeline.sh "spring-boot-admin" "https://github.com/codecentric/spring-boot-admin.git" "spring-boot-admin-server" "2.7.9" "0ac7a6be5f849b6260e38e68e6f0610f39a1a729";
 #./pipeline.sh "nifi" "https://github.com/apache/nifi.git" "nifi-bootstrap" "1.19.1" "a7236ecc9123113ba5b9aaa3baab06354778116f";
