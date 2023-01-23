@@ -1,5 +1,4 @@
 Project,FilePath,BuildResult
-zeppelin_zeppelin-common,results/zeppelin_zeppelin-common/depclean/pom-debloated/maven.log,SUCCESS
 tablesaw_json,results/tablesaw_json/depclean/pom-debloated/maven.log,SUCCESS
 commons-validator,results/commons-validator/depclean/pom-debloated/maven.log,SUCCESS
 checkstyle,results/checkstyle/depclean/pom-debloated/maven.log,SUCCESS

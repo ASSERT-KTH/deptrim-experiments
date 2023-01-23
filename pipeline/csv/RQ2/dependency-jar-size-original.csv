@@ -1,6 +1,4 @@
 Project,FilePath,Dependency,SizeOriginal
-zeppelin_zeppelin-common,results/zeppelin_zeppelin-common/original/compile-scope-dependencies/dependency/gson-2.8.6.jar,gson-2.8.6.jar,234.0
-zeppelin_zeppelin-common,results/zeppelin_zeppelin-common/original/compile-scope-dependencies/dependency/slf4j-api-1.7.30.jar,slf4j-api-1.7.30.jar,40.0
 tablesaw_json,results/tablesaw_json/original/compile-scope-dependencies/dependency/commons-lang3-3.9.jar,commons-lang3-3.9.jar,492.0
 tablesaw_json,results/tablesaw_json/original/compile-scope-dependencies/dependency/commons-text-1.8.jar,commons-text-1.8.jar,202.0
 tablesaw_json,results/tablesaw_json/original/compile-scope-dependencies/dependency/json-flattener-0.8.1.jar,json-flattener-0.8.1.jar,28.0

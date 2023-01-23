@@ -1,5 +1,4 @@
 Project,FilePath,ProjectClassesNumber
-zeppelin_zeppelin-common,results/zeppelin_zeppelin-common/target/classes,4
 tablesaw_json,results/tablesaw_json/target/classes,7
 commons-validator,results/commons-validator/target/classes,64
 checkstyle,results/checkstyle/target/classes,863

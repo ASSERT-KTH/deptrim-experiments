@@ -1,5 +1,4 @@
 Project,FilePath,UsedDirectCompile,UsedTransitiveCompile,UsedInheritedDirectCompile,UsedInheritedTransitiveCompile,UsedDirectNonCompile,UsedTransitiveNonCompile,UsedInheritedDirectNonCompile,UsedInheritedTransitiveNonCompile,UnusedDirectCompile,UnusedTransitiveCompile,UnusedInheritedDirectCompile,UnusedInheritedTransitiveCompile,UnusedDirectNonCompile,UnusedTransitiveNonCompile,UnusedInheritedDirectNonCompile,UnusedInheritedTransitiveNonCompile,DirectChartCompile,TransitiveChartCompile,InheritedChartCompile
-zeppelin_zeppelin-common,results/zeppelin_zeppelin-common/depclean/depclean.log,2,0,0,0,2,1,0,0,0,0,0,0,0,0,0,0,\ChartSmall[r]{2}{2},\ChartSmall[r]{0}{0},\ChartSmall[r]{0}{0}
 tablesaw_json,results/tablesaw_json/depclean/depclean.log,3,6,0,0,2,18,0,0,0,0,0,0,0,2,0,0,\ChartSmall[r]{3}{3},\ChartSmall[r]{6}{6},\ChartSmall[r]{0}{0}
 commons-validator,results/commons-validator/depclean/depclean.log,4,0,0,0,3,1,0,0,0,0,0,0,0,0,0,0,\ChartSmall[r]{4}{4},\ChartSmall[r]{0}{0},\ChartSmall[r]{0}{0}
 checkstyle,results/checkstyle/depclean/depclean.log,7,8,0,0,15,25,0,0,0,2,0,0,0,0,0,0,\ChartSmall[r]{7}{7},\ChartSmall[r]{8}{10},\ChartSmall[r]{0}{0}

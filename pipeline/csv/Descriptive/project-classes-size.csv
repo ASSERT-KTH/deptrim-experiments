@@ -1,5 +1,4 @@
 Project,FilePath,ProjectClassesSize
-zeppelin_zeppelin-common,results/zeppelin_zeppelin-common/target/classes,32.0
 tablesaw_json,results/tablesaw_json/target/classes,23.0
 commons-validator,results/commons-validator/target/classes,357.0
 checkstyle,results/checkstyle/target/classes,4797.0

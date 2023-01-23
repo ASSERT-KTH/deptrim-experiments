@@ -1,6 +1,4 @@
 Project,FilePath,Dependency,SizeSpecialized
-zeppelin_zeppelin-common,results/zeppelin_zeppelin-common/deptrim/libs-specialized/gson-2.8.6.jar,gson-2.8.6.jar,219.0
-zeppelin_zeppelin-common,results/zeppelin_zeppelin-common/deptrim/libs-specialized/slf4j-api-1.7.30.jar,slf4j-api-1.7.30.jar,3.0
 tablesaw_json,results/tablesaw_json/deptrim/libs-specialized/commons-lang3-3.9.jar,commons-lang3-3.9.jar,199.0
 tablesaw_json,results/tablesaw_json/deptrim/libs-specialized/commons-text-1.8.jar,commons-text-1.8.jar,39.0
 tablesaw_json,results/tablesaw_json/deptrim/libs-specialized/json-flattener-0.8.1.jar,json-flattener-0.8.1.jar,22.0

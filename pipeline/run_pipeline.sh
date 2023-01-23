@@ -9,31 +9,43 @@
 # scp -i ~/.ssh/aquiles.pem -r ubuntu@129.192.81.91:/home/ubuntu/cesarsv/pipeline/results.zip ~/IdeaProjects/deptrim-experiments/pipeline/results/results.zip
 
 # WORK WELL (Build is successful and Depclean is successful)
-./pipeline.sh "guice" "https://github.com/google/guice.git" "core" "5.1.0" "b0ff10c8ec8911137451623a333d6daa65f73d8a";
-./pipeline.sh "Chronicle-Map" "https://github.com/OpenHFT/Chronicle-Map.git" "" "3.23.5" "26e26c132290ad8049c97e0c44eb7f33b63c1c60";
-./pipeline.sh "graphhopper" "git@github.com:graphhopper/graphhopper.git" "core" "6.2" "6d3da37960f56aa6b9c4b1ffd77f70ebebff8747";
-./pipeline.sh "Recaf" "git@github.com:Col-E/Recaf.git" "" "2.21.13" "c66f23801493bd866db757b0594c1fceaa30dce0";
-./pipeline.sh "zeppelin" "git@github.com:apache/zeppelin.git" "zeppelin-common" "v0.10.1" "fd74504199247f8a9f9c3950abf193c97cf1d771";
-./pipeline.sh "RxRelay" "https://github.com/cesarsotovalero/RxRelay.git" "" "3.0.1" "e9fc1586192ca1ecdbc41ae39036cbf0d09428b5";
-./pipeline.sh "checkstyle" "https://github.com/checkstyle/checkstyle.git" "" "10.5.0" "dbeb9024c861ad11b194e40d8c6e08d7e6ec5122";
-./pipeline.sh "commons-validator" "https://github.com/apache/commons-validator.git" "" "1.7" "f9bb21748a9f9c50fbc31862de25ed49433ecc88";
-./pipeline.sh "httpcomponents-client" "https://github.com/apache/httpcomponents-client.git" "httpclient5" "5.2.1-RC1" "d8f702fb4d44c746bb0edf00643aa7139cb8bdf7"
-./pipeline.sh "jacop" "https://github.com/cesarsotovalero/jacop.git" "" "4.9.0" "4fa3b8f2ea74df17b40ebe564552c28735a82885";
-./pipeline.sh "java-faker" "https://github.com/cesarsotovalero/java-faker.git" "" "1.0.2" "0bed1d8381cd0b3319a6f3bb03efc74728334f6a";
-./pipeline.sh "jcabi-github" "https://github.com/jcabi/jcabi-github.git" "" "1.27.0" "02f3ab93156349c2f66989ac675bd6292462d724";
-./pipeline.sh "jooby" "https://github.com/jooby-project/jooby.git" "jooby" "2.16.1" "4d7be54dad429b5aeb5266387df14b0781c78357";
-./pipeline.sh "mybatis-3" "https://github.com/mybatis/mybatis-3.git" "" "mybatis-3.5.11" "c195f12808a88a1ee245dc86d9c1621042655970";
-./pipeline.sh "pdfbox" "https://github.com/cesarsotovalero/pdfbox.git" "pdfbox" "2.0.27" "07ddd189b4f76c9e265d7c80d95979642567af6b";
-./pipeline.sh "qart4j" "https://github.com/cesarsotovalero/qart4j.git" "" "1.0.0" "04d17792030e02792a198c92c3dfee53a81bb051";
-./pipeline.sh "tablesaw" "https://github.com/jtablesaw/tablesaw.git" "json" "v0.43.1" "05823f66246ea191e62ad0658d2fed0b080d5334";
-./pipeline.sh "tika" "https://github.com/apache/tika.git" "tika-core" "2.6.0" "41319f3c294b13de5342a80570b4540f7dd04a3e";
-./pipeline.sh "undertow" "https://github.com/undertow-io/undertow.git" "core" "2.2.21.Final" "56c91f129b1c2a55cf3287836cc68c80acce54c6";
-./pipeline.sh "woodstox" "https://github.com/cesarsotovalero/woodstox.git" "" "6.4.0" "6de8bf7bfed4baa1c05d5a916fd5f96335708a84";
-./pipeline.sh "flink" "https://github.com/apache/flink.git" "flink-java" "1.15.3" "c41c8e5cfab683da8135d6c822693ef851d6e2b7";
-./pipeline.sh "pf4j" "git@github.com:pf4j/pf4j.git" "pf4j" "release-3.8.0" "efaed93c10dd9d114335e2a344e8bca04fd00c63";
-./pipeline.sh "CoreNLP" "https://github.com/stanfordnlp/CoreNLP" "" "v4.5.1" "f7782ff5f235584b0fc559f266961b5ab013556a";
+#./pipeline.sh "Mapper" "https://github.com/abel533/Mapper.git" "core" "4.2.2" "a29b37dc9b9b76290329603aa467d92e16c53978"; to be added to the paper
+#./pipeline.sh "OpenPDF" "git@github.com:LibrePDF/OpenPDF.git" "openpdf" "1.3.30" "0c9c4ca393b01444b7cb13bb1d12da202bd0d458"; to be added to the paper
+
+#./pipeline.sh "guice" "https://github.com/google/guice.git" "core" "5.1.0" "b0ff10c8ec8911137451623a333d6daa65f73d8a";
+#./pipeline.sh "Chronicle-Map" "https://github.com/OpenHFT/Chronicle-Map.git" "" "3.23.5" "26e26c132290ad8049c97e0c44eb7f33b63c1c60";
+#./pipeline.sh "graphhopper" "git@github.com:graphhopper/graphhopper.git" "core" "6.2" "6d3da37960f56aa6b9c4b1ffd77f70ebebff8747";
+#./pipeline.sh "Recaf" "git@github.com:Col-E/Recaf.git" "" "2.21.13" "c66f23801493bd866db757b0594c1fceaa30dce0";
+#./pipeline.sh "RxRelay" "https://github.com/cesarsotovalero/RxRelay.git" "" "3.0.1" "e9fc1586192ca1ecdbc41ae39036cbf0d09428b5";
+#./pipeline.sh "checkstyle" "https://github.com/checkstyle/checkstyle.git" "" "10.5.0" "dbeb9024c861ad11b194e40d8c6e08d7e6ec5122";
+#./pipeline.sh "commons-validator" "https://github.com/apache/commons-validator.git" "" "1.7" "f9bb21748a9f9c50fbc31862de25ed49433ecc88";
+#./pipeline.sh "httpcomponents-client" "https://github.com/apache/httpcomponents-client.git" "httpclient5" "5.2.1-RC1" "d8f702fb4d44c746bb0edf00643aa7139cb8bdf7"
+#./pipeline.sh "jacop" "https://github.com/cesarsotovalero/jacop.git" "" "4.9.0" "4fa3b8f2ea74df17b40ebe564552c28735a82885";
+#./pipeline.sh "java-faker" "https://github.com/cesarsotovalero/java-faker.git" "" "1.0.2" "0bed1d8381cd0b3319a6f3bb03efc74728334f6a";
+#./pipeline.sh "jcabi-github" "https://github.com/jcabi/jcabi-github.git" "" "1.27.0" "02f3ab93156349c2f66989ac675bd6292462d724";
+#./pipeline.sh "jooby" "https://github.com/jooby-project/jooby.git" "jooby" "2.16.1" "4d7be54dad429b5aeb5266387df14b0781c78357";
+#./pipeline.sh "mybatis-3" "https://github.com/mybatis/mybatis-3.git" "" "mybatis-3.5.11" "c195f12808a88a1ee245dc86d9c1621042655970";
+#./pipeline.sh "pdfbox" "https://github.com/cesarsotovalero/pdfbox.git" "pdfbox" "2.0.27" "07ddd189b4f76c9e265d7c80d95979642567af6b";
+#./pipeline.sh "qart4j" "https://github.com/cesarsotovalero/qart4j.git" "" "1.0.0" "04d17792030e02792a198c92c3dfee53a81bb051";
+#./pipeline.sh "tablesaw" "https://github.com/jtablesaw/tablesaw.git" "json" "v0.43.1" "05823f66246ea191e62ad0658d2fed0b080d5334";
+#./pipeline.sh "tika" "https://github.com/apache/tika.git" "tika-core" "2.6.0" "41319f3c294b13de5342a80570b4540f7dd04a3e";
+#./pipeline.sh "undertow" "https://github.com/undertow-io/undertow.git" "core" "2.2.21.Final" "56c91f129b1c2a55cf3287836cc68c80acce54c6";
+#./pipeline.sh "woodstox" "https://github.com/cesarsotovalero/woodstox.git" "" "6.4.0" "6de8bf7bfed4baa1c05d5a916fd5f96335708a84";
+#./pipeline.sh "flink" "https://github.com/apache/flink.git" "flink-java" "1.15.3" "c41c8e5cfab683da8135d6c822693ef851d6e2b7";
+#./pipeline.sh "pf4j" "git@github.com:pf4j/pf4j.git" "pf4j" "release-3.8.0" "efaed93c10dd9d114335e2a344e8bca04fd00c63";
+#./pipeline.sh "CoreNLP" "https://github.com/stanfordnlp/CoreNLP" "" "v4.5.1" "f7782ff5f235584b0fc559f266961b5ab013556a";
 
 # not work
+#./pipeline.sh "alluxio" "https://github.com/Alluxio/alluxio.git" "shell" "2.9.0" "d5919d8d80ae7bfdd914ade30620d5ca14f3b67e";
+#./pipeline.sh "jsonschema2pojo-core" "https://github.com/joelittlejohn/jsonschema2pojo.git" "jsonschema2pojo-core" "1.1.2" "97ab6af78deb4ba42d55a5177a4d9a6cf2db89ef";
+#./pipeline.sh "javacv" "https://github.com/bytedeco/javacv.git" "platform" "1.5.8" "022992443611cecec1c23d3f8d3d1588936d13af";
+#./pipeline.sh "elasticsearch-sql" "https://github.com/NLPchina/elasticsearch-sql.git" "" "8.5.3" "426ab94077368dab7bbe383a952d90d7f2dd9dde";
+#./pipeline.sh "vjtools" "https://github.com/vipshop/vjtools.git" "" "1.0.8" "5c27d752d6ccfee6841d80383b729b2007f15a3a";
+#./pipeline.sh "Mycat-Server" "https://github.com/MyCATApache/Mycat-Server.git" "" "1.6.7.6" "f3ea7bde8ab7d6e33d2df166cec0f34d8e5b11ff";
+#./pipeline.sh "OpenRefine" "https://github.com/OpenRefine/OpenRefine.git" "main" "3.6.2" "579a6f718c83d9b5d4c88ca0cf3d44b1b74e6d60";
+#./pipeline.sh "cryptomator" "https://github.com/cryptomator/cryptomator.git" "" "1.6.17" "c0f73a2802a095e9f282fecc316b8db145969630";
+#./pipeline.sh "cim" "https://github.com/crossoverJie/cim.git" "vjtop" "1.0.5" "19540d84797ad377941b571804ffdf610376e83f";
+#./pipeline.sh "zeppelin" "git@github.com:apache/zeppelin.git" "zeppelin-common" "v0.10.1" "fd74504199247f8a9f9c3950abf193c97cf1d771";
 #./pipeline.sh "redisson" "https://github.com/redisson/redisson.git" "redisson" "3.19.0" "cb305d35bb5fc3678e825cc3d7ed6009b721c552";  # tests are skipped in the config file
 #./pipeline.sh "javaparser" "https://github.com/javaparser/javaparser.git" "javaparser-symbol-solver-core" "3.24.8" "3926ccabdac3341f365bf867ea2c2a11d1ab224b"; # has no tests
 #./pipeline.sh "gson" "https://github.com/google/gson.git" "metrics" "2.10" "dd92e49b279f335006433148e673fdfb2c387074"; # has no tests

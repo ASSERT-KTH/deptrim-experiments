@@ -1,6 +1,4 @@
 Project,FilePath,CompilationError,TestRun,TestFailure,TestError,TestSkipped
-zeppelin_zeppelin-common,results/zeppelin_zeppelin-common/deptrim/pom-specialized_2_2/maven.log,yes,0,0,0,0
-zeppelin_zeppelin-common,results/zeppelin_zeppelin-common/deptrim/pom-specialized_1_2/maven.log,yes,0,0,0,0
 tablesaw_json,results/tablesaw_json/deptrim/pom-specialized_6_7/maven.log,no,9,0,0,0
 tablesaw_json,results/tablesaw_json/deptrim/pom-specialized_2_7/maven.log,no,9,0,0,0
 tablesaw_json,results/tablesaw_json/deptrim/pom-specialized_5_7/maven.log,no,9,0,0,0

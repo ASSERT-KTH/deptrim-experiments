@@ -1,6 +1,4 @@
 Project,FilePath,Dependency,RemovedClasses,TotalClasses
-zeppelin_zeppelin-common,results/zeppelin_zeppelin-common/deptrim/deptrim.log,org.slf4j:slf4j-api:1.7.30,32,34
-zeppelin_zeppelin-common,results/zeppelin_zeppelin-common/deptrim/deptrim.log,com.google.code.gson:gson:2.8.6,13,181
 tablesaw_json,results/tablesaw_json/deptrim/deptrim.log,com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.2,5,59
 tablesaw_json,results/tablesaw_json/deptrim/deptrim.log,com.github.wnameless.json:json-base:1.0.0,7,24
 tablesaw_json,results/tablesaw_json/deptrim/deptrim.log,com.github.wnameless.json:json-flattener:0.8.1,2,19

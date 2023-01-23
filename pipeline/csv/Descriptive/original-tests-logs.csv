@@ -1,5 +1,4 @@
 Project,FilePath,TestRun,TestFailure,TestError,TestSkipped
-zeppelin_zeppelin-common,results/zeppelin_zeppelin-common/deptrim/maven.log,NA,NA,NA,NA
 tablesaw_json,results/tablesaw_json/deptrim/maven.log,9,0,0,0
 commons-validator,results/commons-validator/deptrim/maven.log,576,0,0,1
 checkstyle,results/checkstyle/deptrim/maven.log,3887,0,0,0

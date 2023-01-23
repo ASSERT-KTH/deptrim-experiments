@@ -1,5 +1,4 @@
 Project,FilePath,BuildResult
-zeppelin_zeppelin-common,results/zeppelin_zeppelin-common/deptrim/pom-specialized/maven.log,SUCCESS
 tablesaw_json,results/tablesaw_json/deptrim/pom-specialized/maven.log,SUCCESS
 commons-validator,results/commons-validator/deptrim/pom-specialized/maven.log,SUCCESS
 checkstyle,results/checkstyle/deptrim/pom-specialized/maven.log,FAILURE

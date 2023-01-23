@@ -1,6 +1,4 @@
 Project,FilePath,BuildResult
-zeppelin_zeppelin-common,results/zeppelin_zeppelin-common/deptrim/pom-specialized_2_2/maven.log,SUCCESS
-zeppelin_zeppelin-common,results/zeppelin_zeppelin-common/deptrim/pom-specialized_1_2/maven.log,SUCCESS
 tablesaw_json,results/tablesaw_json/deptrim/pom-specialized_6_7/maven.log,SUCCESS
 tablesaw_json,results/tablesaw_json/deptrim/pom-specialized_2_7/maven.log,SUCCESS
 tablesaw_json,results/tablesaw_json/deptrim/pom-specialized_5_7/maven.log,SUCCESS
