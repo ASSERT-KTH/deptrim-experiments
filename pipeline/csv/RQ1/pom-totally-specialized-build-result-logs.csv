@@ -2,8 +2,12 @@ Project,FilePath,BuildResult
 tablesaw_json,results/tablesaw_json/deptrim/pom-specialized/maven.log,SUCCESS
 commons-validator,results/commons-validator/deptrim/pom-specialized/maven.log,SUCCESS
 checkstyle,results/checkstyle/deptrim/pom-specialized/maven.log,FAILURE
+helidon_openapi,results/helidon_openapi/deptrim/pom-specialized/maven.log,FAILURE
+classgraph,results/classgraph/deptrim/pom-specialized/maven.log,SUCCESS
+modelmapper,results/modelmapper/core/deptrim/pom-specialized/maven.log,FAILURE
 jooby_jooby,results/jooby_jooby/deptrim/pom-specialized/maven.log,FAILURE
 flink,results/flink/flink-java/deptrim/pom-specialized/maven.log,FAILURE
+lettuce-core,results/lettuce-core/deptrim/pom-specialized/maven.log,FAILURE
 mybatis-3,results/mybatis-3/deptrim/pom-specialized/maven.log,FAILURE
 RxRelay,results/RxRelay/deptrim/pom-specialized/maven.log,FAILURE
 woodstox,results/woodstox/deptrim/pom-specialized/maven.log,FAILURE
@@ -15,9 +19,13 @@ Recaf,results/Recaf/deptrim/pom-specialized/maven.log,SUCCESS
 Chronicle-Map,results/Chronicle-Map/deptrim/pom-specialized/maven.log,FAILURE
 pf4j,results/pf4j/deptrim/pom-specialized/maven.log,SUCCESS
 undertow_core,results/undertow_core/deptrim/pom-specialized/maven.log,FAILURE
+jimfs,results/jimfs/deptrim/pom-specialized/maven.log,SUCCESS
+OpenPDF,results/OpenPDF/deptrim/pom-specialized/maven.log,FAILURE
 httpcomponents-client_httpclient5,results/httpcomponents-client_httpclient5/deptrim/pom-specialized/maven.log,SUCCESS
 jcabi-github,results/jcabi-github/deptrim/pom-specialized/maven.log,FAILURE
+scribejava-core,results/scribejava-core/deptrim/pom-specialized/maven.log,SUCCESS
 CoreNLP,results/CoreNLP/deptrim/pom-specialized/maven.log,SUCCESS
-qart4j,results/qart4j/deptrim/pom-specialized/maven.log,SUCCESS
+immutables_gson,results/immutables_gson/deptrim/pom-specialized/maven.log,SUCCESS
+poi-tl,results/poi-tl/deptrim/pom-specialized/maven.log,SUCCESS
 java-faker,results/java-faker/deptrim/pom-specialized/maven.log,FAILURE
 tika_tika-core,results/tika_tika-core/deptrim/pom-specialized/maven.log,SUCCESS

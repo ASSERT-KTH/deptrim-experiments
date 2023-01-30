@@ -2,8 +2,12 @@ Project,FilePath,UsedDirectCompile,UsedTransitiveCompile,UsedInheritedDirectComp
 tablesaw_json,results/tablesaw_json/depclean/depclean.log,3,6,0,0,2,18,0,0,0,0,0,0,0,2,0,0,\ChartSmall[r]{3}{3},\ChartSmall[r]{6}{6},\ChartSmall[r]{0}{0}
 commons-validator,results/commons-validator/depclean/depclean.log,4,0,0,0,3,1,0,0,0,0,0,0,0,0,0,0,\ChartSmall[r]{4}{4},\ChartSmall[r]{0}{0},\ChartSmall[r]{0}{0}
 checkstyle,results/checkstyle/depclean/depclean.log,7,8,0,0,15,25,0,0,0,2,0,0,0,0,0,0,\ChartSmall[r]{7}{7},\ChartSmall[r]{8}{10},\ChartSmall[r]{0}{0}
+helidon_openapi,results/helidon_openapi/depclean/depclean.log,9,25,0,0,10,11,0,0,1,1,0,0,0,0,0,0,\ChartSmall[r]{9}{10},\ChartSmall[r]{25}{26},\ChartSmall[r]{0}{0}
+classgraph,results/classgraph/depclean/depclean.log,2,0,0,0,11,26,0,0,0,0,0,0,0,0,0,0,\ChartSmall[r]{2}{2},\ChartSmall[r]{0}{0},\ChartSmall[r]{0}{0}
+modelmapper,results/modelmapper/core/depclean/depclean.log,4,2,0,0,7,27,1,3,0,0,0,0,0,0,0,0,\ChartSmall[r]{4}{4},\ChartSmall[r]{2}{2},\ChartSmall[r]{0}{0}
 jooby_jooby,results/jooby_jooby/depclean/depclean.log,13,7,0,0,9,37,0,0,1,1,0,0,0,0,0,0,\ChartSmall[r]{13}{14},\ChartSmall[r]{7}{8},\ChartSmall[r]{0}{0}
 flink,results/flink/flink-java/depclean/depclean.log,4,8,2,1,1,8,12,16,0,0,1,0,0,0,0,0,\ChartSmall[r]{4}{4},\ChartSmall[r]{8}{8},\ChartSmall[r]{3}{4}
+lettuce-core,results/lettuce-core/depclean/depclean.log,20,19,0,0,19,19,0,0,4,1,0,0,0,0,0,0,\ChartSmall[r]{20}{24},\ChartSmall[r]{19}{20},\ChartSmall[r]{0}{0}
 mybatis-3,results/mybatis-3/depclean/depclean.log,7,1,0,0,20,36,0,0,0,0,0,0,0,0,0,0,\ChartSmall[r]{7}{7},\ChartSmall[r]{1}{1},\ChartSmall[r]{0}{0}
 RxRelay,results/RxRelay/depclean/depclean.log,1,1,0,0,2,2,0,0,0,0,0,0,0,0,0,0,\ChartSmall[r]{1}{1},\ChartSmall[r]{1}{1},\ChartSmall[r]{0}{0}
 woodstox,results/woodstox/depclean/depclean.log,4,1,0,0,3,1,0,0,0,0,0,0,0,2,0,0,\ChartSmall[r]{4}{4},\ChartSmall[r]{1}{1},\ChartSmall[r]{0}{0}
@@ -15,9 +19,13 @@ Recaf,results/Recaf/depclean/depclean.log,30,19,0,0,11,8,0,0,1,6,0,0,0,0,0,0,\Ch
 Chronicle-Map,results/Chronicle-Map/depclean/depclean.log,12,16,0,0,14,26,0,0,0,7,0,0,0,0,0,0,\ChartSmall[r]{12}{12},\ChartSmall[r]{16}{23},\ChartSmall[r]{0}{0}
 pf4j,results/pf4j/depclean/depclean.log,3,0,0,0,8,23,0,0,0,0,0,0,0,0,0,0,\ChartSmall[r]{3}{3},\ChartSmall[r]{0}{0},\ChartSmall[r]{0}{0}
 undertow_core,results/undertow_core/depclean/depclean.log,3,2,0,0,14,9,0,0,0,0,0,0,0,0,0,0,\ChartSmall[r]{3}{3},\ChartSmall[r]{2}{2},\ChartSmall[r]{0}{0}
+jimfs,results/jimfs/depclean/depclean.log,5,3,0,0,3,4,0,0,0,1,0,0,0,0,0,0,\ChartSmall[r]{5}{5},\ChartSmall[r]{3}{4},\ChartSmall[r]{0}{0}
+OpenPDF,results/OpenPDF/depclean/depclean.log,4,8,0,0,6,6,0,0,1,22,0,0,0,0,0,0,\ChartSmall[r]{4}{5},\ChartSmall[r]{8}{30},\ChartSmall[r]{0}{0}
 httpcomponents-client_httpclient5,results/httpcomponents-client_httpclient5/depclean/depclean.log,5,0,0,0,6,12,0,0,0,0,0,0,1,0,0,0,\ChartSmall[r]{5}{5},\ChartSmall[r]{0}{0},\ChartSmall[r]{0}{0}
 jcabi-github,results/jcabi-github/depclean/depclean.log,10,7,0,0,18,12,1,3,0,3,0,0,6,16,1,0,\ChartSmall[r]{10}{10},\ChartSmall[r]{7}{10},\ChartSmall[r]{0}{0}
+scribejava-core,results/scribejava-core/depclean/depclean.log,4,0,1,2,0,0,2,8,0,1,0,0,0,0,0,0,\ChartSmall[r]{4}{4},\ChartSmall[r]{0}{1},\ChartSmall[r]{3}{3}
 CoreNLP,results/CoreNLP/depclean/depclean.log,20,10,0,0,3,6,0,0,0,2,0,0,0,0,0,0,\ChartSmall[r]{20}{20},\ChartSmall[r]{10}{12},\ChartSmall[r]{0}{0}
-qart4j,results/qart4j/depclean/depclean.log,6,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,\ChartSmall[r]{6}{6},\ChartSmall[r]{0}{0},\ChartSmall[r]{0}{0}
+immutables_gson,results/immutables_gson/depclean/depclean.log,2,0,0,0,17,34,0,0,0,0,0,0,0,0,0,0,\ChartSmall[r]{2}{2},\ChartSmall[r]{0}{0},\ChartSmall[r]{0}{0}
+poi-tl,results/poi-tl/depclean/depclean.log,5,28,0,0,7,24,0,0,0,3,0,0,0,0,0,0,\ChartSmall[r]{5}{5},\ChartSmall[r]{28}{31},\ChartSmall[r]{0}{0}
 java-faker,results/java-faker/depclean/depclean.log,3,1,0,0,7,6,0,0,0,0,0,0,0,4,0,0,\ChartSmall[r]{3}{3},\ChartSmall[r]{1}{1},\ChartSmall[r]{0}{0}
 tika_tika-core,results/tika_tika-core/depclean/depclean.log,2,0,0,0,7,16,0,0,0,0,0,0,2,5,0,0,\ChartSmall[r]{2}{2},\ChartSmall[r]{0}{0},\ChartSmall[r]{0}{0}

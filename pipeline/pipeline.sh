@@ -57,7 +57,7 @@ echo "${logger_pipeline} Building original project and storing results in $REPO_
 mkdir original
 cp pom.xml pom-original.xml
 cp pom.xml original/pom-original.xml
-mvn -B clean package -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true -Dlicense.skip=true >>original/maven.log
+mvn -B clean package -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true -Dlicense.skip=true -Dmaven.clean.skip=true >>original/maven.log
 cp target/*.jar original/
 mvn -B dependency:copy-dependencies -DincludeScope=runtime >>original/compile-scope-dependencies.log
 mkdir original/compile-scope-dependencies/
@@ -74,7 +74,7 @@ echo "${logger_deptrim} Running DepTrim with all dependencies specialized"
 mkdir deptrim
 mvn -B se.kth.castor:deptrim-maven-plugin:0.1.2:deptrim -DcreateSinglePomSpecialized=true -DverboseMode=true -DignoreScopes=test,provided,system,import,runtime >>deptrim/deptrim.log
 mv libs-specialized deptrim
-mvn -B clean package -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true >>deptrim/maven.log
+mvn -B clean package -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true -Dmaven.clean.skip=true >>deptrim/maven.log
 
 # CLEANUP
 mvn -B clean package -q -Dcheckstyle.skip -DskipTests -Drat.skip=true -Dtidy.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true
@@ -106,7 +106,7 @@ for i in ${poms}; do
   # Running mvn clean package
   echo "====================================================="
   echo "${logger_pipeline} Building ${REPO_NAME}/${MODULE_DIR} with ${specialized_pom}"
-  mvn -B clean package -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true -Dlicense.skip=true >>${output}/maven.log
+  mvn -B clean package -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true -Dlicense.skip=true -Dmaven.clean.skip=true >>${output}/maven.log
   mvn -B dependency:tree >>${output}/dependency-tree.log
   cp target/*.jar "${output}"/
   # Getting build status from maven log
@@ -164,7 +164,7 @@ fi
 mv pom.xml pom-original.xml
 mv pom-debloated.xml pom.xml
 mkdir depclean/pom-debloated
-mvn -B clean package -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true -Dlicense.skip=true >>depclean/pom-debloated/maven.log
+mvn -B clean package -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true -Dlicense.skip=true -Dmaven.clean.skip=true >>depclean/pom-debloated/maven.log
 cp target/*.jar depclean/pom-debloated/
 mvn -B dependency:copy-dependencies >>depclean/pom-debloated/all-dependencies.log
 mv target/dependency depclean/pom-debloated/all-dependencies/
@@ -189,7 +189,7 @@ if [ $TST = 0 ]; then
   # Building and moving results to deptrim/pst/
   mv ${pom_pst} pom.xml
   mkdir deptrim/pst
-  mvn clean package -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true -Dlicense.skip=true >>deptrim/pst/maven.log
+  mvn clean package -Dcheckstyle.skip -DskipITs -Drat.skip=true -Dtidy.skip=true -Denforcer.skip=true -Dmaven.javadoc.skip=true -DskipBundle=true -Dlicense.skip=true -Dmaven.clean.skip=true >>deptrim/pst/maven.log
   mvn dependency:tree >>deptrim/pst/dependency-tree.log
   cp target/*.jar deptrim/pst/
   mv pom.xml deptrim/pst/${pom_pst}

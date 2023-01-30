@@ -2,8 +2,12 @@ Project,FilePath,BuildResult
 tablesaw_json,results/tablesaw_json/depclean/pom-debloated/maven.log,SUCCESS
 commons-validator,results/commons-validator/depclean/pom-debloated/maven.log,SUCCESS
 checkstyle,results/checkstyle/depclean/pom-debloated/maven.log,SUCCESS
+helidon_openapi,results/helidon_openapi/depclean/pom-debloated/maven.log,SUCCESS
+classgraph,results/classgraph/depclean/pom-debloated/maven.log,SUCCESS
+modelmapper,results/modelmapper/core/depclean/pom-debloated/maven.log,SUCCESS
 jooby_jooby,results/jooby_jooby/depclean/pom-debloated/maven.log,SUCCESS
 flink,results/flink/flink-java/depclean/pom-debloated/maven.log,SUCCESS
+lettuce-core,results/lettuce-core/depclean/pom-debloated/maven.log,SUCCESS
 mybatis-3,results/mybatis-3/depclean/pom-debloated/maven.log,SUCCESS
 RxRelay,results/RxRelay/depclean/pom-debloated/maven.log,SUCCESS
 woodstox,results/woodstox/depclean/pom-debloated/maven.log,SUCCESS
@@ -15,9 +19,13 @@ Recaf,results/Recaf/depclean/pom-debloated/maven.log,SUCCESS
 Chronicle-Map,results/Chronicle-Map/depclean/pom-debloated/maven.log,SUCCESS
 pf4j,results/pf4j/depclean/pom-debloated/maven.log,SUCCESS
 undertow_core,results/undertow_core/depclean/pom-debloated/maven.log,SUCCESS
+jimfs,results/jimfs/depclean/pom-debloated/maven.log,SUCCESS
+OpenPDF,results/OpenPDF/depclean/pom-debloated/maven.log,SUCCESS
 httpcomponents-client_httpclient5,results/httpcomponents-client_httpclient5/depclean/pom-debloated/maven.log,SUCCESS
 jcabi-github,results/jcabi-github/depclean/pom-debloated/maven.log,SUCCESS
+scribejava-core,results/scribejava-core/depclean/pom-debloated/maven.log,SUCCESS
 CoreNLP,results/CoreNLP/depclean/pom-debloated/maven.log,SUCCESS
-qart4j,results/qart4j/depclean/pom-debloated/maven.log,SUCCESS
+immutables_gson,results/immutables_gson/depclean/pom-debloated/maven.log,SUCCESS
+poi-tl,results/poi-tl/depclean/pom-debloated/maven.log,SUCCESS
 java-faker,results/java-faker/depclean/pom-debloated/maven.log,SUCCESS
 tika_tika-core,results/tika_tika-core/depclean/pom-debloated/maven.log,SUCCESS

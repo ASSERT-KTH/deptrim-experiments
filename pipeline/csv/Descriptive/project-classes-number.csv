@@ -2,8 +2,12 @@ Project,FilePath,ProjectClassesNumber
 tablesaw_json,results/tablesaw_json/target/classes,7
 commons-validator,results/commons-validator/target/classes,64
 checkstyle,results/checkstyle/target/classes,863
+helidon_openapi,results/helidon_openapi/target/classes,32
+classgraph,results/classgraph/target/classes,261
+modelmapper,results/modelmapper/core/target/classes,210
 jooby_jooby,results/jooby_jooby/target/classes,320
 flink,results/flink/flink-java/target/classes,277
+lettuce-core,results/lettuce-core/target/classes,1302
 mybatis-3,results/mybatis-3/target/classes,480
 RxRelay,results/RxRelay/target/classes,16
 woodstox,results/woodstox/target/classes,208
@@ -15,9 +19,13 @@ Recaf,results/Recaf/target/classes,538
 Chronicle-Map,results/Chronicle-Map/target/classes,375
 pf4j,results/pf4j/target/classes,93
 undertow_core,results/undertow_core/target/classes,1581
+jimfs,results/jimfs/target/classes,124
+OpenPDF,results/OpenPDF/target/classes,484
 httpcomponents-client_httpclient5,results/httpcomponents-client_httpclient5/target/classes,493
 jcabi-github,results/jcabi-github/target/classes,312
+scribejava-core,results/scribejava-core/target/classes,116
 CoreNLP,results/CoreNLP/target/classes,3932
-qart4j,results/qart4j/target/classes,33
+immutables_gson,results/immutables_gson/target/classes,31
+poi-tl,results/poi-tl/target/classes,255
 java-faker,results/java-faker/target/classes,107
 tika_tika-core,results/tika_tika-core/target/classes,435

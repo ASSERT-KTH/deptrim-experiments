@@ -48,7 +48,7 @@ public class DeptrimDataCollectorRQ2 {
                     getRemovedClassesFromDeptrimLogs(removedAndTotalClassesSpecializedDependency, f);
                 } else if (f.toString().contains("deptrim/libs-specialized") && f.toString().endsWith(".jar")) {
                     computeSizeOfSpecializedJars(dependencyJarSizeSpecialized, f);
-                } else if (f.toString().contains("original/compile-scope-dependencies/")) {
+                } else if (f.toString().contains("original/compile-scope-dependencies/") && f.toString().endsWith(".jar")) {
                     computeSizeOfOriginalJars(dependencyJarSizeOriginal, f);
                 }
             });

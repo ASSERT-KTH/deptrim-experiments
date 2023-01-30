@@ -2,8 +2,12 @@ Project,FilePath,BuildResult
 tablesaw_json,results/tablesaw_json/deptrim/maven.log,SUCCESS
 commons-validator,results/commons-validator/deptrim/maven.log,SUCCESS
 checkstyle,results/checkstyle/deptrim/maven.log,SUCCESS
+helidon_openapi,results/helidon_openapi/deptrim/maven.log,SUCCESS
+classgraph,results/classgraph/deptrim/maven.log,SUCCESS
+modelmapper,results/modelmapper/core/deptrim/maven.log,SUCCESS
 jooby_jooby,results/jooby_jooby/deptrim/maven.log,SUCCESS
 flink,results/flink/flink-java/deptrim/maven.log,SUCCESS
+lettuce-core,results/lettuce-core/deptrim/maven.log,SUCCESS
 mybatis-3,results/mybatis-3/deptrim/maven.log,SUCCESS
 RxRelay,results/RxRelay/deptrim/maven.log,SUCCESS
 woodstox,results/woodstox/deptrim/maven.log,SUCCESS
@@ -15,9 +19,13 @@ Recaf,results/Recaf/deptrim/maven.log,SUCCESS
 Chronicle-Map,results/Chronicle-Map/deptrim/maven.log,SUCCESS
 pf4j,results/pf4j/deptrim/maven.log,SUCCESS
 undertow_core,results/undertow_core/deptrim/maven.log,SUCCESS
+jimfs,results/jimfs/deptrim/maven.log,SUCCESS
+OpenPDF,results/OpenPDF/deptrim/maven.log,SUCCESS
 httpcomponents-client_httpclient5,results/httpcomponents-client_httpclient5/deptrim/maven.log,SUCCESS
 jcabi-github,results/jcabi-github/deptrim/maven.log,SUCCESS
+scribejava-core,results/scribejava-core/deptrim/maven.log,SUCCESS
 CoreNLP,results/CoreNLP/deptrim/maven.log,SUCCESS
-qart4j,results/qart4j/deptrim/maven.log,SUCCESS
+immutables_gson,results/immutables_gson/deptrim/maven.log,SUCCESS
+poi-tl,results/poi-tl/deptrim/maven.log,SUCCESS
 java-faker,results/java-faker/deptrim/maven.log,SUCCESS
 tika_tika-core,results/tika_tika-core/deptrim/maven.log,SUCCESS
