@@ -9,37 +9,37 @@
 # scp -i ~/.ssh/aquiles.pem -r ubuntu@129.192.81.91:/home/ubuntu/cesarsv/pipeline/results.zip ~/IdeaProjects/deptrim-experiments/pipeline/results/results.zip
 
 # WORK WELL (Build is successful and Depclean is successful)
-./pipeline.sh "jimfs" "https://github.com/google/jimfs.git" "jimfs" "1.2" "3bc54fae2feb218dcf5427d2626720fc09ef38d1";
-./pipeline.sh "modelmapper" "https://github.com/modelmapper/modelmapper.git" "core" "3.1.1" "894c658609f47f817ce20e41f6e87e1f803663ee";
-./pipeline.sh "OpenPDF" "git@github.com:LibrePDF/OpenPDF.git" "openpdf" "1.3.30" "0c9c4ca393b01444b7cb13bb1d12da202bd0d458"; # to be added to the paper
-./pipeline.sh "scribejava" "https://github.com/scribejava/scribejava.git" "scribejava-core" "8.3.2" "466f37c6faf5a9a2de9c87ae1bce71b617a6185b";
-./pipeline.sh "lettuce-core" "https://github.com/lettuce-io/lettuce-core.git" "" "6.2.2" "77c4ea587fdba73f688c95a481d2743b6fc94fcb"; # to be added to the paper, has 37 specialized DTs and 2600 tests
-./pipeline.sh "classgraph" "https://github.com/classgraph/classgraph.git" "" "4.8.154" "92b644677964496fb841ba41bed52247f8a24786";
-./pipeline.sh "helidon" "https://github.com/helidon-io/helidon.git" "openapi" "2.5.6" "99cf5add9b4049581f08aae9eddaf0280070f2bb";
+# ./pipeline.sh "jimfs" "https://github.com/google/jimfs.git" "jimfs" "1.2" "3bc54fae2feb218dcf5427d2626720fc09ef38d1";
+# ./pipeline.sh "modelmapper" "https://github.com/modelmapper/modelmapper.git" "core" "3.1.1" "894c658609f47f817ce20e41f6e87e1f803663ee";
+# ./pipeline.sh "OpenPDF" "git@github.com:LibrePDF/OpenPDF.git" "openpdf" "1.3.30" "0c9c4ca393b01444b7cb13bb1d12da202bd0d458"; # to be added to the paper
+# ./pipeline.sh "scribejava" "https://github.com/scribejava/scribejava.git" "scribejava-core" "8.3.2" "466f37c6faf5a9a2de9c87ae1bce71b617a6185b";
+# ./pipeline.sh "lettuce-core" "https://github.com/lettuce-io/lettuce-core.git" "" "6.2.2" "77c4ea587fdba73f688c95a481d2743b6fc94fcb"; # to be added to the paper, has 37 specialized DTs and 2600 tests
+# ./pipeline.sh "classgraph" "https://github.com/classgraph/classgraph.git" "" "4.8.154" "92b644677964496fb841ba41bed52247f8a24786";
+# ./pipeline.sh "helidon" "https://github.com/helidon-io/helidon.git" "openapi" "2.5.6" "99cf5add9b4049581f08aae9eddaf0280070f2bb";
 ./pipeline.sh "poi-tl" "https://github.com/Sayi/poi-tl.git" "poi-tl" "1.12.2" "5d5004311a406b7d5843be76322bf208071b5969"; # to be added to the paper
-./pipeline.sh "immutables" "https://github.com/immutables/immutables.git" "gson" "2.9.3" "6e192030320eaf7a8b5f146c39ae5a17b413aa37"; # to be added to the paper
-./pipeline.sh "guice" "https://github.com/google/guice.git" "core" "5.1.0" "b0ff10c8ec8911137451623a333d6daa65f73d8a";
-./pipeline.sh "Chronicle-Map" "https://github.com/OpenHFT/Chronicle-Map.git" "" "3.23.5" "26e26c132290ad8049c97e0c44eb7f33b63c1c60";
-./pipeline.sh "graphhopper" "git@github.com:graphhopper/graphhopper.git" "core" "6.2" "6d3da37960f56aa6b9c4b1ffd77f70ebebff8747";
-./pipeline.sh "Recaf" "git@github.com:Col-E/Recaf.git" "" "2.21.13" "c66f23801493bd866db757b0594c1fceaa30dce0";
-./pipeline.sh "RxRelay" "https://github.com/cesarsotovalero/RxRelay.git" "" "3.0.1" "e9fc1586192ca1ecdbc41ae39036cbf0d09428b5";
-./pipeline.sh "checkstyle" "https://github.com/checkstyle/checkstyle.git" "" "10.5.0" "dbeb9024c861ad11b194e40d8c6e08d7e6ec5122";
-./pipeline.sh "commons-validator" "https://github.com/apache/commons-validator.git" "" "1.7" "f9bb21748a9f9c50fbc31862de25ed49433ecc88";
-./pipeline.sh "httpcomponents-client" "https://github.com/apache/httpcomponents-client.git" "httpclient5" "5.2.1-RC1" "d8f702fb4d44c746bb0edf00643aa7139cb8bdf7"
-./pipeline.sh "jacop" "https://github.com/cesarsotovalero/jacop.git" "" "4.9.0" "4fa3b8f2ea74df17b40ebe564552c28735a82885";
-./pipeline.sh "java-faker" "https://github.com/cesarsotovalero/java-faker.git" "" "1.0.2" "0bed1d8381cd0b3319a6f3bb03efc74728334f6a";
-./pipeline.sh "jcabi-github" "https://github.com/jcabi/jcabi-github.git" "" "1.27.0" "02f3ab93156349c2f66989ac675bd6292462d724";
-./pipeline.sh "jooby" "https://github.com/jooby-project/jooby.git" "jooby" "2.16.1" "4d7be54dad429b5aeb5266387df14b0781c78357";
-./pipeline.sh "mybatis-3" "https://github.com/mybatis/mybatis-3.git" "" "mybatis-3.5.11" "c195f12808a88a1ee245dc86d9c1621042655970";
-./pipeline.sh "pdfbox" "https://github.com/cesarsotovalero/pdfbox.git" "pdfbox" "2.0.27" "07ddd189b4f76c9e265d7c80d95979642567af6b";
-./pipeline.sh "qart4j" "https://github.com/cesarsotovalero/qart4j.git" "" "1.0.0" "04d17792030e02792a198c92c3dfee53a81bb051";
-./pipeline.sh "tablesaw" "https://github.com/jtablesaw/tablesaw.git" "json" "v0.43.1" "05823f66246ea191e62ad0658d2fed0b080d5334";
-./pipeline.sh "tika" "https://github.com/apache/tika.git" "tika-core" "2.6.0" "41319f3c294b13de5342a80570b4540f7dd04a3e";
-./pipeline.sh "undertow" "https://github.com/undertow-io/undertow.git" "core" "2.2.21.Final" "56c91f129b1c2a55cf3287836cc68c80acce54c6";
-./pipeline.sh "woodstox" "https://github.com/cesarsotovalero/woodstox.git" "" "6.4.0" "6de8bf7bfed4baa1c05d5a916fd5f96335708a84";
-./pipeline.sh "flink" "https://github.com/apache/flink.git" "flink-java" "1.15.3" "c41c8e5cfab683da8135d6c822693ef851d6e2b7";
-./pipeline.sh "pf4j" "git@github.com:pf4j/pf4j.git" "pf4j" "release-3.8.0" "efaed93c10dd9d114335e2a344e8bca04fd00c63";
-./pipeline.sh "CoreNLP" "https://github.com/stanfordnlp/CoreNLP" "" "v4.5.1" "f7782ff5f235584b0fc559f266961b5ab013556a";
+# ./pipeline.sh "immutables" "https://github.com/immutables/immutables.git" "gson" "2.9.3" "6e192030320eaf7a8b5f146c39ae5a17b413aa37"; # to be added to the paper
+# ./pipeline.sh "guice" "https://github.com/google/guice.git" "core" "5.1.0" "b0ff10c8ec8911137451623a333d6daa65f73d8a";
+# ./pipeline.sh "Chronicle-Map" "https://github.com/OpenHFT/Chronicle-Map.git" "" "3.23.5" "26e26c132290ad8049c97e0c44eb7f33b63c1c60";
+# ./pipeline.sh "graphhopper" "git@github.com:graphhopper/graphhopper.git" "core" "6.2" "6d3da37960f56aa6b9c4b1ffd77f70ebebff8747";
+# ./pipeline.sh "Recaf" "git@github.com:Col-E/Recaf.git" "" "2.21.13" "c66f23801493bd866db757b0594c1fceaa30dce0";
+# ./pipeline.sh "RxRelay" "https://github.com/cesarsotovalero/RxRelay.git" "" "3.0.1" "e9fc1586192ca1ecdbc41ae39036cbf0d09428b5";
+# ./pipeline.sh "checkstyle" "https://github.com/checkstyle/checkstyle.git" "" "10.5.0" "dbeb9024c861ad11b194e40d8c6e08d7e6ec5122";
+# ./pipeline.sh "commons-validator" "https://github.com/apache/commons-validator.git" "" "1.7" "f9bb21748a9f9c50fbc31862de25ed49433ecc88";
+# ./pipeline.sh "httpcomponents-client" "https://github.com/apache/httpcomponents-client.git" "httpclient5" "5.2.1-RC1" "d8f702fb4d44c746bb0edf00643aa7139cb8bdf7"
+# ./pipeline.sh "jacop" "https://github.com/cesarsotovalero/jacop.git" "" "4.9.0" "4fa3b8f2ea74df17b40ebe564552c28735a82885";
+# ./pipeline.sh "java-faker" "https://github.com/cesarsotovalero/java-faker.git" "" "1.0.2" "0bed1d8381cd0b3319a6f3bb03efc74728334f6a";
+# ./pipeline.sh "jcabi-github" "https://github.com/jcabi/jcabi-github.git" "" "1.27.0" "02f3ab93156349c2f66989ac675bd6292462d724";
+# ./pipeline.sh "jooby" "https://github.com/jooby-project/jooby.git" "jooby" "2.16.1" "4d7be54dad429b5aeb5266387df14b0781c78357";
+# ./pipeline.sh "mybatis-3" "https://github.com/mybatis/mybatis-3.git" "" "mybatis-3.5.11" "c195f12808a88a1ee245dc86d9c1621042655970";
+# ./pipeline.sh "pdfbox" "https://github.com/cesarsotovalero/pdfbox.git" "pdfbox" "2.0.27" "07ddd189b4f76c9e265d7c80d95979642567af6b";
+# ./pipeline.sh "qart4j" "https://github.com/cesarsotovalero/qart4j.git" "" "1.0.0" "04d17792030e02792a198c92c3dfee53a81bb051";
+# ./pipeline.sh "tablesaw" "https://github.com/jtablesaw/tablesaw.git" "json" "v0.43.1" "05823f66246ea191e62ad0658d2fed0b080d5334";
+# ./pipeline.sh "tika" "https://github.com/apache/tika.git" "tika-core" "2.6.0" "41319f3c294b13de5342a80570b4540f7dd04a3e";
+# ./pipeline.sh "undertow" "https://github.com/undertow-io/undertow.git" "core" "2.2.21.Final" "56c91f129b1c2a55cf3287836cc68c80acce54c6";
+# ./pipeline.sh "woodstox" "https://github.com/cesarsotovalero/woodstox.git" "" "6.4.0" "6de8bf7bfed4baa1c05d5a916fd5f96335708a84";
+# ./pipeline.sh "flink" "https://github.com/apache/flink.git" "flink-java" "1.15.3" "c41c8e5cfab683da8135d6c822693ef851d6e2b7";
+# ./pipeline.sh "pf4j" "git@github.com:pf4j/pf4j.git" "pf4j" "release-3.8.0" "efaed93c10dd9d114335e2a344e8bca04fd00c63";
+# ./pipeline.sh "CoreNLP" "https://github.com/stanfordnlp/CoreNLP" "" "v4.5.1" "f7782ff5f235584b0fc559f266961b5ab013556a";
 
 # not work
 #./pipeline.sh "sofa-bolt" "https://github.com/sofastack/sofa-bolt.git" "" "1.6.6" "25157f74611d25df821a866d6e47207810c6d30a";

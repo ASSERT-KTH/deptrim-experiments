@@ -110,9 +110,10 @@ for i in ${poms}; do
   mvn -B dependency:tree >>${output}/dependency-tree.log
   cp target/*.jar "${output}"/
   # Getting build status from maven log
-  build_status=$(grep "BUILD SUCCESS" ${output}/maven.log | wc -l)
+  build_status=$(grep --text "BUILD SUCCESS" ${output}/maven.log | wc -l)
+  test_status=$(grep --text "There are test failures" ${output}/maven.log | wc -l)
   # If BUILD SUCCESS, getting artifactId of specialized dependency
-  if [ $build_status = 1 ] && [[ $specialized_pom == *"_"* ]]; then
+  if [ $build_status = 1 ] && [ $test_status = 0 ] && [[ $specialized_pom == *"_"* ]]; then
     line_number=$(grep -n "<groupId>se.kth.castor.deptrim.spl</groupId>" pom.xml | cut -d ":" -f 1)
     specialized_dependency=$(head -n $(($line_number+1)) pom.xml | tail -1)
     echo "${logger_pipeline} BUILD SUCCESS, will include ${specialized_dependency} in PST"
@@ -122,8 +123,9 @@ for i in ${poms}; do
   fi
   # Setting TST to 1 if fully specialized pom builds
   if [[ $specialized_pom != *"_"* ]]; then
-    build_status=$(grep "BUILD SUCCESS" ${output}/maven.log | wc -l)
-    if [ $build_status = 1 ]; then
+    build_status=$(grep --text "BUILD SUCCESS" ${output}/maven.log | wc -l)
+    test_status=$(grep --text "There are test failures" ${output}/maven.log | wc -l)
+    if [ $build_status = 1 ] && [ $test_status = 0 ]; then
       TST=1
     fi
   fi
