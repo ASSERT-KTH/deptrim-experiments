@@ -6,5 +6,7 @@ public class PipelineRunner {
         DeptrimDataCollectorRQ1.execute();
         DeptrimDataCollectorRQ2.execute();
         DeptrimDataCollectorRQ3.execute();
+        ProjectDataCollector.execute();
+        System.out.println("\nPipeline executed successfully!");
     }
 }

@@ -22,9 +22,9 @@ public class ProjectDataCollector {
     // CSV files to be written
     private static File projectClasses = new File("csv/Descriptive/project-classes.csv");
 
-    private static HashMap<String, List<String>> map = new HashMap<>();
+    private static HashMap<String, List<Dependency>> map = new HashMap<>();
 
-    public static void main(String[] args) throws IOException {
+    public static void execute() throws IOException {
 
 
         // delete files if they already exist
@@ -33,7 +33,7 @@ public class ProjectDataCollector {
         }
 
         FileUtils.writeStringToFile(projectClasses,
-                "Project,DependencyJar,TotalOriginalClasses" + "\n", true
+                "Project,Dependency,DependencyJar,TotalOriginalClasses" + "\n", true
         );
 
         try (Stream<Path> filepath = Files.walk(Paths.get("results"))) {
@@ -64,11 +64,11 @@ public class ProjectDataCollector {
 
     private static void computeClassesInOriginalDepsJars(File splDeps, Path f) throws IOException {
         String project = f.toString().split("/")[1];
-        List<String> jarNames = map.get(project);
-        for (String jarName : jarNames) {
-            File jar = new File(f.toString() + "/" + jarName + ".jar");
+        List<Dependency> dependencies = map.get(project);
+        for (Dependency dependency : dependencies) {
+            File jar = new File(f.toString() + "/" + dependency.jarName + ".jar");
             if (jar.exists()) {
-                FileUtils.writeStringToFile(splDeps, project + "," + jarName + "," + totalClassesInJar(jar) + "\n", true);
+                FileUtils.writeStringToFile(splDeps, project + "," + dependency.GAV+ "," + dependency.jarName + "," + totalClassesInJar(jar) + "\n", true);
             }
         }
     }
@@ -82,13 +82,26 @@ public class ProjectDataCollector {
                 String line = sc.nextLine();
                 String[] parts = line.split(":");
                 if ((line.startsWith("[INFO]    ") && line.endsWith(":compile")) || (parts.length > 4 && parts[4].startsWith("compile"))) {
-                    String depJar = parts[1] + "-" + parts[3];
+
+                    String depJar = "";
+                    String GAV = "";
+                    if(parts.length > 5) {
+                        //handle special case: [INFO]    org.yaml:snakeyaml:jar:android:1.26:compile
+                        // System.out.println(project);
+                        depJar = parts[1] + "-" + parts[4] + "-" + parts[3];
+                        GAV =  parts[0].split("    ")[1] + ":" + parts[1] + ":" + parts[4];
+                    } else {
+                        // normal case: [INFO]    org.apache.commons:commons-lang3:jar:3.5:compile
+                        depJar = parts[1] + "-" + parts[3];
+                        GAV = parts[0].split("    ")[1] + ":" + parts[1] + ":" + parts[3];
+                    }
+
                     // System.out.println(depJar);
                     if (map.containsKey(project)) {
-                        map.get(project).add(depJar);
+                        map.get(project).add(new Dependency(GAV, depJar));
                     } else {
-                        List<String> l = new ArrayList<>();
-                        l.add(depJar);
+                        List<Dependency> l = new ArrayList<>();
+                        l.add(new Dependency(GAV, depJar));
                         map.put(project, l);
                     }
                 }
@@ -114,6 +127,24 @@ public class ProjectDataCollector {
         return totalClasses;
     }
 
+}
+
+class Dependency {
+    String GAV;
+    String jarName;
+
+    public Dependency(String GAV, String jarName) {
+        this.GAV = GAV;
+        this.jarName = jarName;
+    }
+
+    public String getGAV() {
+        return GAV;
+    }
+
+    public String getJarName() {
+        return jarName;
+    }
 }
 
 

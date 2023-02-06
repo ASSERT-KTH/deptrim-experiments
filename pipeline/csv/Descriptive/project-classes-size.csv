@@ -6,7 +6,7 @@ helidon_openapi,results/helidon_openapi/target/classes,152.0
 classgraph,results/classgraph/target/classes,1125.0
 modelmapper,results/modelmapper/core/target/classes,538.0
 jooby_jooby,results/jooby_jooby/target/classes,1043.0
-flink,results/flink/flink-java/target/classes,1159.0
+flink,results/flink/flink-java/target/classes,1165.0
 lettuce-core,results/lettuce-core/target/classes,4928.0
 mybatis-3,results/mybatis-3/target/classes,1382.0
 RxRelay,results/RxRelay/target/classes,49.0
