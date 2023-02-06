@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="581pt" height="226pt" version="1.1" viewBox="0 0 580.5 226" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g class="node" transform="translate(4,222)" fill="#cbe4ca">
+  <title>org.jacop:jacop:jar:compile</title>
+  <path d="m290-218h-32c-6 0-12 6-12 12v18c0 6 6 12 12 12h32c6 0 12-6 12-12v-18c0-6-6-12-12-12" fill="#cbe4ca" stroke="#000"/>
+ </g>
+ <g class="node" transform="translate(4,222)" fill="#d2e2fb">
+  <title>org.mockito:mockito-all:jar:compile</title>
+  <path d="m70-135h-58c-6 0-12 6-12 12v18c0 6 6 12 12 12h58c6 0 12-6 12-12v-18c0-6-6-12-12-12" fill="#d2e2fb" stroke="#000"/>
+ </g>
+ <g class="edge" transform="translate(4,222)">
+  <title>org.jacop:jacop:jar:compile-&gt;org.mockito:mockito-all:jar:compile</title>
+  <path d="m245.91-188.97c-36.35 9.46-101.38 27.57-154.91 48.97-0.71 0.28-1.42 0.57-2.14 0.87" fill="none" stroke="#000"/>
+  <polygon points="87.23 -142.24 90.03 -135.82 79.47 -135.03" stroke="#000"/>
+ </g>
+ <g class="node" transform="translate(4,222)" fill="#d2e2fb">
+  <title>org.scala-lang:scala-library:jar:compile</title>
+  <path d="m249.5-135h-65c-6 0-12 6-12 12v18c0 6 6 12 12 12h65c6 0 12-6 12-12v-18c0-6-6-12-12-12" fill="#d2e2fb" stroke="#000"/>
+ </g>
+ <g class="edge" transform="translate(4,222)">
+  <title>org.jacop:jacop:jar:compile-&gt;org.scala-lang:scala-library:jar:compile</title>
+  <path d="m259.91-175.98c-6.92 9.84-15.38 21.85-22.95 32.61" fill="none" stroke="#000"/>
+  <polygon points="234.02 -145.27 239.74 -141.24 231.13 -135.07" stroke="#000"/>
+ </g>
+ <g class="node" transform="translate(4,222)" fill="#d2e2fb">
+  <title>org.scala-lang:scala-compiler:jar:compile</title>
+  <path d="m372-135h-80c-6 0-12 6-12 12v18c0 6 6 12 12 12h80c6 0 12-6 12-12v-18c0-6-6-12-12-12" fill="#d2e2fb" stroke="#000"/>
+ </g>
+ <g class="edge" transform="translate(4,222)">
+  <title>org.jacop:jacop:jar:compile-&gt;org.scala-lang:scala-compiler:jar:compile</title>
+  <path d="m288.34-175.98c7.04 9.84 15.64 21.85 23.35 32.61" fill="none" stroke="#000"/>
+  <polygon points="308.96 -141.17 314.65 -145.24 317.63 -135.07" stroke="#000"/>
+ </g>
+ <g class="node" transform="translate(4,222)" fill="#d2e2fb">
+  <title>org.scala-lang:scala-reflect:jar:compile</title>
+  <path d="m274.5-47h-65c-6 0-12 6-12 12v18c0 6 6 12 12 12h65c6 0 12-6 12-12v-18c0-6-6-12-12-12" fill="#d2e2fb" stroke="#000"/>
+ </g>
+ <g class="edge" transform="translate(4,222)">
+  <title>org.scala-lang:scala-compiler:jar:compile-&gt;org.scala-lang:scala-reflect:jar:compile</title>
+  <path d="m310.67-92.62c-11.99 11.46-27.12 25.92-40.12 38.34" fill="none" stroke="#000"/>
+  <polygon points="267.99 -56.67 272.82 -51.61 263.18 -47.23" stroke="#000"/>
+ </g>
+ <g font-family="Helvetica, sans-Serif">
+  <text transform="translate(4,222)" x="254" y="-207" font-size="10px">org.jacop</text>
+  <text transform="translate(4,222)" x="257.5" y="-193.8" font-size="14px">jacop</text>
+  <text transform="translate(4,222)" x="260" y="-183" font-size="10px">4.10.0</text>
+  <text transform="translate(4,222)" x="15" y="-124" font-size="10px">org.mockito</text>
+  <text transform="translate(4,222)" x="8" y="-110.8" font-size="14px">mockito-all</text>
+  <text transform="translate(4,222)" x="24.5" y="-100" font-size="10px">1.10.19</text>
+  <text transform="translate(4,222)" x="186.5" y="-124" font-size="10px">org.scala-lang</text>
+  <text transform="translate(4,222)" x="180.5" y="-110.8" font-size="14px">scala-library</text>
+  <text transform="translate(4,222)" x="203" y="-100" font-size="10px">2.13.1</text>
+  <text transform="translate(4,222)" x="301.5" y="-124" font-size="10px">org.scala-lang</text>
+  <text transform="translate(4,222)" x="288" y="-110.8" font-size="14px">scala-compiler</text>
+  <text transform="translate(4,222)" x="318" y="-100" font-size="10px">2.13.1</text>
+  <text transform="translate(4,222)" x="211.5" y="-36" font-size="10px">org.scala-lang</text>
+  <text transform="translate(4,222)" x="205.5" y="-22.799999" font-size="14px">scala-reflect</text>
+  <text transform="translate(4,222)" x="228" y="-12" font-size="10px">2.13.1</text>
+ </g>
+</svg>

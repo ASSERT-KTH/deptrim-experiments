@@ -1,0 +1,464 @@
+---
+title: "R Notebook with the data analysis"
+output: html_notebook
+---
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# Import the header 
+source("0_header.R")
+# Clear the R environment
+rm(list=ls())
+library(knitr)
+```
+
+# Descriptive
+
+## General stats
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+general_stats <- read.delim("/Users/cesarsv/IdeaProjects/deptrim-experiments/pipeline/csv/Descriptive/general-stats.csv", sep = ",", header = T, stringsAsFactors = TRUE)
+
+paste("TestRun:", sum(general_stats$TestRun))
+paste("Stars:", sum(general_stats$Stars))
+paste("Commits:", sum(general_stats$Commits))
+paste("LoC:", sum(general_stats$LoC))
+
+stats <- general_stats %>% 
+  mutate(TestRun = paste(paste("\\np{", TestRun, sep = ""), "}", sep = ""),
+         Stars = paste(paste("\\np{", Stars, sep = ""), "}", sep = ""),
+          Commits = paste(paste("\\np{", Commits, sep = ""), "}", sep = ""),
+          LoC = paste(paste("\\np{", LoC, sep = ""), "}", sep = "")
+         ) %>% arrange(Project)
+
+```
+## Plots of the general stats
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+general_stats <- read.delim("/Users/cesarsv/IdeaProjects/deptrim-experiments/pipeline/csv/Descriptive/general-stats.csv", sep = ",", header = T, stringsAsFactors = TRUE)
+# Test
+tests <- general_stats %>%
+  ggplot(aes(TestRun, "Tests")) +
+  geom_violin(trim = FALSE, fill = 'gray') +
+  geom_boxplot(width = 0.2) +
+  # stat_summary(fun.data=data_summary) +
+  scale_x_continuous(
+    labels = label_number(
+      suffix = "K",
+      scale = 1e-3,
+      accuracy = NULL
+    ),
+    limits = c(min(general_stats$TestRun), max(general_stats$TestRun))
+  ) +
+  stat_summary(fun.y=mean, geom="point", shape=4, size=3, color="black", fill="white") +
+  coord_flip() +
+  theme(axis.title.y = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x=element_blank(),
+        axis.text.y = element_text(colour = "black"))
+ 
+tests
+save_figure(tests, "tests", 1.5, 2.5)
+
+# Stars
+stars <- general_stats %>%
+  ggplot(aes(Stars, "Stars")) +
+  geom_violin(trim = FALSE, fill = 'gray') +
+  geom_boxplot(width = 0.2) +
+  scale_x_continuous(
+    labels = label_number(
+      suffix = "K",
+      scale = 1e-3,
+      accuracy = NULL
+    ),
+    limits = c(min(general_stats$Stars), max(general_stats$Stars))
+  ) +
+  stat_summary(fun.y=mean, geom="point", shape=4, size=3, color="black", fill="white") +
+  coord_flip() +
+ theme(axis.title.y = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x=element_blank(),
+       axis.text.y = element_text(colour = "black"))
+stars
+save_figure(stars, "stars", 1.5, 2.5)
+
+# Commits
+commits <- general_stats %>%
+  ggplot(aes(Commits, "Commits")) +
+  geom_violin(trim = FALSE, fill = 'gray') +
+  geom_boxplot(width = 0.2) +
+  scale_x_continuous(
+    labels = label_number(
+      suffix = "K",
+      scale = 1e-3,
+      accuracy = NULL
+    ),
+    limits = c(min(general_stats$Commits), max(general_stats$Commits))
+  ) +
+  stat_summary(fun.y=mean, geom="point", shape=4, size=3, color="black", fill="white") +
+  coord_flip() +
+ theme(axis.title.y = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x=element_blank(),
+       axis.text.y = element_text(colour = "black"))
+commits
+save_figure(commits, "commits", 1.5, 2.5)
+
+# LoC
+loc <- general_stats %>%
+  ggplot(aes(LoC, "LoC")) +
+  geom_violin(trim = FALSE, fill = 'gray') +
+  geom_boxplot(width = 0.2) +
+  scale_x_continuous(
+    labels = label_number(
+      suffix = "K",
+      scale = 1e-3,
+      accuracy = NULL
+    ),
+   limits = c(min(general_stats$LoC), max(general_stats$LoC))
+  ) +
+  stat_summary(fun.y=mean, geom="point", shape=4, size=3, color="black", fill="white") +
+  coord_flip() +
+  guides(fill=FALSE) +
+  theme(axis.title.y = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x=element_blank(),
+        axis.text.y = element_text(colour = "black"))
+loc
+save_figure(loc, "loc", 1.5, 2.5)
+
+summary(general_stats[2:5])
+```
+
+
+# Depclean results
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# Read the data
+raw_results_original_size <- read.delim("/Users/cesarsv/IdeaProjects/deptrim-experiments/pipeline/csv/RQ2/dependency-jar-size-original.csv", sep = ",", header = T, stringsAsFactors = TRUE)
+raw_results_original_classes <- read.delim("/Users/cesarsv/IdeaProjects/deptrim-experiments/pipeline/csv/RQ2/removed-classes-per-specialized-dependency.csv", sep = ",", header = T, stringsAsFactors = TRUE)
+depclean_results <- read.delim("/Users/cesarsv/IdeaProjects/deptrim-experiments/pipeline/csv/Descriptive/depclean-results.csv", sep = ",", header = T, stringsAsFactors = TRUE)
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+depclean <- depclean_results %>% 
+  mutate(TotalUsedDepsCompile=UsedDirectCompile+UsedTransitiveCompile+UsedInheritedDirectCompile+UsedInheritedTransitiveCompile, TotalDepsCompile=UnusedDirectCompile+UnusedTransitiveCompile+UnusedInheritedDirectCompile+UnusedInheritedTransitiveCompile+UsedDirectCompile+UsedTransitiveCompile+UsedInheritedDirectCompile+UsedInheritedTransitiveCompile) %>% 
+  select(Project,TotalUsedDepsCompile,TotalDepsCompile) %>% 
+  mutate(npTotalDepsCompile = paste(paste("\\np{", TotalDepsCompile, sep = ""), "}", sep = "")) %>% 
+  mutate(ChartSmart = paste(paste(paste(paste("\\ChartSmall[r]{", TotalUsedDepsCompile, sep = ""), "}{", sep = ""), TotalDepsCompile, sep = ""), "}", sep = "")) %>% 
+  arrange(Project) 
+depclean
+
+sum(depclean$TotalUsedDepsCompile)
+sum(depclean$TotalDepsCompile)
+
+
+```
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# Number of classes in original of dependencies
+nb_classes_dependencies_original <- raw_results_original_classes %>% 
+  group_by(Project) %>% 
+  summarise(nbClasses=sum(TotalClasses)) %>% 
+  arrange(Project)
+nb_classes_dependencies_original
+sum(nb_classes_dependencies_original$nbClasses)
+
+# Size of orignal dependencies
+size_of_dependencies_original <- raw_results_original_size %>% 
+  group_by(Project) %>% 
+  summarise(size=sum(SizeOriginal)) %>% 
+  arrange(Project)
+size_of_dependencies_original
+sum(size_of_dependencies_original$size)
+```
+
+
+
+## General stats 
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+project_classes <- read.delim("/Users/cesarsv/IdeaProjects/deptrim-experiments/pipeline/csv/Descriptive/project-classes.csv", sep = ",", header = T, stringsAsFactors = TRUE)
+
+# Total number of original dependencies
+dependencies <- project_classes %>% 
+  group_by(Project) %>% 
+  summarise(Dependencies = n()) %>% 
+  arrange(Project)
+dependencies
+
+paste("Total dependencies in original DTs:", sum(dependencies$Dependencies))
+
+# Total number of classes in original dependencies
+project_classes_in_original_dependencies <- project_classes %>% 
+  group_by(Project) %>% 
+  summarise(TotalOriginalClasses = sum(TotalOriginalClasses)) %>% 
+  mutate(nbTotalOriginalClasses = paste(paste("\\np{", TotalOriginalClasses, sep = ""), "}", sep = "")) %>% 
+  arrange(Project)
+project_classes_in_original_dependencies
+
+paste("Total classes in original depeendencies:",sum(project_classes_in_original_dependencies$TotalOriginalClasses))
+
+```
+
+# Depclean removed classes
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+project_classes <- read.delim("/Users/cesarsv/IdeaProjects/deptrim-experiments/pipeline/csv/Descriptive/project-classes.csv", sep = ",", header = T, stringsAsFactors = TRUE)
+raw_results_original_classes <- read.delim("/Users/cesarsv/IdeaProjects/deptrim-experiments/pipeline/csv/RQ2/removed-classes-per-specialized-dependency.csv", sep = ",", header = T, stringsAsFactors = TRUE)
+
+total_classes_after_depclean <- raw_results_original_classes %>% select(Project, Dependency,TotalClasses) %>% group_by(Project) %>% summarise(TotalClassesDepclean = sum(TotalClasses))
+total_classes_original <- project_classes %>% select(Project, Dependency,TotalOriginalClasses) %>% group_by(Project) %>% summarise(TotalClassesOriginalClasses = sum(TotalOriginalClasses))
+
+depclean_classes <- inner_join(total_classes_after_depclean, total_classes_original, by = "Project") %>% 
+  mutate(ClassesRemovedDepclean = TotalClassesOriginalClasses - TotalClassesDepclean) %>% 
+  mutate(ChartSmart = paste(paste(
+      paste(
+        paste("\\ChartSmall[p]{", ClassesRemovedDepclean, sep = ""),
+        "}{",
+        sep = ""
+      ),   TotalClassesOriginalClasses, sep = ""
+    ), "}", sep = "")) %>%
+    arrange(Project)
+depclean_classes
+
+paste("Total classes in dependencies after DepClean:",sum(depclean_classes$TotalClassesDepclean))
+paste("Total classes removed with DepClean:",sum(depclean_classes$ClassesRemovedDepclean))
+paste("Total classes before DepClean:", sum(depclean_classes$TotalClassesOriginalClasses))
+
+
+# Dependencies debloated by depclean that have zero classes
+kable(project_classes %>% filter(TotalOriginalClasses == 0) %>% select(Project,Dependency,TotalOriginalClasses))
+
+
+# Dependencies with all the classes used
+deps_all_classes_used <- raw_results_original_classes %>% 
+  filter(RemovedClasses == 0) %>% 
+  group_by(Project) %>% 
+  summarize(DependenciesWithAllClassesUsed = n())
+deps_all_classes_used
+
+sum(deps_all_classes_used$DependenciesWithAllClassesUsed)
+
+raw_results_original_classes %>% 
+  filter(RemovedClasses == 0) %>% 
+  count(Dependency) %>% arrange(n)
+
+
+tud_frequency <- raw_results_original_classes %>% 
+  filter(RemovedClasses == 0) %>% 
+  select(Project,Dependency) %>% 
+  separate(Dependency, c('G', 'A', 'V'), sep = ":") %>% 
+  select(Project, A) %>% 
+  count(A) %>% 
+  arrange(desc(n))
+kable(tud_frequency)
+  
+
+# List of dependencies that are more frequently specialized
+raw_results_original_classes %>% 
+  select(Project,Dependency,RemovedClasses) %>% 
+  filter(RemovedClasses > 0) %>% 
+  separate(Dependency, c('G', 'A', 'V'), sep = ":") %>% 
+  select(Project, A) %>% 
+  count(A) %>% 
+  arrange(desc(n))
+
+a <- raw_results_original_classes %>%
+  filter(Project == "tika_tika-core") %>% 
+  select(Project, Dependency,RemovedClasses,TotalClasses)
+kable(a)
+  
+```
+
+
+# RQ1
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# Read the data
+pom_specialized_build_result_logs <- read.delim("/Users/cesarsv/IdeaProjects/deptrim-experiments/pipeline/csv/RQ1/pom-specialized-build-result-logs.csv", sep = ",", header = T, stringsAsFactors = TRUE)
+tmp <- pom_specialized_build_result_logs %>% 
+  select(Project, BuildResult) %>% 
+  group_by(Project, .drop = FALSE) %>% 
+  count(BuildResult) %>% 
+  spread(BuildResult, n) %>% 
+  mutate(ChartSmart = paste(paste(paste(paste("\\ChartSmall[r]{", SUCCESS, sep = ""), "}{", sep = ""), SUCCESS + FAILURE, sep = ""), "}", sep = "")) %>% 
+  arrange(Project)
+
+tmp <- pom_specialized_build_result_logs %>% 
+  select(Project, BuildResult) %>% 
+  group_by(Project, .drop = FALSE) %>% 
+  count(BuildResult) %>% 
+  spread(BuildResult, n)
+sum(tmp$SUCCESS)
+
+tmp <- pom_specialized_build_result_logs %>% 
+  select(Project, BuildResult) %>% 
+  group_by(Project, .drop = FALSE) %>% 
+  count(BuildResult) %>% 
+  spread(BuildResult, n) %>% 
+  mutate(Total=FAILURE + SUCCESS) %>% 
+  select(Project, Total)
+sum(tmp$Total)
+
+```
+
+# RQ2
+
+## Classes
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# Classes original dependencies
+raw_results_original_classes <- read.delim("/Users/cesarsv/IdeaProjects/deptrim-experiments/pipeline/csv/RQ2/removed-classes-per-specialized-dependency.csv", sep = ",", header = T, stringsAsFactors = TRUE)
+
+# Classes all original classes in dependencies
+raw_results_original_classes %>% 
+  group_by(Project) %>% 
+  summarise(Removed=sum(RemovedClasses), Total=sum(TotalClasses)) 
+
+classes <- raw_results_original_classes %>% 
+  group_by(Project) %>% 
+  summarise(Removed=sum(RemovedClasses), Total=sum(TotalClasses)) %>% 
+  mutate(AfterDeptrim = Total - Removed) %>% 
+   mutate(ChartSmart = paste(paste(
+    paste(paste(
+      "\\ChartSmall[p]{", Removed, sep = ""
+    ), "}{", sep = ""),   Total, sep = ""
+  ), "}", sep = "")) %>%
+  arrange(Project)
+classes
+
+
+raw_results_original_classes %>% 
+  filter(RemovedClasses == 0) %>% 
+  group_by(Project) %>% 
+  summarise(sum(TotalClasses))
+
+# Other stats
+View(raw_results_original_classes %>% arrange(desc(RemovedClasses)) %>% select(Project,Dependency,RemovedClasses,TotalClasses))
+summary(classes[2:3])
+
+
+paste("Total classes removed by DepTrim:",sum(classes$Removed))
+paste("Total classes before DepTrim", sum(classes$Total))
+paste("Total classes after DepTrim", sum(classes$AfterDeptrim))
+
+```
+
+## Size
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# Jar size
+dependency_jar_size_original <- read.delim("/Users/cesarsv/IdeaProjects/deptrim-experiments/pipeline/csv/RQ2/dependency-jar-size-original.csv", sep = ",", header = T, stringsAsFactors = TRUE)
+dependency_jar_size_specialized <- read.delim("/Users/cesarsv/IdeaProjects/deptrim-experiments/pipeline/csv/RQ2/dependency-jar-size-specialized.csv", sep = ",", header = T, stringsAsFactors = TRUE)
+
+# Jar size all original dependencies
+jar_size_original <- dependency_jar_size_original %>% 
+  group_by(Project) %>% 
+  summarise(JarSizeOriginal=sum(SizeOriginal)) %>% 
+  arrange(Project)
+
+# Jar size all specialized dependencies
+jar_size_specialized <- dependency_jar_size_specialized %>% 
+  group_by(Project) %>% 
+  summarise(JarSizeSpecialized=sum(SizeSpecialized)) %>% 
+  arrange(Project)
+
+size <- inner_join(jar_size_original, jar_size_specialized, by = "Project") %>%
+  mutate(SizeReduced = JarSizeOriginal - JarSizeSpecialized) %>% 
+  mutate(ChartSmart = paste(paste(
+    paste(
+      paste("\\ChartSmall[p]{", SizeReduced, sep = ""),
+      "}{",
+      sep = ""
+    ),   JarSizeOriginal, sep = ""
+  ), "}", sep = "")) %>%
+  arrange(Project)
+size 
+size %>% select(Project, ChartSmart)
+sum(size$JarSizeOriginal)
+sum(size$JarSizeSpecialized)
+
+# Other stats
+summary(size[2:4])
+size %>% arrange(SizeReduced)
+
+View(inner_join(dependency_jar_size_original, dependency_jar_size_specialized, by = "Dependency") %>% 
+  mutate(SizeReduced = SizeOriginal - SizeSpecialized) %>% 
+  select(Project.x, Dependency, SizeReduced, SizeOriginal) %>% 
+  arrange(desc(SizeReduced)))
+  
+dependency_jar_size_original %>% filter(Project == "httpcomponents-client_httpclient5")#count(Project)
+dependency_jar_size_original %>% count(Project)
+dependency_jar_size_specialized %>% filter(Project == "httpcomponents-client_httpclient5")#count(Project)
+dependency_jar_size_specialized %>% count(Project)
+
+```
+
+## Project
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# Project classes number
+project_classes_number <- read.delim("/Users/cesarsv/IdeaProjects/deptrim-experiments/pipeline/csv/Descriptive/project-classes-number.csv", sep = ",", header = T, stringsAsFactors = TRUE)
+project_classes_size <- read.delim("/Users/cesarsv/IdeaProjects/deptrim-experiments/pipeline/csv/Descriptive/project-classes-size.csv", sep = ",", header = T, stringsAsFactors = TRUE)
+sum(project_classes_number$ProjectClassesNumber)
+sum(project_classes_size$ProjectClassesSize)
+
+project_jar_size_vs_dependencies_size <- inner_join(project_classes_size, size, by = "Project") %>% 
+  select(Project, ProjectClassesSize, JarSizeOriginal) %>% 
+  mutate(ChartSmart = paste(paste(
+    paste(paste(
+      "\\ChartSmall[r]{", ProjectClassesSize, sep = ""
+    ), "}{", sep = ""),   JarSizeOriginal, sep = ""
+  ), "}", sep = "")) %>%
+  arrange(Project)
+project_jar_size_vs_dependencies_size
+
+project_classes_number_vs_dependencies_classes_number <- inner_join(project_classes_number, classes, by = "Project") %>% 
+  select(Project, ProjectClassesNumber, Total) %>% 
+   mutate(npProjectClassesNumber = paste(paste("\\np{", ProjectClassesNumber, sep = ""), "}", sep = "")) %>% 
+  mutate(ChartSmart = paste(paste(
+    paste(paste(
+      "\\ChartSmall[r]{", ProjectClassesNumber, sep = ""
+    ), "}{", sep = ""),    Total, sep = ""
+  ), "}", sep = "")) %>%
+  arrange(Project)
+project_classes_number_vs_dependencies_classes_number
+```
+
+# RQ3
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# Read the data
+specialization_failures <- read.delim("/Users/cesarsv/IdeaProjects/deptrim-experiments/pipeline/csv/RQ3/specialization-failures.csv", sep = ",", header = T, stringsAsFactors = TRUE)
+
+# Compilation (For Table 2)
+compilation <- specialization_failures %>% 
+  select(Project, CompilationError) %>% 
+  group_by(Project, .drop = FALSE) %>% 
+  count(CompilationError) %>% 
+  spread(CompilationError, n) %>% 
+  mutate(ChartSmart = paste(paste(paste(paste("\\ChartSmall[q]{", yes, sep = ""), "}{", sep = ""), yes + no, sep = ""), "}", sep = "")) %>% 
+  arrange(Project)
+compilation
+
+# Tests (For Table 2)
+tests <- specialization_failures %>% 
+  mutate(TestFail = ifelse(TestFailure > 0 | TestError > 0, "yes", "no")) %>% 
+  select(Project, TestFail) %>% 
+  group_by(Project, .drop = FALSE) %>% 
+  count(TestFail) %>% 
+  spread(TestFail, n) %>% 
+  mutate(yes = ifelse(is.na(yes), 0, yes)) %>% 
+  mutate(ChartSmart = paste(paste(paste(paste("\\ChartSmall[q]{", yes, sep = ""), "}{", sep = ""), yes + no, sep = ""), "}", sep = "")) %>% 
+  arrange(Project)
+tests
+
+# For Table 3
+tests_fail <- specialization_failures %>% 
+  filter(TestFailure > 0 | TestError > 0) %>% 
+  mutate(ChartSmart = paste(paste(paste(paste("\\ChartSmall[q]{", TestFailure+TestError, sep = ""), "}{", sep = ""), TestRun, sep = ""), "}", sep = "")) %>% 
+  select(Project, TestRun,TestFailure, TestError, ChartSmart) %>% 
+  arrange(Project)
+tests_fail
+sum(tests_fail$TestRun)
+sum(tests_fail$TestFailure) + sum(tests_fail$TestError)
+
+```

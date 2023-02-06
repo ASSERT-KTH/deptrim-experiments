@@ -1,0 +1,590 @@
+Version 4.9
+=============
+
+1. New constraints, Increasing and Decreasing, both for strict (<) and
+   non-strict (=<) ordering.
+
+2. Adding to minizinc graph constraints on (sub-)graph isomorphism,
+   matching and clique. Prepared to use package org.jacop.graph that
+   will make it possible to used graph global constraints
+   instead. This is controlled by variable use_jacop_graph_constraints
+   = true in minizinc library file jacop.mzn.
+
+3. Random number generators can start from a given seed defined by
+   Store method setSeed(long seed). Faltzinc accepts option -r
+   (--random-seed) that defines the seed.
+
+4. Support for a new variable selection annotation for search (in
+   minizinc).  Annotation "tiebreak" takes two parameters (two
+   variable selection methods) and uses the first one as the main
+   selection method and the second one as tie breaking, in case when
+   both main selection methods has the same value. Example
+   tiebreak([first_fail,occurrence]).
+
+5. Support for standard "warm_start" search annotation for int and
+   bool variables in minizinc. It starts search with a specified value
+   for a given variable and then continues with either indomain_min or
+   indomain_max.
+
+6. New constraint generation for table constraints in flatzinc
+   interpreter. In cases when up to three variables are defined and
+   there exist up to three conflicting tuples JaCoP Or constraints are
+   generated instead.
+
+7. Bug corrections, code cleaning and performance improvements.
+
+Version 4.8
+=============
+
+1. Removing -f (format) and -p (precision) option flags. Flatzinc uses
+   instead --format and --precision. Option -f is used to denote free
+   search, based on AFCMaxDeg/AFCMax variable selection method. The
+   default search (no search annotations) still uses the old search
+   method for compatibility reasons.
+
+2. Improving debug information print-out for flatzinc.
+
+3. Improvement in propagation for XinA constraint.
+
+4. Improvement of propagation for ArgMin and ArgMax.
+
+5. Generation of IfThenElse constraint instead of Conditional for
+   flatzinc if_then_else_* constraints in cases when it is possible.
+
+6. Improvement in pruning of task duration in Cumulative Basic
+   constraint.
+
+7. New implementation of counting constraints in flatzinc. Some
+   compile to Atleast and AtMost. Original at_least and at_most are
+   deprecated from version 2.4 of Minizinc.
+
+8. New CountVar constraint and its flatzinc interface.
+
+9. New global cardinality constraint CountValues and
+   CountValuesBounds. Changes in minizinc library for global
+   cardinality constraints to use these two new constraints.
+
+10. New constraint Channel that generalizes Reified
+    constraint. Available in Java and minizinc. Several reified
+    constraints on the same variable are converted to a single channel
+    constraint in flatzinc.
+
+11. Removing limitation in flatzinc compiler that flatzinc variables
+    must have domains within interval
+    IntDomain.MinInt..IntDomain.MaxInt. First constraints might report
+    arithmetic overflow.
+
+12. Changing Scala compiler to 2.13.1 and making related code changes.
+
+13. Not recognized search options in flatzinc are ignored instead of
+    aborting computation.
+
+14. Changing IntDomain.divIntBounds method to use double instead of floats
+    for bounds calculations (better precision).
+
+15. Constraints XplusYplusQeqZ, XplusYplusCeqZ and XplusYplusQeqC are
+    removed. Use SumInt instead.
+
+16. Additional CountBounds constraint added in flatzinc translation of
+    global_cardinality_low_up_closed if domain consistency annotation
+    is present (GCC does bounds consistency only).
+
+17. Bug corrections and performance improvements.
+
+Version 4.7
+=============
+
+1. Implementation of restart search both in JaCoP and flatzinc (uses
+   standard minizinc annotation).
+
+2. Implementation of priority search both in JaCoP and in flatzinc
+   (uses annotation priority_search; check JaCoP specific library
+   definition at jacop.mzn for the definition).
+
+3. Making WeightedDegree variable selection method working correctly;
+   available in flatzinc as dom_w_deg. Adding new variable selection
+   methods based on accumulated failure count (AFC) and pruning
+   activity; defined in flatzinc also.
+
+4. Time-out in flatzinc is changed to be specified in milliseconds (to
+   be compatible with minizinc options).
+
+5. New distance step option for search with cost function specified as
+   FloatVar. Available in both Java and flatzinc.
+
+6. Small corrections in pom.xml to use right version of Scala.
+
+7. Restructuring of minizinc library with the new method introduced in
+   Minizinc 2.3. It uses fzn_*.mzn files to define JaCoP specific
+   global constraint
+
+8. Definitions in redefintions.mzn and implementation of half-reified
+   constraints, that is minizinc constraints with the name *_imp. Implementation
+   of JaCoP constraint Implies.
+
+9. Definitions and implementation of fzn_if_then_else_* constraints in
+   flatzinc JaCoP library and in Java (constraint Conditional).
+
+10. Implementation of Member constraint and making it available from
+    flatzinc (added into the JaCoP library).
+
+11. Flatzinc annotation "priority(k)" defining constraint priority
+    (0..4) where 0 is the highest and 4 the lowest priority of a constraint.
+
+12. New format for methods toString() for depth first search
+    methods. Flatzinc compiler prints search in debug mode.
+
+13. Bug corrections.
+
+Version 4.6
+=============
+
+1. Replacing buggy Lex constraint for sets with simple but correct
+   AltB and AleB. Both constraints implement lexical order between
+   sets using either "<" or "<=" relations. Lex is kept for
+   compatibility.
+   Constraints AltB and AleB are primitive and can be used as
+   parameters to other constraints. Implementation of flatzinc
+   set_lt_reif and set_le_reif.
+
+2. SumInt, SumBool, LinearInt, LinearIntDom and LinearFloat does not
+   need Store parameter any longer.
+
+3. Fix of null pointer exception in Binpacking constraint. It is
+   sometimes present if a bin variable is ground when constraint is
+   imposed. Improving performance of Binpacking constraint by running
+   computationally expensive lower bound computations only when
+   constraint is fix-point.
+
+4. New constraint for symmetry breaking, ValuePrecede.
+
+5. Implementation of ElementFloatVariable and ElementSetVariable as
+   well as related flatzinc predicates array_var_float_element
+   array_var_set_element.
+
+6. New version of Alldiff constraints that uses new algorithm with
+   complexity O(n logn) instead of O(n^2).
+
+7. Improvements in subcircuit constraint. It applies computationally
+   expensive dominance pruning if SCC did not pruned anything.
+
+8. New primitive constraints AtLeast and AtMost. Adding generation of
+   these constraints and their reified versions for flatzinc.
+
+9. Adding print-out of intermediate statistics for search (search nodes
+   and execution time) to flatzinc when option -v is given.
+
+10. Adding JaCoP solver configuration file, 'org.jacop.msc', for
+    minizinc 2.2 (both stand-alone and IDE) and fzn-jacop script to be
+    used to call JaCoP solve.
+
+11. New print-out of statistics for flatzinc that follows minizinc 2.2
+    standard.
+
+12. Definition of flatzinc library global constraint
+    alldifferent_except0 using global_cardinality_low_up_closed.
+    Related changes of generation of JaCoP GCC constraint.
+
+13. Bug fix in sequential search when there is float_search after
+    set_search.
+
+Version 4.5
+=============
+
+1. Performance improvements and identification of the same items in
+   Binpacking constraint.
+
+2. Correcting definitions of bin_packing and bin_packing_capa in JaCoP
+    flatzinc library.
+
+3. New constructor for LinearInt and LInearIntDom that makes it easier
+   to define it. Makes it possible to specify result as IntVar.
+
+4. New constraint SumFloat and new constructor for LinearFloat. Makes
+   it possible to specify result as FloatVar.
+
+5. New JaCoP specific variable selection options in flatzinc
+   (smallest_max, smallest_most_constrained, smallest_first_fail). It
+   requires to include jacop.mzn in minizinc program.
+
+6. Adding soft_all_different_int and soft_global_cardinality_int to
+   flatzinc. It requires to include jacop.mzn in minizinc program.
+
+7. Printing BooleanVar when store is printed.
+
+8. Adding possibility to Scala wrapper to define element constraint
+   on a list of BoolVar as array access.
+
+9. Adding floating-point constraints log2 and log10 to flatzinc to
+   JaCoP compiler.
+
+10. Two new classes for debugging and statistics gathering.
+   VariableTrace prints out variables prunings during search.
+   FailConstraintsStatistics gather number of fails for each
+   constraints and class of constraints.
+
+11. New cumulative constraints. CumulativeBasic does time-tabling
+    propagation, Cumulative does time-tabling and edge finding
+    propagation, and CumulativeUnary is a specialized version of unary
+    resources and does in addition to two previous propagations
+    not-first-not-last, detectable and overload propagations. All
+    propagations, except time-tabling, are done on binary trees and
+    have the following complexities, where n is the number of tasks
+    and k is the number of distinct resource values for tasks. Edge
+    finding O(k*n*logn), not-first-not-last, detectable and overload
+    O(n*logn).
+
+12. New, more efficient implementation of Diffn constraint. Added
+    Nooveralp constraint implementing basic non-overlapping
+    conditions for rectangles and DiffnDecomposed implemented as three
+    constraints: Nooverlap and two CumulativeBasic constraints in
+    direction X and Y.
+
+13. New Table and SimpleTable (number of table entries =< 64)
+    constraints based on compact-table representation.
+
+14. Calls to new cumulative, diffn and table constraints in Scala wrapper.
+
+15. New method for constraint generation for flatzinc.
+
+16. Making JaCoP compatible with Scala 2.12.
+
+17. Improvement in pruning for MinSimple and MaxSimple.
+
+18. Bug fixes:
+   - Changing comparator method in LinearFloat that
+     IllegalArgumentException is not reported.
+   - Correcting bugs in AndBool, OrBool and AndBoolSimple.
+   - Correcting a bug when a constraint needs information of changed
+     variables and is a parameter to other constraint, for example
+     Reified, Xor.
+   - Bug fix when reified BoolClause is generated in falzinc. The case
+     when BoolClause fails and reified variable is false.
+   - Bug fix in SumInt that stopped the propagator from computing a
+     fix-point in some situations.
+   - Bug fix in method inComplement that did not generated event
+     "BOUND" when bounds in the domain was changed (generated "ANY"
+     instead).
+
+19. Different Maven profiles for testing (commit, push, release) that
+    will execute different lengths tests in Maven test phase using
+    Minizinc tests stored in src/test/fz/ directory.
+
+20. Various code cleaning based on complaints from findbugs, Intelij IDE,
+    and Sonar.
+
+21. Adding workaround for a bug in Geost caused by too eager ignoring
+    execution of propagation when constraint is not consistent.
+
+22. Extending testing suites by adding thousands of minizinc based tests,
+    as well as some unit tests for domain classes. Adding fznFileGenerator
+    skrypt to quickly categorize new minizinc problems into time categories
+    to be used by future tests.
+
+23. Cleaning up design around Constraints. Refactoring a lot of code from
+    particular constraints into common functionality in Constraint.
+	
+Version 4.4
+===========
+
+1. New selection for search variables in minizinc. Only output
+   variables are selected by default.
+
+2. Adding additional pass to the flatzinc compiler. bool2int does not
+   generate the equality constraints on both variables. Only the first
+   variable is used in the model and the second one as the alias for
+   the first one. Decreases the number of generated constraints.
+
+3. Sum and SumWeight are deprecated and SumInt, SumBool or LinearInt
+   should be used instead.
+
+4. New circuit and subcircuit constraint definitions in minizinc that
+   accept arbitrary indexes (not always starting from 1).
+
+5. New constraint SumBool.
+
+6. Correcting a bug in OrBool constraint.
+
+7. Xor of Linear constraint corrected. Linear is deprecated and
+   LinearInt should be used instead.
+
+8. Correcting a bug in GCC.
+
+9. Improvements and corrections in Linear, LinearInt, SumInt,
+   LinearIntDom and LinearFloat.
+
+10. Bug fixes and improvements.
+
+Version 4.3
+===========
+1. Implementation of constraints ArgMin and ArgMax as well connection to
+   flatzinc constraints arg_min_int and arg_max_int.
+
+2. Correcting implementation of Diff2 and Disjoint. Currently Diff2
+   implements non-strict version of diffn constraint (minizinc constraint
+   diffn_nonstrict) that makes it possible to pack zero-width rectangles
+   anywhere. Disjoint implements a strict version of diffn constraint
+   (minizinc diffn constraint). It requires that zero-width rectangles
+   does not overlap with any other rectangle.
+	
+3. Implementation of primitive constraint BoolClause implementing flatzinc
+   constraint bool_clause.
+	
+4. Sets of integer with bounds 1..0 are treated by flatzinc parser as
+   empty sets. This implements a way minizinc 2.0 represents empty sets.
+
+5. Adding int_pow build-in predicate to flatzinc interpreter.
+
+6. LexOrder global constraints accepts vectors of different sizes.
+
+7. Performance improvement for SumWeightDom.
+
+8. Performance improvement for ElementInteger and two new constraints
+   ElementIntegerFast and ElementVariableFast that implement a
+   straightforward pruning method.
+
+9. New primitive constraints LinearInt and SumInt that implement
+   pruning methods from paper "Bounds Consistency Techniques for Long
+   Linear Constraints" by Warwick Harvey and Joachim Schimpf.
+
+10. Fixing performance bug in IntervalBasedBacktrackableManager.
+    Unnecessary call to checkRemoveInvariant outside assert statement.
+
+11. Adding option --bound (-b) to flatzinc parser that enforces use of bounds
+    consistency for constraints (instead of domain, even for constraints
+    annotated with "::domain").
+
+12. Adding SAT solver to JaCoP and connecting it to flatzinc
+    interpreter. The use of SAT solver in flatzinc is controlled by
+    option -sat. If the option is specified the SAT solver is used for
+    all bool_* constraints, otherwise CP constraints are used.
+
+13. Improving performance of Max and Min constraints. Specially for
+    large lists of varibales.
+
+14. Bug fixes.
+	
+Version 4.2
+===========
+1. Support for minizinc 2.0
+2. Constraint Geost avaible is now from minizinc.
+3. Implementation of Solution-Guided Multi-Point Constructive Search.
+4. Improvements in minimization method for floating-point variables.
+
+Version 4.1.1
+===========
+
+1. New global constraint LexOrder that defines lexicographical order
+   between two vectors of IntVar. Vectors must be of the same size.
+2. Implementation of a loader for flazinc models and related examples. The
+   loader makes it possible to load the model and then define own search
+   methods as well as use all variables defined in the model and their values.
+3. Performance improvements in AndBool and OrBool. it is no longer needed
+   to scan the whole list for achieving consistency.
+4. Checking for overflow in Sum and improvement in detecting overflow for
+   addition.
+5. Since domain consistency is computationally expensive minizinc uses
+   domain consistency for linear constraints only when constrained are
+   annotated ":: domain" and the size of maximal domains is <= 4 and
+   there is no more than 2 variables.
+
+Version 4.1
+===========
+
+1. New floating point variables and constraints on these variables.
+
+2. Flatzinc interface for JaCoP's floating point constraints.
+
+3. Scala interface for floating point constraints.
+
+4. Fixing a bug in knapsack constraints when large numbers are used.
+
+5. Implementing intersection method between SmallDenseDomain and BoundDomain.
+
+Version 4.0
+===========
+
+1. Maven support and new directory structure. The package has changed name from JaCoP to org.jacop and files are placed in the new directory structure.
+
+2. Experimental feature - stochastic variables and constraints - is moved to feature branch as it still requires additional testing.
+   It is excluded from this release, but we encourage contribution in this branch (examples/tests in particular) to help us make it
+   quicker a part of the next release.
+
+3. Experimental feature SAT solver - JaSAT - is moved to experimental feature branch as its performance and integration with JaCoP still
+   requires extra work. It is excluded from this release, but we encourage contribution in this branch to help us make it quicker a part
+    of the next release.
+
+4. Adding constraint SumWeightDom that implements domain consistency
+   for weighted sum of linear terms.
+
+5. New primitive constraint Linear and its use in flatzinc.
+
+6. New global constraint Subcircuit.
+
+7. Adding additional propagation to Min and Max constraint. It
+   propagates in situations when one variable on the list is lowest
+   (greatest). It enforces that this variable from the list is equal
+   min (max) variable.
+
+8. Print of statistics for flatzinc (org.jacop.fz.Fz2jacop) after Ctrl-C.
+
+9. Updated JaCoP guide to reflect new features.
+
+10. Bug fixes.
+
+Version 3.2
+=============
+
+1. Fixes few bugs
+2. Provides an interface from Scala to JaCoP. Examples using Scala are provided in ExamplesScala package.
+
+Version 3.1.2
+=============
+
+The release of JaCoP version 3.1.2 fixes several bugs and makes JaCoP compatible with minizinc v.1.4.
+
+1. Compatibility changes for minizinc 1.4.
+2. Bug fix of reification in several primitive set constraints that made pruning working correctly.
+3. New method for pruning length of rectangles in Diff/Diff2 constraints.
+4. Several small bug fixes.
+5. Bug fix in search to make limit on a number of solutions work correctly (specially for sequence search).
+
+Version 3.1.1
+=============
+
+1. Changes to bo compatible with minizinc v. 1.3.
+2. New pruning methods for multiplication and division constraints, icluding div and mod.
+3. Bug fix in Among constraint.
+4. Bug fix in SmallDenseDomain.
+
+
+Version 3.1
+===========
+
+This release fixes few bugs as well as provides a new Binpacking constraint. 
+
+The Binpacking constraint allows modeling of problems exhibiting bin
+packing problem structure. The addition of this constraint introduced
+changes to minizinc/fz library in JaCoP since the definitions of
+bin_packing.mzn, bin_packin_capa.mzn and bin_packing_load.mzn have
+been added. The JaCoP guide has been updated to explain how to use
+Binpacking constraint.
+
+Version 3.0
+===========
+
+We have just released JaCoP 3.0 final. Since the previous release
+(RC2) we have fixed one rarely triggering bug in ElementInteger
+constraint, as well as added code supporting generation of data for
+CP-viz framework. Here is the list of most important changes since
+version 2.4.
+
+1) The introduction of Network Flow constraint, which allows efficient
+  modeling of problems with network flow structure. The constraint
+  allows to specify minimum cost flow problem in terms of finite
+  domain variables.  It uses network simplex algorithm as an
+  propagator for network-like structure. It is a very expressive
+  constraint where arc flow and arc unit costs can be specified by
+  variables.
+
+2) The introduction of set package forced changes in the design of
+  core interfaces. There are IntVar and SetVar classes which inherit
+  from Var class. This change allowed to refactor and improve set package
+  so it is designed in cleaner and more efficient manner.
+
+3) The introduction of special domain representation SmallDenseDomain,
+  which uses bits within a long primitive type to encode small
+  domains of range not larger than 64.
+
+4) The introduction of Soft-alldifferent as well as Soft-GCC global
+  constraints. The soft-alldifferent constraint implements Variable
+  and Decomposition based violation metrics. The soft-gcc constraint
+  implements value based violation metric. Both are decomposed constraints
+  based on network flow constraint.
+
+5) Examples have been updated by moving multiple solving functionality
+  from main function to test function, so user can easily see what is
+  the best model just by looking at main function. BIBD example has
+  been added.  Examples with Set variables have been updated to
+  reflect the changes.
+
+6) A number of bug fixes and changes in flatzinc interface to better
+  comply with minizinc 1.1. We have also added into minizinc
+  predicates networkflow that uses newly introduced JaCoP Network
+  Flow constraint.
+
+7) A number of minor API changes to improve intuitiveness of use
+  (e.g. order of arguments in constructors).
+
+8) The JaCoP guide has been updated to reflect the changes and additions
+  to the newest version.
+
+Version 2.4.2
+=============
+
+The main reason for this release is change of Minizinc standard, the
+newest version handles Minizinc 1.1.
+
+Version 2.4.1
+=============
+
+???
+
+Version 2.4
+===========
+
+The version 2.4 has a number of new features in addition to some bug
+fixes. The most important additions in this version are:
+
+The flatzinc interface that makes it possible to run minizinc programs
+using JaCoP. The distribution contains number of different minizinc
+examples.
+
+Geometrical constraint, geost, based on pruning algorithms originally
+proposed by Nicolas Beldiceanu et al. This constraint makes it
+possible to define placement problems of non-convex objects in
+k-dimensional space.
+
+Knapsack constraint, which is based on the work published by Irit
+Katriel et al. We extend the original work in number of ways, for
+example by making it possible to use non-boolean quantity variables.
+
+Set constraints defining typical operation on sets using set interval
+variables.
+
+Version 2.3
+===========
+
+As with previous releases, JaCoP focuses on ease of use, efficiency,
+and modeling power by providing more and more global constraints.
+
+In JaCoP 2.3 you'll notice:
+
+Number of new global constraints implemented, namely Among, GCC,
+Regular, two new variants of ExtensionalSupport constraint (STR, MDD),
+Stretch, and Sequence constraints.
+
+Redesigned search functionality making it possible to express search
+as by designing search plugins and transforming available search.
+
+Redesigned part of the JaCoP core focusing on domains, making it
+easier to add new domains representations.
+
+Significantly improved Java Doc API making code even better
+documented.
+
+Number of new examples explaining how to apply CP technology.
+
+
+Version JaCoP 2.2 
+=================
+
+
+Version JaCoP 2.1 
+=================
+
+Version JaCoP 1.7 
+=================
+
+Version JaCoP 1.3 
+=================

@@ -2,24 +2,8 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4592533.svg)](https://doi.org/10.5281/zenodo.4592533)
 
-> Data collection results are in [results.zip](https://kth-my.sharepoint.com/:u:/g/personal/cesarsv_ug_kth_se/ERTa867oxpdNmq3_bUpcafgBRDE1PGSe4P6py5WPqiJDxg?e=LMXcLF) (file size is 3.47 GB).
-
 Open-science repository containing our experiments about debloating for specialization using [DepTrim](https://github.com/castor-software/deptrim).
 For more details about this repository, refer to the companion paper:
-
-```
-@article{Valero2023,
-  TITLE = "{TODO}",
-  AUTHOR = {TODO},
-  JOURNAL = "{TODO}",
-  PUBLISHER = "{TODO}",
-  PAGES = {TODO},
-  VOLUME = {TODO},
-  URL = {TODO},
-  YEAR = {TODO},
-  doi = {TODO},
-}
-```
 
 ## Organization
 
@@ -150,4 +134,3 @@ Distributed under the MIT License. See [LICENSE](https://github.com/castor-softw
 DepTrim is partially funded by the [Wallenberg Autonomous Systems and Software Program (WASP)](https://wasp-sweden.org).
 
 <img src="https://github.com/castor-software/depclean/blob/master/.img/wasp.svg" height="50px" alt="Wallenberg Autonomous Systems and Software Program (WASP)"/>
-

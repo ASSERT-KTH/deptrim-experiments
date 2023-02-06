@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="581pt" height="226pt" version="1.1" viewBox="0 0 580.5 226" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g class="node" transform="translate(4,222)" fill="#cbe4ca">
+  <title>org.jacop:jacop:jar:compile</title>
+  <path d="m290-218h-32c-6 0-12 6-12 12v18c0 6 6 12 12 12h32c6 0 12-6 12-12v-18c0-6-6-12-12-12" fill="#cbe4ca" stroke="#000"/>
+ </g>
+ <g class="node" transform="translate(4,222)" fill="#d2e2fb">
+  <title>org.mockito:mockito-all:jar:compile</title>
+  <path d="m70-135h-58c-6 0-12 6-12 12v18c0 6 6 12 12 12h58c6 0 12-6 12-12v-18c0-6-6-12-12-12" fill="#d2e2fb" stroke="#000"/>
+ </g>
+ <g class="edge" transform="translate(4,222)">
+  <title>org.jacop:jacop:jar:compile-&gt;org.mockito:mockito-all:jar:compile</title>
+  <path d="m245.91-188.97c-36.35 9.46-101.38 27.57-154.91 48.97-0.71 0.28-1.42 0.57-2.14 0.87" fill="none" stroke="#000"/>
+  <polygon points="87.23 -142.24 90.03 -135.82 79.47 -135.03" stroke="#000"/>
+ </g>
+ <g class="node" transform="translate(4,222)" fill="#d2e2fb">
+  <title>junit:junit:jar:test</title>
+  <path d="m142-140h-30c-6 0-12 6-12 12v28c0 6 6 12 12 12h30c6 0 12-6 12-12v-28c0-6-6-12-12-12" fill="#d2e2fb" stroke="#000"/>
+ </g>
+ <g class="edge" transform="translate(4,222)">
+  <title>org.jacop:jacop:jar:compile-&gt;junit:junit:jar:test</title>
+  <path d="m245.59-183.02c-22.78 10.73-55.33 26.79-82.59 43.02-0.09 0.05-0.18 0.11-0.27 0.16" fill="none" stroke="#000"/>
+  <polygon points="160.86 -142.8 164.59 -136.87 154.26 -134.51" stroke="#000"/>
+ </g>
+ <g class="node" transform="translate(4,222)" fill="#d2e2fb">
+  <title>org.scala-lang:scala-library:jar:compile</title>
+  <path d="m249.5-135h-65c-6 0-12 6-12 12v18c0 6 6 12 12 12h65c6 0 12-6 12-12v-18c0-6-6-12-12-12" fill="#d2e2fb" stroke="#000"/>
+ </g>
+ <g class="edge" transform="translate(4,222)">
+  <title>org.jacop:jacop:jar:compile-&gt;org.scala-lang:scala-library:jar:compile</title>
+  <path d="m259.91-175.98c-6.92 9.84-15.38 21.85-22.95 32.61" fill="none" stroke="#000"/>
+  <polygon points="234.02 -145.27 239.74 -141.24 231.13 -135.07" stroke="#000"/>
+ </g>
+ <g class="node" transform="translate(4,222)" fill="#d2e2fb">
+  <title>org.scala-lang:scala-compiler:jar:compile</title>
+  <path d="m372-135h-80c-6 0-12 6-12 12v18c0 6 6 12 12 12h80c6 0 12-6 12-12v-18c0-6-6-12-12-12" fill="#d2e2fb" stroke="#000"/>
+ </g>
+ <g class="edge" transform="translate(4,222)">
+  <title>org.jacop:jacop:jar:compile-&gt;org.scala-lang:scala-compiler:jar:compile</title>
+  <path d="m288.34-175.98c7.04 9.84 15.64 21.85 23.35 32.61" fill="none" stroke="#000"/>
+  <polygon points="308.96 -141.17 314.65 -145.24 317.63 -135.07" stroke="#000"/>
+ </g>
+ <g class="node" transform="translate(4,222)" fill="#d2e2fb">
+  <title>org.slf4j:slf4j-api:jar:compile</title>
+  <path d="m453.5-135h-39c-6 0-12 6-12 12v18c0 6 6 12 12 12h39c6 0 12-6 12-12v-18c0-6-6-12-12-12" fill="#d2e2fb" stroke="#000"/>
+ </g>
+ <g class="edge" transform="translate(4,222)">
+  <title>org.jacop:jacop:jar:compile-&gt;org.slf4j:slf4j-api:jar:compile</title>
+  <path d="m302.31-183.71c24.38 10.82 60.33 27.37 90.69 43.71 0.19 0.1 0.39 0.21 0.58 0.31" fill="none" stroke="#000"/>
+  <polygon points="391.98 -136.57 395.41 -142.67 402.41 -134.72" stroke="#000"/>
+ </g>
+ <g class="node" transform="translate(4,222)" fill="#d2e2fb">
+  <title>org.slf4j:slf4j-log4j12:jar:compile</title>
+  <path d="m560.5-135h-65c-6 0-12 6-12 12v18c0 6 6 12 12 12h65c6 0 12-6 12-12v-18c0-6-6-12-12-12" fill="#d2e2fb" stroke="#000"/>
+ </g>
+ <g class="edge" transform="translate(4,222)">
+  <title>org.jacop:jacop:jar:compile-&gt;org.slf4j:slf4j-log4j12:jar:compile</title>
+  <path d="m302.11-189.76c39.3 9.09 112.63 27.34 172.89 49.76 0.88 0.33 1.76 0.66 2.64 1" fill="none" stroke="#000"/>
+  <polygon points="476.63 -135.63 479.28 -142.11 487.21 -135.08" stroke="#000"/>
+ </g>
+ <g class="node" transform="translate(4,222)" fill="#d2e2fb">
+  <title>org.hamcrest:hamcrest-core:jar:test</title>
+  <path d="m167-52h-80c-6 0-12 6-12 12v28c0 6 6 12 12 12h80c6 0 12-6 12-12v-28c0-6-6-12-12-12" fill="#d2e2fb" stroke="#000"/>
+ </g>
+ <g class="edge" transform="translate(4,222)">
+  <title>junit:junit:jar:test-&gt;org.hamcrest:hamcrest-core:jar:test</title>
+  <path d="m127-87.66v25.42" fill="none" stroke="#000"/>
+  <polygon points="123.5 -62.16 130.5 -62.16 127 -52.16" stroke="#000"/>
+ </g>
+ <g class="node" transform="translate(4,222)" fill="#d2e2fb">
+  <title>org.scala-lang:scala-reflect:jar:compile</title>
+  <path d="m274.5-47h-65c-6 0-12 6-12 12v18c0 6 6 12 12 12h65c6 0 12-6 12-12v-18c0-6-6-12-12-12" fill="#d2e2fb" stroke="#000"/>
+ </g>
+ <g class="edge" transform="translate(4,222)">
+  <title>org.scala-lang:scala-compiler:jar:compile-&gt;org.scala-lang:scala-reflect:jar:compile</title>
+  <path d="m310.67-92.62c-11.99 11.46-27.12 25.92-40.12 38.34" fill="none" stroke="#000"/>
+  <polygon points="267.99 -56.67 272.82 -51.61 263.18 -47.23" stroke="#000"/>
+ </g>
+ <g class="node" transform="translate(4,222)" fill="#d2e2fb">
+  <title>jline:jline:jar:compile</title>
+  <path d="m347-47h-30c-6 0-12 6-12 12v18c0 6 6 12 12 12h30c6 0 12-6 12-12v-18c0-6-6-12-12-12" fill="#d2e2fb" stroke="#000"/>
+ </g>
+ <g class="edge" transform="translate(4,222)">
+  <title>org.scala-lang:scala-compiler:jar:compile-&gt;jline:jline:jar:compile</title>
+  <path d="m332-92.62v35.17" fill="none" stroke="#000"/>
+  <polygon points="328.5 -57.23 335.5 -57.23 332 -47.23" stroke="#000"/>
+ </g>
+ <g class="node" transform="translate(4,222)" fill="#d2e2fb">
+  <title>org.fusesource.jansi:jansi:jar:compile</title>
+  <path d="m469-47h-80c-6 0-12 6-12 12v18c0 6 6 12 12 12h80c6 0 12-6 12-12v-18c0-6-6-12-12-12" fill="#d2e2fb" stroke="#000"/>
+ </g>
+ <g class="edge" transform="translate(4,222)">
+  <title>org.scala-lang:scala-compiler:jar:compile-&gt;org.fusesource.jansi:jansi:jar:compile</title>
+  <path d="m354.99-92.62c13.04 11.57 29.53 26.19 43.64 38.69" fill="none" stroke="#000"/>
+  <polygon points="396.37 -51.25 401.02 -56.49 406.18 -47.23" stroke="#000"/>
+ </g>
+ <g class="node" transform="translate(4,222)" fill="#d2e2fb">
+  <title>log4j:log4j:jar:compile</title>
+  <path d="m543-47h-30c-6 0-12 6-12 12v18c0 6 6 12 12 12h30c6 0 12-6 12-12v-18c0-6-6-12-12-12" fill="#d2e2fb" stroke="#000"/>
+  <text x="517.5" y="-36" fill="#d2e2fb" font-family="Helvetica, sans-Serif" font-size="10px">log4j</text>
+ </g>
+ <g class="edge" transform="translate(4,222)">
+  <title>org.slf4j:slf4j-log4j12:jar:compile-&gt;log4j:log4j:jar:compile</title>
+  <path d="m528-92.62v35.17" fill="none" stroke="#000"/>
+ </g>
+ <g font-family="Helvetica, sans-Serif">
+  <text transform="translate(4,222)" x="254" y="-207" font-size="10px">org.jacop</text>
+  <text transform="translate(4,222)" x="257.5" y="-193.8" font-size="14px">jacop</text>
+  <text transform="translate(4,222)" x="260" y="-183" font-size="10px">4.10.0</text>
+  <text transform="translate(4,222)" x="15" y="-124" font-size="10px">org.mockito</text>
+  <text transform="translate(4,222)" x="8" y="-110.8" font-size="14px">mockito-all</text>
+  <text transform="translate(4,222)" x="24.5" y="-100" font-size="10px">1.10.19</text>
+  <text transform="translate(4,222)" x="117.5" y="-129" font-size="10px">junit</text>
+  <text transform="translate(4,222)" x="114.5" y="-115.8" font-size="14px">junit</text>
+  <g font-size="10px">
+   <text transform="translate(4,222)" x="113" y="-105">4.13.1</text>
+   <text transform="translate(4,222)" x="115.5" y="-95">(test)</text>
+   <text transform="translate(4,222)" x="186.5" y="-124">org.scala-lang</text>
+  </g>
+  <text transform="translate(4,222)" x="180.5" y="-110.8" font-size="14px">scala-library</text>
+  <text transform="translate(4,222)" x="203" y="-100" font-size="10px">2.13.1</text>
+  <text transform="translate(4,222)" x="301.5" y="-124" font-size="10px">org.scala-lang</text>
+  <text transform="translate(4,222)" x="288" y="-110.8" font-size="14px">scala-compiler</text>
+  <text transform="translate(4,222)" x="318" y="-100" font-size="10px">2.13.1</text>
+  <text transform="translate(4,222)" x="416.5" y="-124" font-size="10px">org.slf4j</text>
+  <text transform="translate(4,222)" x="410.5" y="-110.8" font-size="14px">slf4j-api</text>
+  <text transform="translate(4,222)" x="420" y="-100" font-size="10px">1.7.24</text>
+  <text transform="translate(4,222)" x="510.5" y="-124" font-size="10px">org.slf4j</text>
+  <text transform="translate(4,222)" x="491.5" y="-110.8" font-size="14px">slf4j-log4j12</text>
+  <text transform="translate(4,222)" x="514" y="-100" font-size="10px">1.7.24</text>
+  <text transform="translate(4,222)" x="98" y="-41" font-size="10px">org.hamcrest</text>
+  <text transform="translate(4,222)" x="83" y="-27.799999" font-size="14px">hamcrest-core</text>
+  <g font-size="10px">
+   <text transform="translate(4,222)" x="120" y="-17">1.3</text>
+   <text transform="translate(4,222)" x="115.5" y="-7">(test)</text>
+   <text transform="translate(4,222)" x="211.5" y="-36">org.scala-lang</text>
+  </g>
+  <text transform="translate(4,222)" x="205.5" y="-22.799999" font-size="14px">scala-reflect</text>
+  <text transform="translate(4,222)" x="228" y="-12" font-size="10px">2.13.1</text>
+  <text transform="translate(4,222)" x="323" y="-36" font-size="10px">jline</text>
+  <text transform="translate(4,222)" x="319.5" y="-22.799999" font-size="14px">jline</text>
+  <text transform="translate(4,222)" x="318" y="-12" font-size="10px">2.14.6</text>
+  <text transform="translate(4,222)" x="385" y="-36" font-size="10px">org.fusesource.jansi</text>
+  <text transform="translate(4,222)" x="415" y="-22.799999" font-size="14px">jansi</text>
+  <text transform="translate(4,222)" x="419.5" y="-12" font-size="10px">1.12</text>
+  <text transform="translate(4,222)" x="513.5" y="-22.799999" font-size="14px">log4j</text>
+  <text transform="translate(4,222)" x="514" y="-12" font-size="10px">1.2.17</text>
+ </g>
+ <polygon transform="translate(4,222)" points="524.5 -57.23 531.5 -57.23 528 -47.23" stroke="#000"/>
+</svg>
