@@ -1,16 +1,16 @@
 # deptrim-experiments
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4592533.svg)](https://doi.org/10.5281/zenodo.4592533)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7613554.svg)](https://doi.org/10.5281/zenodo.7613554)
 
-Open-science repository containing our experiments about debloating for specialization using [DepTrim](https://github.com/castor-software/deptrim).
-For more details about this repository, refer to the companion paper:
+Open-science repository containing our experiments about automatic specialization of third-party dependencies using [DepTrim](https://github.com/castor-software/deptrim).
 
 ## Organization
 
 This repository is organized as follows:
 
-- [pipeline](https://github.com/castor-software/deptrim-experiments/tree/main/notebooks) contains the data collection pipeline
-- [notebooks](https://github.com/castor-software/deptrim-experiments/tree/main/pipeline) contains the R notebooks used analyze the results obtained with the pipeline
+- [pipeline](https://github.com/castor-software/deptrim-experiments/tree/main/notebooks) contains the data collection pipeline.
+- [notebooks](https://github.com/castor-software/deptrim-experiments/tree/main/pipeline) contains the R notebooks used analyze the results obtained with the pipeline.
+- [dataset](https://github.com/castor-software/deptrim-experiments/tree/main/dataset) contains part of the dataset of third party dependencies that we filtered to select the study subjects for experiments. 
 
 ## Collecting the results
 
@@ -21,7 +21,7 @@ To run the automatic data collection pipeline, you need the following installed:
 - [DepClean v2.0.4](https://github.com/castor-software/depclean/releases/tag/2.0.5) or above
 - [DepTrim v0.1.1](https://github.com/castor-software/deptrim/releases/tag/0.1.1) or above
 
-Then, execute the [run_pipeline.sh](https://github.com/castor-software/deptrim-experiments/blob/main/pipeline/run_pipeline.sh) script.
+Execute the [run_pipeline.sh](https://github.com/castor-software/deptrim-experiments/blob/main/pipeline/run_pipeline.sh) script.
 This will create a directory named `results` with 30 subdirectories, each representing the result for a Java project.
 For example, for the project [java-faker](https://https://github.com/DiUS/java-faker/commit/e23d6067c8f83b335a037d24e6107a37eb0b9e6e), the `results/java-faker` directory contains the following files:
 
